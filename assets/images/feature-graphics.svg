@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 380" width="100%" height="100%">
+  <defs>
+    <linearGradient id="ue5Bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#050505" />
+      <stop offset="50%" stop-color="#121826" />
+      <stop offset="100%" stop-color="#090d16" />
+    </linearGradient>
+    <linearGradient id="rayGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#38bdf8" />
+      <stop offset="50%" stop-color="#818cf8" />
+      <stop offset="100%" stop-color="#c084fc" />
+    </linearGradient>
+    <filter id="ueBloom" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="6" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+  </defs>
+
+  <rect width="600" height="380" rx="16" fill="url(#ue5Bg)" stroke="#1e293b" stroke-width="1.5" />
+  
+  <!-- Wireframe Nanite Poly Mesh Grid -->
+  <g stroke="#38bdf8" stroke-width="0.8" opacity="0.35">
+    <line x1="100" y1="100" x2="250" y2="70" />
+    <line x1="250" y1="70" x2="350" y2="110" />
+    <line x1="350" y1="110" x2="480" y2="80" />
+    <line x1="100" y1="100" x2="180" y2="200" />
+    <line x1="250" y1="70" x2="280" y2="190" />
+    <line x1="350" y1="110" x2="380" y2="210" />
+    <line x1="480" y1="80" x2="450" y2="200" />
+    <line x1="180" y1="200" x2="280" y2="190" />
+    <line x1="280" y1="190" x2="380" y2="210" />
+    <line x1="380" y1="210" x2="450" y2="200" />
+    <line x1="180" y1="200" x2="240" y2="300" />
+    <line x1="280" y1="190" x2="300" y2="310" />
+    <line x1="380" y1="210" x2="400" y2="290" />
+    <line x1="240" y1="300" x2="300" y2="310" />
+    <line x1="300" y1="310" x2="400" y2="290" />
+  </g>
+
+  <!-- High-Tech Unreal Engine Circle Emblem -->
+  <circle cx="300" cy="180" r="70" fill="none" stroke="url(#rayGrad)" stroke-width="3" filter="url(#ueBloom)" />
+  <circle cx="300" cy="180" r="55" fill="rgba(15, 23, 42, 0.7)" stroke="#38bdf8" stroke-width="1.5" />
+  <text x="272" y="196" font-family="'Cinzel', 'Montserrat', serif" font-size="44" font-weight="900" fill="#ffffff">UE</text>
+  <text x="330" y="194" font-family="'Segoe UI', sans-serif" font-size="28" font-weight="900" fill="#38bdf8">5</text>
+
+  <!-- Spec Badges Bottom -->
+  <g transform="translate(140, 290)">
+    <rect width="100" height="34" rx="6" fill="#1e293b" stroke="#334155" stroke-width="1" />
+    <text x="22" y="22" font-family="'Segoe UI', sans-serif" font-size="12" font-weight="bold" fill="#38bdf8">4K HDR</text>
+  </g>
+  <g transform="translate(255, 290)">
+    <rect width="100" height="34" rx="6" fill="#1e293b" stroke="#334155" stroke-width="1" />
+    <text x="22" y="22" font-family="'Segoe UI', sans-serif" font-size="12" font-weight="bold" fill="#38bdf8">120 FPS</text>
+  </g>
+  <g transform="translate(370, 290)">
+    <rect width="100" height="34" rx="6" fill="#1e293b" stroke="#334155" stroke-width="1" />
+    <text x="14" y="22" font-family="'Segoe UI', sans-serif" font-size="12" font-weight="bold" fill="#38bdf8">RAY TRACING</text>
+  </g>
+
+  <!-- Tag Pill -->
+  <rect x="30" y="30" width="220" height="32" rx="16" fill="rgba(56, 189, 248, 0.15)" stroke="#38bdf8" stroke-width="1" />
+  <text x="50" y="51" font-family="'Segoe UI', sans-serif" font-size="12" font-weight="700" fill="#38bdf8">UNREAL ENGINE 5</text>
+</svg>

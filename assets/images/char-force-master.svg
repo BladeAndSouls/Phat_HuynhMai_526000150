@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 650" width="100%" height="100%">
+  <defs>
+    <linearGradient id="fireGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ff4b1f" />
+      <stop offset="100%" stop-color="#ff9068" />
+    </linearGradient>
+    <linearGradient id="iceGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00c6ff" />
+      <stop offset="100%" stop-color="#0072ff" />
+    </linearGradient>
+    <filter id="magicGlow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="8" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+  </defs>
+
+  <rect width="500" height="650" rx="16" fill="#0f172a" />
+  
+  <!-- Yin Yang Magic Array -->
+  <circle cx="250" cy="240" r="150" fill="none" stroke="#ff4b1f" stroke-width="2" stroke-dasharray="10 5" opacity="0.4" />
+  <circle cx="250" cy="240" r="120" fill="none" stroke="#00c6ff" stroke-width="2" stroke-dasharray="6 4" opacity="0.4" />
+
+  <!-- Fire Orb (Right) -->
+  <circle cx="370" cy="190" r="35" fill="url(#fireGrad)" filter="url(#magicGlow)" opacity="0.9" />
+  <circle cx="370" cy="190" r="15" fill="#fff" />
+  <!-- Flame Tendrils -->
+  <path d="M370,150 Q410,130 390,190 Q420,230 360,220" fill="none" stroke="#ff4b1f" stroke-width="4" filter="url(#magicGlow)" />
+
+  <!-- Ice Crystal Orb (Left) -->
+  <polygon points="130,160 150,190 130,220 110,190" fill="url(#iceGrad)" filter="url(#magicGlow)" opacity="0.9" />
+  <polygon points="130,170 142,190 130,210 118,190" fill="#fff" />
+  <!-- Frost Shards -->
+  <polygon points="110,140 120,160 100,165" fill="#00c6ff" />
+  <polygon points="150,230 165,245 140,245" fill="#00c6ff" />
+
+  <!-- Force Master Silhouette -->
+  <g transform="translate(150, 100)">
+    <!-- Flowing Celestial Robes -->
+    <path d="M100,110 C40,160 20,260 0,380 C60,370 140,370 200,380 C180,260 160,160 100,110 Z" fill="#1e1b4b" stroke="#6366f1" stroke-width="2" />
+    <path d="M60,170 C40,250 30,340 20,380 C70,350 130,350 180,380 C170,340 160,250 140,170 Z" fill="#312e81" opacity="0.7" />
+
+    <!-- Head & Floating Hair -->
+    <path d="M100,45 C80,45 80,85 90,105 C100,115 110,115 120,105 C130,85 130,45 100,45 Z" fill="#fde047" />
+    <!-- Mystic Tiara -->
+    <polygon points="100,30 90,50 100,45 110,50" fill="#f59e0b" filter="url(#magicGlow)" />
+    <!-- Long Floating Twin Hair ribbons -->
+    <path d="M85,55 C50,80 30,140 15,220" fill="none" stroke="#fbcfe8" stroke-width="4" />
+    <path d="M115,55 C150,80 170,140 185,220" fill="none" stroke="#fbcfe8" stroke-width="4" />
+
+    <!-- Hand Gestures casting elemental orbs -->
+    <!-- Left Hand towards Ice -->
+    <line x1="70" y1="140" x2="-10" y2="90" stroke="#818cf8" stroke-width="5" stroke-linecap="round" />
+    <!-- Right Hand towards Fire -->
+    <line x1="130" y1="140" x2="210" y2="90" stroke="#818cf8" stroke-width="5" stroke-linecap="round" />
+    
+    <!-- Robe Sash Ribbon -->
+    <polygon points="90,180 110,180 120,280 100,320 80,280" fill="#f43f5e" opacity="0.8" />
+  </g>
+
+  <!-- Card Info -->
+  <rect x="30" y="520" width="440" height="95" rx="12" fill="rgba(15, 23, 42, 0.85)" stroke="#334155" stroke-width="1" />
+  <text x="50" y="555" font-family="'Cinzel', 'Segoe UI', serif" font-size="22" font-weight="800" fill="#ffffff">KHÍ CÔNG SƯ (FORCE MASTER)</text>
+  <text x="50" y="582" font-family="'Segoe UI', sans-serif" font-size="13" fill="#94a3b8">Bậc thầy nguyên tố Hỏa thiêu rụi kẻ thù &amp; Băng đóng băng diện rộng.</text>
+  <text x="50" y="602" font-family="'Segoe UI', sans-serif" font-size="12" font-weight="bold" fill="#ff4b1f">ĐỘ KHÓ: ★★★☆☆ | VAI TRÒ: RANGE DPS / CROWD CONTROL</text>
+</svg>

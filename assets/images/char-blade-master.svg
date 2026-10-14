@@ -1,0 +1,74 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 650" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bmGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00f2fe" />
+      <stop offset="100%" stop-color="#4facfe" />
+    </linearGradient>
+    <linearGradient id="bgGlow" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#1e293b" />
+      <stop offset="100%" stop-color="#0f172a" />
+    </linearGradient>
+    <filter id="swordGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="6" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+  </defs>
+
+  <!-- Background Base -->
+  <rect width="500" height="650" rx="16" fill="url(#bgGlow)" />
+  <circle cx="250" cy="240" r="180" fill="#00f2fe" opacity="0.08" filter="url(#swordGlow)" />
+
+  <!-- Geometric Rune Circle -->
+  <circle cx="250" cy="240" r="140" fill="none" stroke="#00f2fe" stroke-width="1.5" stroke-dasharray="8 6" opacity="0.4" />
+  <circle cx="250" cy="240" r="110" fill="none" stroke="#4facfe" stroke-width="1" opacity="0.3" />
+  
+  <!-- Aura Slash Waves -->
+  <path d="M 80,320 Q 250,150 420,100" fill="none" stroke="url(#bmGrad)" stroke-width="6" stroke-linecap="round" filter="url(#swordGlow)" opacity="0.9" />
+  <path d="M 120,380 Q 280,220 450,220" fill="none" stroke="#38bdf8" stroke-width="3" stroke-linecap="round" opacity="0.6" />
+  
+  <!-- Character Silhouette & Armor Structure -->
+  <g transform="translate(140, 110)">
+    <!-- Flowing Cape / Scarf -->
+    <path d="M70,90 C40,140 10,220 -20,350 C40,320 80,300 110,340 C100,260 90,160 85,95 Z" fill="#0284c7" opacity="0.6" />
+    <path d="M150,90 C180,140 210,220 240,350 C180,320 140,300 110,340 C120,260 130,160 135,95 Z" fill="#0369a1" opacity="0.4" />
+
+    <!-- Head & Hair -->
+    <path d="M110,40 C85,40 85,85 95,110 C105,120 115,120 125,110 C135,85 135,40 110,40 Z" fill="#e2e8f0" />
+    <!-- Spiky Anime Martial Hair -->
+    <path d="M110,20 L80,55 L100,50 L75,80 L105,75 L110,30 L125,75 L145,55 L125,50 L140,25 Z" fill="#38bdf8" />
+    
+    <!-- Face mask / Visor -->
+    <polygon points="100,85 120,85 115,100 105,100" fill="#0f172a" />
+    <line x1="98" y1="80" x2="110" y2="80" stroke="#00f2fe" stroke-width="2" filter="url(#swordGlow)" />
+    <line x1="114" y1="80" x2="124" y2="80" stroke="#00f2fe" stroke-width="2" filter="url(#swordGlow)" />
+
+    <!-- Shoulders & Torso Armor -->
+    <polygon points="110,95 60,115 45,150 75,170 110,185 145,170 175,150 160,115" fill="#1e293b" stroke="#38bdf8" stroke-width="2" />
+    <!-- Chest Plate Core -->
+    <polygon points="110,120 95,145 110,170 125,145" fill="url(#bmGrad)" filter="url(#swordGlow)" />
+    
+    <!-- Pauldrons (Shoulder Guards) -->
+    <path d="M50,115 L25,130 L40,165 L65,140 Z" fill="#0f172a" stroke="#00f2fe" stroke-width="2" />
+    <path d="M170,115 L195,130 L180,165 L155,140 Z" fill="#0f172a" stroke="#00f2fe" stroke-width="2" />
+
+    <!-- Lower Body / Hakama Skirt -->
+    <polygon points="85,185 60,340 110,380 160,340 135,185" fill="#0f172a" stroke="#334155" stroke-width="1.5" />
+    <line x1="110" y1="185" x2="110" y2="380" stroke="#38bdf8" stroke-width="2" />
+    
+    <!-- Great Katana Blade -->
+    <!-- Blade -->
+    <path d="M175,40 L195,30 L220,-40 L212,-45 L180,25 Z" fill="#e0f2fe" filter="url(#swordGlow)" />
+    <line x1="175" y1="40" x2="215" y2="-45" stroke="#00f2fe" stroke-width="3" filter="url(#swordGlow)" />
+    <!-- Hilt & Tsuba -->
+    <rect x="165" y="45" width="24" height="6" rx="2" fill="#f59e0b" transform="rotate(-30 177 48)" />
+    <rect x="155" y="55" width="10" height="40" rx="3" fill="#0f172a" stroke="#f59e0b" stroke-width="1.5" transform="rotate(-30 160 75)" />
+    <!-- Tassel -->
+    <path d="M140,85 C130,110 120,130 115,150" fill="none" stroke="#f59e0b" stroke-width="2" />
+  </g>
+
+  <!-- Class Label Info in Card -->
+  <rect x="30" y="520" width="440" height="95" rx="12" fill="rgba(15, 23, 42, 0.85)" stroke="#334155" stroke-width="1" />
+  <text x="50" y="555" font-family="'Cinzel', 'Segoe UI', serif" font-size="22" font-weight="800" fill="#ffffff">KIẾM SƯ (BLADE MASTER)</text>
+  <text x="50" y="582" font-family="'Segoe UI', sans-serif" font-size="13" fill="#94a3b8">Bậc thầy kiếm thuật chém gió, phản đòn thần tốc &amp; công thủ toàn diện.</text>
+  <text x="50" y="602" font-family="'Segoe UI', sans-serif" font-size="12" font-weight="bold" fill="#00f2fe">ĐỘ KHÓ: ★★★★☆ | VAI TRÒ: DPS / PARRIER</text>
+</svg>

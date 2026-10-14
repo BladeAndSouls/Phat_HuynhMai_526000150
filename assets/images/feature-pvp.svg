@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 380" width="100%" height="100%">
+  <defs>
+    <linearGradient id="pvpBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#180e29" />
+      <stop offset="100%" stop-color="#2d132c" />
+    </linearGradient>
+    <linearGradient id="redGlowGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#ee4540" />
+      <stop offset="100%" stop-color="#c72c41" />
+    </linearGradient>
+    <filter id="pBloom" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="5" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+  </defs>
+
+  <rect width="600" height="380" rx="16" fill="url(#pvpBg)" stroke="#4a154b" stroke-width="1.5" />
+  
+  <!-- Arena Colosseum Pillars & Glow -->
+  <line x1="80" y1="280" x2="80" y2="120" stroke="#801336" stroke-width="8" stroke-linecap="round" />
+  <line x1="140" y1="260" x2="140" y2="150" stroke="#801336" stroke-width="6" stroke-linecap="round" />
+  <line x1="520" y1="280" x2="520" y2="120" stroke="#801336" stroke-width="8" stroke-linecap="round" />
+  <line x1="460" y1="260" x2="460" y2="150" stroke="#801336" stroke-width="6" stroke-linecap="round" />
+
+  <!-- Arena Ring Platform -->
+  <ellipse cx="300" cy="270" rx="240" ry="70" fill="#2d132c" stroke="#ee4540" stroke-width="3" />
+  <ellipse cx="300" cy="270" rx="160" ry="45" fill="none" stroke="#f59e0b" stroke-width="1.5" stroke-dasharray="10 5" />
+  
+  <!-- Crossed Battle Axes / Blades in Center -->
+  <g transform="translate(260, 100)">
+    <!-- VS Emblem -->
+    <circle cx="40" cy="50" r="38" fill="rgba(238, 69, 64, 0.2)" stroke="#ee4540" stroke-width="2" filter="url(#pBloom)" />
+    <text x="22" y="60" font-family="'Cinzel', 'Segoe UI', serif" font-size="28" font-weight="900" fill="#ffd200" filter="url(#pBloom)">VS</text>
+  </g>
+
+  <!-- Blue vs Red Fighter Silhouettes on sides -->
+  <!-- Left Fighter (Blue Team) -->
+  <circle cx="170" cy="230" r="14" fill="#00f2fe" filter="url(#pBloom)" />
+  <path d="M170,244 L150,290 M170,244 L190,290 M170,260 L140,240 M170,260 L210,250" stroke="#00f2fe" stroke-width="5" stroke-linecap="round" />
+  
+  <!-- Right Fighter (Red Team) -->
+  <circle cx="430" cy="230" r="14" fill="#ee4540" filter="url(#pBloom)" />
+  <path d="M430,244 L410,290 M430,244 L450,290 M430,260 L400,250 M430,260 L460,240" stroke="#ee4540" stroke-width="5" stroke-linecap="round" />
+
+  <!-- Tag Pill -->
+  <rect x="30" y="30" width="180" height="32" rx="16" fill="rgba(238, 69, 64, 0.2)" stroke="#ee4540" stroke-width="1" />
+  <text x="50" y="51" font-family="'Segoe UI', sans-serif" font-size="12" font-weight="700" fill="#ee4540">ĐẤU TRƯỜNG ESPORTS</text>
+</svg>

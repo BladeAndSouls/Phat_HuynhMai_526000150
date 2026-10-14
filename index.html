@@ -1,0 +1,701 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Blade & Soul: Awakening - Siêu phẩm game nhập vai võ thuật huyền thoại Next-Gen trên nền tảng Unreal Engine 5. Đồ án thiết kế web của Huỳnh Mai Phát (MSSV: 526000150).">
+  <meta name="keywords" content="Blade and Soul, MMORPG, Game Landing Page, Unreal Engine 5, Huỳnh Mai Phát, 526000150, Thiết kế Web">
+  <meta name="author" content="Huỳnh Mai Phát - MSSV: 526000150">
+  <title>Blade &amp; Soul: Awakening | Siêu Phẩm MMORPG Võ Thuật Next-Gen</title>
+
+  <!-- Google Fonts: Cinzel & Montserrat -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800;900&family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Animate.css Library CDN (Yêu cầu kỹ thuật) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+
+  <!-- AOS (Animate On Scroll) CSS CDN (Yêu cầu kỹ thuật) -->
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css">
+
+  <!-- Custom Stylesheet (CSS Variables, Flexbox, Grid, Pure CSS Animations, Zero JS) -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ======================================================================
+       1. HEADER & NAVIGATION (<header>, <nav>)
+       ====================================================================== -->
+  <header class="site-header" role="banner">
+    <div class="container nav-container">
+      
+      <!-- Logo thương hiệu -->
+      <a href="#hero" class="site-logo animate__animated animate__fadeInLeft" aria-label="Trang chủ Blade and Soul">
+        <img src="assets/images/logo.svg" alt="Blade & Soul Awakening Logo" width="220" height="48">
+      </a>
+
+      <!-- Pure CSS Mobile Hamburger Toggle (Không dùng JavaScript) -->
+      <input type="checkbox" id="nav-toggle" class="nav-toggle-checkbox" aria-label="Mở menu điều hướng">
+      <label for="nav-toggle" class="nav-toggle-label" aria-hidden="true">
+        <span></span>
+        <span></span>
+        <span></span>
+      </label>
+
+      <!-- Thanh điều hướng (<nav>) -->
+      <nav class="site-nav" role="navigation" aria-label="Menu chính">
+        <ul class="nav-list">
+          <li><a href="#hero" class="nav-link">Trang Chủ</a></li>
+          <li><a href="#lore" class="nav-link">Cốt Truyện</a></li>
+          <li><a href="#classes" class="nav-link">Hệ Phái</a></li>
+          <li><a href="#features" class="nav-link">Tính Năng</a></li>
+          <li><a href="#editions" class="nav-link">Gói Game</a></li>
+          <li><a href="#specs" class="nav-link">Cấu Hình</a></li>
+        </ul>
+
+        <!-- Nhóm nút CTA trên Header -->
+        <div class="header-cta-group">
+          <a href="#editions" class="btn btn-secondary">Đăng Ký Sớm</a>
+          <a href="#download" class="btn btn-primary btn-shimmer">
+            <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+            Tải Game
+          </a>
+        </div>
+      </nav>
+
+    </div>
+  </header>
+
+  <!-- ======================================================================
+       2. MAIN CONTENT (<main>)
+       ====================================================================== -->
+  <main id="main-content" role="main">
+
+    <!-- ====================================================================
+         HERO SECTION (<section class="hero-section">)
+         Áp dụng Animate.css cho tiêu đề, badge và nút kêu gọi hành động
+         ==================================================================== -->
+    <section id="hero" class="hero-section" aria-label="Khu vực mở đầu">
+      <div class="container hero-grid">
+        
+        <!-- Nội dung giới thiệu bên trái -->
+        <div class="hero-content">
+          
+          <div class="hero-badge animate__animated animate__fadeInDown">
+            <span class="hero-badge-pulse" aria-hidden="true"></span>
+            Season 5: Dragon's Awakening &bull; Ra mắt Toàn cầu
+          </div>
+
+          <h1 class="hero-title animate__animated animate__fadeInUp">
+            Bước Vào Thế Giới <br>
+            <span class="text-gradient">Huyền Thoại Kiếm Hiệp</span>
+          </h1>
+
+          <p class="hero-desc animate__animated animate__fadeInUp animate__delay-1s">
+            Trải nghiệm siêu phẩm MMORPG võ thuật hành động không chiến đỉnh cao. Đột phá công nghệ Unreal Engine 5 mang lại thế giới mở rộng lớn, đồ họa 4K sống động và những trận chiến PvP mãn nhãn.
+          </p>
+
+          <div class="hero-action-group animate__animated animate__fadeInUp animate__delay-1s">
+            <a href="#download" class="btn btn-primary btn-shimmer animate__animated animate__pulse animate__infinite animate__slower">
+              <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+              Tải Game Miễn Phí
+            </a>
+            <a href="#features" class="btn btn-secondary">
+              <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+              Khám Phá Gameplay
+            </a>
+          </div>
+
+          <!-- Số liệu thống kê ấn tượng -->
+          <div class="hero-stats animate__animated animate__fadeIn animate__delay-2s">
+            <div class="stat-item">
+              <span class="stat-number text-gradient">15M+</span>
+              <span class="stat-label">Game thủ toàn cầu</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-number text-gold">4K 120Hz</span>
+              <span class="stat-label">Ray Tracing Next-Gen</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-number text-gradient">98.9%</span>
+              <span class="stat-label">Đánh giá tích cực</span>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Khung ảnh Vector Hero bên phải -->
+        <div class="hero-visual animate__animated animate__zoomIn animate__delay-1s">
+          <div class="hero-card-preview">
+            <img src="assets/images/char-blade-master.svg" alt="Nhân vật Kiếm Sư huyền thoại Blade and Soul" width="460" height="600" loading="eager">
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         LORE & STORY SECTION (<section id="lore">, <article>)
+         Sử dụng thẻ ngữ nghĩa <article> để phân tách bài viết cốt truyện
+         ==================================================================== -->
+    <section id="lore" class="section lore-section" aria-label="Cốt truyện Blade and Soul" data-aos="fade-up">
+      <div class="container">
+        
+        <div class="section-title-wrap" data-aos="fade-up">
+          <span class="section-tag">Thế Giới Khởi Nguyên</span>
+          <h2 class="section-title">Bản Hùng Ca <span class="text-gradient">Linh Hồn &amp; Kiếm Đao</span></h2>
+          <p class="section-subtitle">
+            Khám phá nguồn gốc của thanh Ma Kiếm và số phận của những truyền nhân Thiên Kiếm trong kỷ nguyên hỗn mang.
+          </p>
+        </div>
+
+        <!-- Thẻ bài viết ngữ nghĩa HTML5: <article> -->
+        <article class="lore-article" data-aos="zoom-in">
+          
+          <div class="lore-content">
+            <blockquote class="lore-quote">
+              "Khi ranh giới giữa chính nghĩa và tà đạo bị xóa nhòa, chỉ có lưỡi kiếm của kẻ thức tỉnh mới định đoạt được giang sơn."
+            </blockquote>
+            
+            <div class="lore-body">
+              <p>
+                Hàng ngàn năm trước, Thần Giới đã ban tặng bốn Thánh Vật Linh Hồn để duy trì sự cân bằng của Lục Địa Thần Phong. Nhưng bóng tối của Ma Hoàng đã trỗi dậy, tha hóa tâm trí các đại tông sư và gieo rắc sự hỗn loạn khắp chín tầng trời.
+              </p>
+              <p>
+                Là người sống sót cuối cùng của Hồng Môn Tông phái, bạn mang trong mình dòng máu Cực Âm Dương Thức Tỉnh. Nhiệm vụ của bạn là rèn luyện võ học bí truyền, làm chủ khinh công và tìm lại sự bình yên cho nhân thế.
+              </p>
+            </div>
+
+            <div class="lore-features-list">
+              <div class="lore-feature-item">
+                <svg class="lore-feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>Hơn 120 giờ cốt truyện lồng tiếng điện ảnh đạt chuẩn Hollywood</span>
+              </div>
+              <div class="lore-feature-item">
+                <svg class="lore-feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>Quyết định của người chơi ảnh hưởng trực tiếp đến kết cục thế giới</span>
+              </div>
+              <div class="lore-feature-item">
+                <svg class="lore-feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>Hàng trăm hầm ngục Dungeon thần thoại phong phú và bí ẩn</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="lore-banner-wrap">
+            <img src="assets/images/feature-world.svg" alt="Thế giới mở thần thoại Blade and Soul" width="560" height="350" loading="lazy">
+          </div>
+
+        </article>
+
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         CLASSES / HEROES SECTION (<section id="classes">)
+         Sử dụng CSS Grid linh hoạt & hiệu ứng Hover thẻ bài viết
+         ==================================================================== -->
+    <section id="classes" class="section classes-section" aria-label="Các hệ phái nhân vật" data-aos="fade-up">
+      <div class="container">
+        
+        <div class="section-title-wrap" data-aos="fade-up">
+          <span class="section-tag">Hệ Thống Nghề Nghiệp</span>
+          <h2 class="section-title">Chọn Lựa <span class="text-gradient">Hệ Phái Của Bạn</span></h2>
+          <p class="section-subtitle">
+            Mỗi hệ phái sở hữu phong cách chiến đấu, chuỗi combo chiêu thức và vai trò độc nhất vô nhị trong tổ đội.
+          </p>
+        </div>
+
+        <div class="classes-grid">
+          
+          <!-- Class Card 1: Kiếm Sư -->
+          <article class="class-card" data-aos="fade-up" data-aos-delay="100">
+            <div class="class-card-image">
+              <img src="assets/images/char-blade-master.svg" alt="Hệ phái Kiếm Sư (Blade Master)" width="400" height="500" loading="lazy">
+            </div>
+            <div class="class-card-body">
+              <span class="class-type-badge">Cận Chiến &bull; Chém Nhanh</span>
+              <h3 class="class-name">Kiếm Sư (Blade Master)</h3>
+              <p class="class-desc">
+                Bậc thầy kiếm đạo sở hữu khả năng đỡ đòn hoàn hảo, phản kích sấm sét và khống chế kiếm khí trận vô song.
+              </p>
+              <div class="class-stats-list">
+                <div class="class-stat-row">
+                  <span>Sát Thương</span>
+                  <div class="stat-bar-bg"><div class="stat-bar-fill" style="width: 90%;"></div></div>
+                </div>
+                <div class="class-stat-row">
+                  <span>Phòng Thủ</span>
+                  <div class="stat-bar-bg"><div class="stat-bar-fill" style="width: 85%;"></div></div>
+                </div>
+                <div class="class-stat-row">
+                  <span>Độ Khó Thao Tác</span>
+                  <div class="stat-bar-bg"><div class="stat-bar-fill" style="width: 80%;"></div></div>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- Class Card 2: Khí Công Sư -->
+          <article class="class-card" data-aos="fade-up" data-aos-delay="200">
+            <div class="class-card-image">
+              <img src="assets/images/char-force-master.svg" alt="Hệ phái Khí Công Sư (Force Master)" width="400" height="500" loading="lazy">
+            </div>
+            <div class="class-card-body">
+              <span class="class-type-badge">Tầm Xa &bull; Băng Hỏa Ma Pháp</span>
+              <h3 class="class-name">Khí Công Sư (Force Master)</h3>
+              <p class="class-desc">
+                Thao túng hai dòng nguyên tố Hỏa thiêu đốt mục tiêu và Băng đóng băng diện rộng, bảo kê đồng đội tuyệt đối.
+              </p>
+              <div class="class-stats-list">
+                <div class="class-stat-row">
+                  <span>Sát Thương</span>
+                  <div class="stat-bar-bg"><div class="stat-bar-fill" style="width: 95%;"></div></div>
+                </div>
+                <div class="class-stat-row">
+                  <span>Phòng Thủ</span>
+                  <div class="stat-bar-bg"><div class="stat-bar-fill" style="width: 50%;"></div></div>
+                </div>
+                <div class="class-stat-row">
+                  <span>Độ Khó Thao Tác</span>
+                  <div class="stat-bar-bg"><div class="stat-bar-fill" style="width: 65%;"></div></div>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- Class Card 3: Sát Thủ -->
+          <article class="class-card" data-aos="fade-up" data-aos-delay="300">
+            <div class="class-card-image">
+              <img src="assets/images/char-assassin.svg" alt="Hệ phái Sát Thủ (Assassin)" width="400" height="500" loading="lazy">
+            </div>
+            <div class="class-card-body">
+              <span class="class-type-badge">Ám Sát &bull; Ẩn Thân Tức Thì</span>
+              <h3 class="class-name">Sát Thủ (Assassin)</h3>
+              <p class="class-desc">
+                Bậc thầy tàng hình trong bóng tối, đặt bẫy nổ, dịch chuyển tức thời và hạ gục đối thủ bằng nhát chém chí mạng.
+              </p>
+              <div class="class-stats-list">
+                <div class="class-stat-row">
+                  <span>Sát Thương</span>
+                  <div class="stat-bar-bg"><div class="stat-bar-fill" style="width: 100%;"></div></div>
+                </div>
+                <div class="class-stat-row">
+                  <span>Phòng Thủ</span>
+                  <div class="stat-bar-bg"><div class="stat-bar-fill" style="width: 40%;"></div></div>
+                </div>
+                <div class="class-stat-row">
+                  <span>Độ Khó Thao Tác</span>
+                  <div class="stat-bar-bg"><div class="stat-bar-fill" style="width: 95%;"></div></div>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- Class Card 4: Quyền Sư -->
+          <article class="class-card" data-aos="fade-up" data-aos-delay="400">
+            <div class="class-card-image">
+              <img src="assets/images/char-soul-fighter.svg" alt="Hệ phái Quyền Sư (Soul Fighter)" width="400" height="500" loading="lazy">
+            </div>
+            <div class="class-card-body">
+              <span class="class-type-badge">Quyền Thuật &bull; Chống Chịu</span>
+              <h3 class="class-name">Quyền Sư (Soul Fighter)</h3>
+              <p class="class-desc">
+                Sức mạnh thể chất cuồng nộ kết hợp rồng lửa, quật ngã boss lớn và tạo lá chắn linh hồn bảo vệ toàn đội.
+              </p>
+              <div class="class-stats-list">
+                <div class="class-stat-row">
+                  <span>Sát Thương</span>
+                  <div class="stat-bar-bg"><div class="stat-bar-fill" style="width: 80%;"></div></div>
+                </div>
+                <div class="class-stat-row">
+                  <span>Phòng Thủ</span>
+                  <div class="stat-bar-bg"><div class="stat-bar-fill" style="width: 95%;"></div></div>
+                </div>
+                <div class="class-stat-row">
+                  <span>Độ Khó Thao Tác</span>
+                  <div class="stat-bar-bg"><div class="stat-bar-fill" style="width: 85%;"></div></div>
+                </div>
+              </div>
+            </div>
+          </article>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         FEATURES / GAMEPLAY SECTION (<section id="features">)
+         Áp dụng CSS Grid 2 cột responsive
+         ==================================================================== -->
+    <section id="features" class="section features-section" aria-label="Tính năng nổi bật" data-aos="fade-up">
+      <div class="container">
+        
+        <div class="section-title-wrap" data-aos="fade-up">
+          <span class="section-tag">Tính Năng Đột Phá</span>
+          <h2 class="section-title">Trải Nghiệm <span class="text-gradient">Gaming Đỉnh Cao</span></h2>
+          <p class="section-subtitle">
+            Hòa mình vào không gian võ thuật hành động chân thực với hệ thống gameplay được cộng đồng quốc tế đánh giá cao.
+          </p>
+        </div>
+
+        <div class="features-grid">
+          
+          <!-- Feature 1 -->
+          <div class="feature-card" data-aos="zoom-in" data-aos-delay="100">
+            <div class="feature-media">
+              <img src="assets/images/feature-combat.svg" alt="Hệ thống chiến đấu hành động không chiến" width="600" height="380" loading="lazy">
+            </div>
+            <div class="feature-details">
+              <h3 class="feature-title">Không Chiến &amp; Combo Không Giới Hạn</h3>
+              <p class="feature-desc">
+                Thực hiện những pha hất tung đối thủ lên không trung, kết hợp chuỗi combo chiêu thức liên hoàn trên không nghẹt thở và không có độ trễ.
+              </p>
+            </div>
+          </div>
+
+          <!-- Feature 2 -->
+          <div class="feature-card" data-aos="zoom-in" data-aos-delay="200">
+            <div class="feature-media">
+              <img src="assets/images/feature-world.svg" alt="Khinh công tự do trong thế giới mở" width="600" height="380" loading="lazy">
+            </div>
+            <div class="feature-details">
+              <h3 class="feature-title">Khinh Công Lướt Gió Tự Do (Windwalking)</h3>
+              <p class="feature-desc">
+                Phi thân qua những đỉnh núi tuyết, lướt trên mặt nước và lao vút qua những tầng mây huyền ảo mà không bị giới hạn bởi thanh năng lượng.
+              </p>
+            </div>
+          </div>
+
+          <!-- Feature 3 -->
+          <div class="feature-card" data-aos="zoom-in" data-aos-delay="300">
+            <div class="feature-media">
+              <img src="assets/images/feature-pvp.svg" alt="Đấu trường Esports PvP liên server" width="600" height="380" loading="lazy">
+            </div>
+            <div class="feature-details">
+              <h3 class="feature-title">Đấu Trường Esports 1v1 &amp; Bang Chiến 50v50</h3>
+              <p class="feature-desc">
+                Cân bằng chỉ số trang bị trong chế độ 1v1 để tôn vinh kỹ năng cá nhân thuần túy, cùng chiến trường Bang Hội rực lửa hàng trăm người cùng lúc.
+              </p>
+            </div>
+          </div>
+
+          <!-- Feature 4 -->
+          <div class="feature-card" data-aos="zoom-in" data-aos-delay="400">
+            <div class="feature-media">
+              <img src="assets/images/feature-graphics.svg" alt="Đồ họa Unreal Engine 5 đỉnh cao" width="600" height="380" loading="lazy">
+            </div>
+            <div class="feature-details">
+              <h3 class="feature-title">Đồ Họa Unreal Engine 5 Siêu Chân Thực</h3>
+              <p class="feature-desc">
+                Ứng dụng công nghệ chiếu sáng toàn cục Lumen, chi tiết hình học Nanite và Ray Tracing thời gian thực mang lại khung cảnh choáng ngợp.
+              </p>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         EDITIONS & PACKAGES SECTION (<section id="editions">)
+         CSS Grid 3 cột với Card nổi bật
+         ==================================================================== -->
+    <section id="editions" class="section editions-section" aria-label="Các phiên bản game" data-aos="fade-up">
+      <div class="container">
+        
+        <div class="section-title-wrap" data-aos="fade-up">
+          <span class="section-tag">Phiên Bản &amp; Quà Tặng</span>
+          <h2 class="section-title">Chọn Gói <span class="text-gradient">Khởi Đầu Của Bạn</span></h2>
+          <p class="section-subtitle">
+            Nhận ngay trang phục độc quyền, thú cưỡi huyền thoại và danh hiệu đặc biệt khi kích hoạt gói game sớm.
+          </p>
+        </div>
+
+        <div class="editions-grid">
+          
+          <!-- Edition 1: Miễn Phí -->
+          <div class="edition-card" data-aos="fade-up" data-aos-delay="100">
+            <div class="edition-header">
+              <h3 class="edition-name">Standard Edition</h3>
+              <p class="edition-desc">Trọn vẹn trải nghiệm cốt truyện &amp; tính năng</p>
+              <div class="edition-price">MIỄN PHÍ</div>
+            </div>
+            <div class="edition-features">
+              <div class="edition-feature-item active">
+                <svg class="edition-check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>Tải và chơi miễn phí trọn đời</span>
+              </div>
+              <div class="edition-feature-item active">
+                <svg class="edition-check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>Truy cập toàn bộ 4 hệ phái cơ bản</span>
+              </div>
+              <div class="edition-feature-item active">
+                <svg class="edition-check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>Tham gia mọi phụ bản Dungeon &amp; PvP</span>
+              </div>
+              <div class="edition-feature-item">
+                <svg class="edition-check-icon" viewBox="0 0 24 24" fill="none" stroke="#64748b" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+                <span>Không có trang phục giới hạn Founder</span>
+              </div>
+            </div>
+            <a href="#download" class="btn btn-secondary">Chơi Ngay</a>
+          </div>
+
+          <!-- Edition 2: Deluxe (Nổi bật nhất) -->
+          <div class="edition-card popular" data-aos="zoom-in" data-aos-delay="200">
+            <span class="popular-badge">Phổ Biến Nhất</span>
+            <div class="edition-header">
+              <h3 class="edition-name">Founder's Deluxe</h3>
+              <p class="edition-desc">Gói khởi đầu tối ưu với vô vàn ưu đãi</p>
+              <div class="edition-price">499.000đ</div>
+            </div>
+            <div class="edition-features">
+              <div class="edition-feature-item active">
+                <svg class="edition-check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>Toàn bộ quyền lợi gói Standard</span>
+              </div>
+              <div class="edition-feature-item active">
+                <svg class="edition-check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>Set Trang Phục Huyền Thoại "Hắc Long Vũ"</span>
+              </div>
+              <div class="edition-feature-item active">
+                <svg class="edition-check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>Thú cưỡi Phi Mã Thần Tốc vĩnh viễn</span>
+              </div>
+              <div class="edition-feature-item active">
+                <svg class="edition-check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>30 Ngày Thẻ Đặc Quyền VIP Membership</span>
+              </div>
+              <div class="edition-feature-item active">
+                <svg class="edition-check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>Danh hiệu độc quyền: "Thiên Kiếm Xuất Thế"</span>
+              </div>
+            </div>
+            <a href="#download" class="btn btn-gold btn-shimmer">Nhận Gói Deluxe</a>
+          </div>
+
+          <!-- Edition 3: Ultimate -->
+          <div class="edition-card" data-aos="fade-up" data-aos-delay="300">
+            <div class="edition-header">
+              <h3 class="edition-name">Ultimate Collector</h3>
+              <p class="edition-desc">Dành cho game thủ đam mê sưu tập đỉnh cao</p>
+              <div class="edition-price">999.000đ</div>
+            </div>
+            <div class="edition-features">
+              <div class="edition-feature-item active">
+                <svg class="edition-check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>Bao gồm toàn bộ quyền lợi gói Deluxe</span>
+              </div>
+              <div class="edition-feature-item active">
+                <svg class="edition-check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>Hiệu ứng hào quang Thần Khí tối thượng</span>
+              </div>
+              <div class="edition-feature-item active">
+                <svg class="edition-check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>Vé vào cổng thử nghiệm Closed Beta độc quyền</span>
+              </div>
+              <div class="edition-feature-item active">
+                <svg class="edition-check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>Artbook điện tử &amp; Bộ Original Soundtrack 4K</span>
+              </div>
+            </div>
+            <a href="#download" class="btn btn-secondary">Nhận Gói Ultimate</a>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         SYSTEM REQUIREMENTS SECTION (<section id="specs">)
+         Bảng cấu hình máy tính khuyến nghị
+         ==================================================================== -->
+    <section id="specs" class="section specs-section" aria-label="Yêu cầu cấu hình hệ thống" data-aos="fade-up">
+      <div class="container">
+        
+        <div class="section-title-wrap" data-aos="fade-up">
+          <span class="section-tag">Thông Số Kỹ Thuật</span>
+          <h2 class="section-title">Yêu Cầu <span class="text-gradient">Cấu Hình PC</span></h2>
+          <p class="section-subtitle">
+            Hệ thống được tối ưu hóa tối đa, tương thích mượt mà từ máy tính tầm trung đến các cỗ máy chiến game cao cấp.
+          </p>
+        </div>
+
+        <div class="specs-grid">
+          
+          <!-- Cấu hình tối thiểu -->
+          <div class="spec-card" data-aos="fade-right">
+            <h3 class="spec-card-title">
+              <svg class="spec-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+              Cấu Hình Tối Thiểu (1080p - 60 FPS)
+            </h3>
+            <div class="spec-list">
+              <div class="spec-item">
+                <span class="spec-key">Hệ điều hành (OS)</span>
+                <span class="spec-val">Windows 10 64-bit</span>
+              </div>
+              <div class="spec-item">
+                <span class="spec-key">Bộ vi xử lý (CPU)</span>
+                <span class="spec-val">Intel Core i5-8400 / AMD Ryzen 5 2600</span>
+              </div>
+              <div class="spec-item">
+                <span class="spec-key">Bộ nhớ RAM</span>
+                <span class="spec-val">16 GB RAM</span>
+              </div>
+              <div class="spec-item">
+                <span class="spec-key">Card đồ họa (GPU)</span>
+                <span class="spec-val">NVIDIA GTX 1060 (6GB) / Radeon RX 580</span>
+              </div>
+              <div class="spec-item">
+                <span class="spec-key">DirectX</span>
+                <span class="spec-val">Phiên bản 12</span>
+              </div>
+              <div class="spec-item">
+                <span class="spec-key">Dung lượng ổ cứng</span>
+                <span class="spec-val">80 GB SSD khả dụng</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Cấu hình khuyến nghị -->
+          <div class="spec-card" data-aos="fade-left">
+            <h3 class="spec-card-title">
+              <svg class="spec-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+              Cấu Hình Khuyến Nghị (4K HDR - 120 FPS)
+            </h3>
+            <div class="spec-list">
+              <div class="spec-item">
+                <span class="spec-key">Hệ điều hành (OS)</span>
+                <span class="spec-val">Windows 11 64-bit</span>
+              </div>
+              <div class="spec-item">
+                <span class="spec-key">Bộ vi xử lý (CPU)</span>
+                <span class="spec-val">Intel Core i7-12700K / AMD Ryzen 7 7800X3D</span>
+              </div>
+              <div class="spec-item">
+                <span class="spec-key">Bộ nhớ RAM</span>
+                <span class="spec-val">32 GB RAM DDR5</span>
+              </div>
+              <div class="spec-item">
+                <span class="spec-key">Card đồ họa (GPU)</span>
+                <span class="spec-val">NVIDIA RTX 4070 Ti / Radeon RX 7900 XT</span>
+              </div>
+              <div class="spec-item">
+                <span class="spec-key">DirectX</span>
+                <span class="spec-val">Phiên bản 12 Ultimate</span>
+              </div>
+              <div class="spec-item">
+                <span class="spec-key">Dung lượng ổ cứng</span>
+                <span class="spec-val">80 GB NVMe M.2 SSD</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         CALL TO ACTION (CTA BANNER SECTION)
+         ==================================================================== -->
+    <section id="download" class="section cta-section" aria-label="Tải game ngay" data-aos="zoom-in">
+      <div class="container">
+        
+        <div class="cta-banner">
+          <h2 class="cta-title">Sẵn Sàng Thức Tỉnh <br><span class="text-gradient">Linh Hồn Kiếm Đạo?</span></h2>
+          <p class="cta-desc">
+            Tham gia cùng hàng triệu chiến binh trên toàn thế giới ngay hôm nay. Tải bản cài đặt miễn phí và nhận trọn bộ quà tân thủ trị giá 500.000đ!
+          </p>
+          <div class="cta-button-group">
+            <a href="https://github.com/BladeAndSouls/Phat_HuynhMai_526000150" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-shimmer">
+              <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+              Tải Bản Cài Đặt PC (Windows)
+            </a>
+            <a href="#editions" class="btn btn-secondary">
+              Xem Các Gói Quà Tặng
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ======================================================================
+       3. FOOTER (<footer>)
+       Đầy đủ thông tin bản quyền, điều hướng, và thông tin sinh viên thực hiện
+       ====================================================================== -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="container">
+      
+      <div class="footer-top-grid">
+        
+        <!-- Cột 1: Thông tin thương hiệu -->
+        <div class="footer-brand">
+          <a href="#hero" class="site-logo">
+            <img src="assets/images/logo.svg" alt="Blade and Soul Logo" width="220" height="48">
+          </a>
+          <p class="footer-brand-desc">
+            Blade &amp; Soul: Awakening là tựa game MMORPG võ thuật hành động không chiến mang tính đột phá, phát triển dựa trên công nghệ đồ họa Unreal Engine 5 thế hệ mới.
+          </p>
+        </div>
+
+        <!-- Cột 2: Điều hướng nhanh -->
+        <div class="footer-column">
+          <h4 class="footer-column-title">Liên Kết Nhanh</h4>
+          <ul class="footer-nav-list">
+            <li><a href="#hero" class="footer-nav-link">Trang Chủ</a></li>
+            <li><a href="#lore" class="footer-nav-link">Cốt Truyện</a></li>
+            <li><a href="#classes" class="footer-nav-link">Hệ Phái Võ Học</a></li>
+            <li><a href="#features" class="footer-nav-link">Tính Năng Game</a></li>
+            <li><a href="#editions" class="footer-nav-link">Gói Bản Quyền</a></li>
+          </ul>
+        </div>
+
+        <!-- Cột 3: Hỗ trợ & Cộng đồng -->
+        <div class="footer-column">
+          <h4 class="footer-column-title">Cộng Đồng</h4>
+          <ul class="footer-nav-list">
+            <li><a href="https://discord.com" target="_blank" rel="noopener noreferrer" class="footer-nav-link">Discord Game Thủ</a></li>
+            <li><a href="https://facebook.com" target="_blank" rel="noopener noreferrer" class="footer-nav-link">Fanpage Chính Thức</a></li>
+            <li><a href="https://youtube.com" target="_blank" rel="noopener noreferrer" class="footer-nav-link">Kênh Video Hướng Dẫn</a></li>
+            <li><a href="#specs" class="footer-nav-link">Hỗ Trợ Kỹ Thuật</a></li>
+          </ul>
+        </div>
+
+        <!-- Cột 4: Thông tin đồ án sinh viên -->
+        <div class="footer-column">
+          <h4 class="footer-column-title">Thông Tin Sinh Viên</h4>
+          <div class="student-card">
+            <p><strong>Họ &amp; Tên:</strong> Huỳnh Mai Phát</p>
+            <p><strong>MSSV:</strong> <span class="highlight">526000150</span></p>
+            <p><strong>Đề Tài:</strong> Landing Page Game</p>
+            <p><strong>Môn Học:</strong> Thiết Kế Web</p>
+            <p><strong>Kỹ Thuật:</strong> Semantic HTML5, CSS Variables, Flexbox/Grid, Animate.css, AOS (Zero JS)</p>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Chân trang dưới cùng -->
+      <div class="footer-bottom">
+        <p class="footer-copyright">
+          &copy; 2026 <strong>Huỳnh Mai Phát (MSSV: 526000150)</strong>. Bài tập thực hành đồ án Thiết Kế Web. Mọi hình ảnh và nhãn hiệu thuộc về nhà phát triển tương ứng.
+        </p>
+        <p>
+          Kho lưu trữ: <a href="https://github.com/BladeAndSouls/Phat_HuynhMai_526000150" target="_blank" rel="noopener noreferrer" class="highlight">GitHub Repository</a>
+        </p>
+      </div>
+
+    </div>
+  </footer>
+
+</body>
+</html>
