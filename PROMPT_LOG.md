@@ -261,6 +261,24 @@ Dự án được xây dựng với vai trò của một **Kỹ sư Thiết kế
 
 ---
 
+### Giai đoạn 13: Tích Hợp Video Khám Phá Gameplay Chính Thức (YouTube Embed & Modal Lightbox)
+- **Mục tiêu:** Thực hiện yêu cầu: *"https://www.youtube.com/watch?v=oHg5SJYRHA0 thêm đường dẫn này vào mục video khám phá game play"*.
+- **Các giải pháp kỹ thuật tích hợp (100% Zero JavaScript):**
+  1. **Tích Hợp YouTube Iframe Player Trực Tiếp Trong Modal Cinema (#trailer-modal):**
+     - Thay thế khung ảnh tĩnh xem trước bằng trình phát video YouTube nhúng chuẩn HD (https://www.youtube.com/embed/oHg5SJYRHA0?rel=0) với tỷ lệ khung hình 16:9 responsive.
+     - Khung modal được kích hoạt bằng kỹ thuật **Pure CSS :target Lightbox** hoàn toàn không cần bất kỳ dòng mã JavaScript nào.
+     - Trang bị thanh thao tác (.modal-footer-actions) với nút kêu gọi hành động dẫn thẳng đến video gốc trên YouTube: https://www.youtube.com/watch?v=oHg5SJYRHA0.
+  2. **Bổ Sung Nút Kêu Gọi Hành Động Khám Phá Gameplay Tại Mục Features (#features):**
+     - Đặt cụm nút .features-video-cta tại phần đầu đề mục "Trải Nghiệm Gaming Đỉnh Cao" với 2 tùy chọn:
+       - Nút chính (Gold Shimmer): Mở modal video xem trực tiếp trên trang.
+       - Nút phụ (Secondary): Mở trực tiếp đường link YouTube https://www.youtube.com/watch?v=oHg5SJYRHA0 ở tab mới.
+  3. **Liên Kết Tại Các Vị Trí Khám Phá Gameplay Khác:**
+     - Nút "Khám Phá Gameplay" tại Hero Section (#hero).
+     - Nút "Xem Phim Hoạt Họa / Gameplay" tại Cổ Thư Tu Tiên (#lore).
+     - Đường dẫn "Video Khám Phá Gameplay (YouTube)" tại Footer cột Cộng Đồng.
+
+---
+
 ## 3. BẢNG TỰ ĐÁNH GIÁ MỨC ĐỘ ĐÁP ỨNG YÊU CẦU ĐỀ BÀI
 
 | STT | Tiêu chí đánh giá của Giảng viên | Hiện trạng thực hiện trong dự án | Mức độ hoàn thành |
