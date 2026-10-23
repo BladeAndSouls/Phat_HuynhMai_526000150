@@ -335,6 +335,19 @@ Dự án được xây dựng với vai trò của một **Kỹ sư Thiết kế
 
 ---
 
+### Giai đoạn 16: Khắc Phục Triệt Để Lỗi Tự Động Phát Video Khi Vào Trang
+- **Mục tiêu:** Thực hiện trọn vẹn yêu cầu: *"fix lỗi tự động phát video khi vào trang"*.
+- **Nguyên nhân phát hiện:** Các iframe nhúng trong các modal clip trailer (`#video-clip-2`, `#video-clip-3`, `#video-clip-4`) được cấu hình tham số `autoplay=1` kèm quyền `allow="autoplay"`, dẫn đến việc trình duyệt tự động nạp ngầm và kích hoạt âm thanh / phát video ngay khi người dùng vừa tải trang web.
+- **Các giải pháp kỹ thuật triệt để (100% Zero JavaScript):**
+  1. **Thiết Lập Rõ Ràng `autoplay=0` Trên Toàn Bộ Iframe:**
+     - Cập nhật URL nhúng YouTube thành `https://www.youtube-nocookie.com/embed/oHg5SJYRHA0?rel=0&amp;autoplay=0` cho cả sân khấu chính `#gameplay-video` và 3 modal clip phụ.
+  2. **Thu Hồi Quyền Tự Động Phát Khỏi Thuộc Tính `allow`:**
+     - Xóa bỏ hoàn toàn chỉ thị `autoplay;` ra khỏi thuộc tính `allow` của tất cả các thẻ `<iframe>`. Trình duyệt sẽ tuân thủ nghiêm ngặt chính sách bảo mật âm thanh (Audio Autoplay Policy), không tự ý phát video hay phát ra âm thanh.
+  3. **Tối Ưu Hóa Tải Chậm (`loading="lazy"`):**
+     - Bổ sung chỉ thị `loading="lazy"` trên toàn bộ các khung chiếu video. Trình duyệt sẽ chỉ nạp dữ liệu khi người dùng cuộn đến hoặc chủ động mở modal, giúp tốc độ tải trang nhanh vượt trội và tiết kiệm băng thông.
+
+---
+
 ## 3. BẢNG TỰ ĐÁNH GIÁ MỨC ĐỘ ĐÁP ỨNG YÊU CẦU ĐỀ BÀI
 
 | STT | Tiêu chí đánh giá của Giảng viên | Hiện trạng thực hiện trong dự án | Mức độ hoàn thành |
