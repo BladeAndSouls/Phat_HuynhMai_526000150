@@ -6568,3 +6568,497 @@ body:has(#theme-gold:checked) .dock-btn-gold,
   }
 }
 
+
+/* ============================================================
+   INLINE GENSHIN HOYOVERSE CHARACTER STAGE & CARD SKILL TABS
+   100% PURE CSS (ZERO JS) - NO POPUP, FULLY INLINE & INTERACTIVE
+   ============================================================ */
+
+/* áº¨n cÃ¡c radio buttons Ä‘iá»u khiá»ƒn */
+.card-skill-radio,
+.genshin-char-radio {
+  display: none !important;
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* --- 1. TÆ°Æ¡ng TÃ¡c Ká»¹ NÄƒng Q, E, R, TAB Ngay TrÃªn Class Card --- */
+.card-skills-interactive-wrap {
+  margin: 16px 0 14px 0;
+  background: rgba(10, 15, 29, 0.65);
+  border: 1px solid rgba(201, 169, 110, 0.25);
+  border-radius: 14px;
+  padding: 14px;
+}
+
+.class-skills-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  margin-bottom: 12px;
+  flex-wrap: wrap;
+}
+
+.skills-nav-label {
+  font-size: 0.74rem;
+  color: #94a3b8;
+  font-weight: 600;
+  letter-spacing: 0.4px;
+}
+
+.skills-btn-group {
+  display: flex;
+  gap: 8px;
+}
+
+.skill-key-btn {
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 0.85rem;
+  font-weight: 800;
+  color: #cbd5e1;
+  transition: all 0.25s ease;
+  user-select: none;
+}
+
+.skill-key-btn:hover {
+  transform: translateY(-2px);
+  border-color: #c9a96e;
+  color: #f3e5ab;
+  background: rgba(201, 169, 110, 0.15);
+}
+
+/* Active State cho cÃ¡c phÃ­m ká»¹ nÄƒng Kiáº¿m SÆ° (bm) */
+#bm-sk-q:checked ~ .class-skills-nav .key-q,
+#bm-sk-e:checked ~ .class-skills-nav .key-e,
+#bm-sk-r:checked ~ .class-skills-nav .key-r,
+#bm-sk-tab:checked ~ .class-skills-nav .key-tab,
+/* KhÃ­ CÃ´ng SÆ° (fm) */
+#fm-sk-q:checked ~ .class-skills-nav .key-q,
+#fm-sk-e:checked ~ .class-skills-nav .key-e,
+#fm-sk-r:checked ~ .class-skills-nav .key-r,
+#fm-sk-tab:checked ~ .class-skills-nav .key-tab,
+/* SÃ¡t Thá»§ (as) */
+#as-sk-q:checked ~ .class-skills-nav .key-q,
+#as-sk-e:checked ~ .class-skills-nav .key-e,
+#as-sk-r:checked ~ .class-skills-nav .key-r,
+#as-sk-tab:checked ~ .class-skills-nav .key-tab,
+/* Quyá»n SÆ° (sf) */
+#sf-sk-q:checked ~ .class-skills-nav .key-q,
+#sf-sk-e:checked ~ .class-skills-nav .key-e,
+#sf-sk-r:checked ~ .class-skills-nav .key-r,
+#sf-sk-tab:checked ~ .class-skills-nav .key-tab {
+  background: linear-gradient(135deg, #c9a96e, #f3e5ab);
+  color: #0b0f19;
+  border-color: #fef08a;
+  box-shadow: 0 0 12px rgba(201, 169, 110, 0.7);
+  transform: scale(1.08);
+}
+
+/* Khung hiá»ƒn thá»‹ chi tiáº¿t ká»¹ nÄƒng */
+.skill-detail-display-box {
+  background: rgba(15, 23, 42, 0.95);
+  border: 1px solid rgba(201, 169, 110, 0.2);
+  border-radius: 10px;
+  padding: 12px 14px;
+  min-height: 92px;
+}
+
+.skill-detail-item {
+  display: none;
+}
+
+.skill-dt-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 6px;
+  flex-wrap: wrap;
+  gap: 4px;
+}
+
+.skill-dt-name {
+  color: #f3e5ab;
+  font-size: 0.85rem;
+  font-weight: 700;
+}
+
+.skill-dt-cd {
+  color: #94a3b8;
+  font-size: 0.72rem;
+  font-weight: 600;
+}
+
+.skill-dt-desc {
+  margin: 0;
+  font-size: 0.78rem;
+  line-height: 1.5;
+  color: #cbd5e1;
+}
+
+.skill-dt-desc strong {
+  color: #fde047;
+}
+
+/* Hiá»ƒn thá»‹ chi tiáº¿t tÆ°Æ¡ng á»©ng khi radio checked */
+#bm-sk-q:checked ~ .skill-detail-display-box .detail-q,
+#bm-sk-e:checked ~ .skill-detail-display-box .detail-e,
+#bm-sk-r:checked ~ .skill-detail-display-box .detail-r,
+#bm-sk-tab:checked ~ .skill-detail-display-box .detail-tab,
+#fm-sk-q:checked ~ .skill-detail-display-box .detail-q,
+#fm-sk-e:checked ~ .skill-detail-display-box .detail-e,
+#fm-sk-r:checked ~ .skill-detail-display-box .detail-r,
+#fm-sk-tab:checked ~ .skill-detail-display-box .detail-tab,
+#as-sk-q:checked ~ .skill-detail-display-box .detail-q,
+#as-sk-e:checked ~ .skill-detail-display-box .detail-e,
+#as-sk-r:checked ~ .skill-detail-display-box .detail-r,
+#as-sk-tab:checked ~ .skill-detail-display-box .detail-tab,
+#sf-sk-q:checked ~ .skill-detail-display-box .detail-q,
+#sf-sk-e:checked ~ .skill-detail-display-box .detail-e,
+#sf-sk-r:checked ~ .skill-detail-display-box .detail-r,
+#sf-sk-tab:checked ~ .skill-detail-display-box .detail-tab {
+  display: block;
+  animation: skillDetailFade 0.3s ease forwards;
+}
+
+@keyframes skillDetailFade {
+  0% { opacity: 0; transform: translateY(4px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+.class-stage-trigger-btn {
+  width: 100%;
+  margin-top: 14px;
+  justify-content: center;
+  font-size: 0.85rem;
+  cursor: pointer;
+  user-select: none;
+}
+
+/* --- 2. SÃ¢n Kháº¥u TrÃ¬nh Diá»…n Há»“ SÆ¡ MÃ´n PhÃ¡i ToÃ n Cáº£nh Genshin (Inline) --- */
+.genshin-inline-character-stage {
+  margin-top: 50px;
+  background: radial-gradient(circle at 50% 20%, rgba(30, 41, 59, 0.85) 0%, rgba(10, 15, 29, 0.98) 100%);
+  border: 1px solid rgba(201, 169, 110, 0.4);
+  border-radius: 24px;
+  box-shadow: 0 25px 60px -10px rgba(0, 0, 0, 0.8),
+              0 0 50px rgba(201, 169, 110, 0.15),
+              inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  padding: 32px 36px;
+  overflow: hidden;
+  position: relative;
+}
+
+.stage-control-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 22px;
+  border-bottom: 1px solid rgba(201, 169, 110, 0.25);
+  margin-bottom: 28px;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.stage-control-title {
+  color: #f3e5ab;
+  font-size: 1.05rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+.genshin-stage-tabs {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.stage-tab-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  border-radius: 24px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(201, 169, 110, 0.25);
+  color: #cbd5e1;
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  user-select: none;
+}
+
+.stage-tab-pill img {
+  border-radius: 50%;
+  display: block;
+}
+
+.stage-tab-pill:hover {
+  border-color: #c9a96e;
+  background: rgba(201, 169, 110, 0.15);
+  color: #f3e5ab;
+  transform: translateY(-2px);
+}
+
+/* Active State cho cÃ¡c Tab mÃ´n phÃ¡i khi radio checked */
+#char-tab-bm:checked ~ #genshin-inline-stage .tab-bm,
+#char-tab-fm:checked ~ #genshin-inline-stage .tab-fm,
+#char-tab-as:checked ~ #genshin-inline-stage .tab-as,
+#char-tab-sf:checked ~ #genshin-inline-stage .tab-sf {
+  background: linear-gradient(135deg, rgba(201, 169, 110, 0.3), rgba(243, 229, 171, 0.15));
+  border-color: #f3e5ab;
+  color: #fef08a;
+  box-shadow: 0 0 16px rgba(201, 169, 110, 0.4);
+  transform: translateY(-2px);
+}
+
+/* Quáº£n lÃ½ hiá»ƒn thá»‹ cÃ¡c mÃ n chiáº¿u nhÃ¢n váº­t */
+.stage-showcase-panel {
+  display: none;
+}
+
+#char-tab-bm:checked ~ #genshin-inline-stage .panel-bm,
+#char-tab-fm:checked ~ #genshin-inline-stage .panel-fm,
+#char-tab-as:checked ~ #genshin-inline-stage .panel-as,
+#char-tab-sf:checked ~ #genshin-inline-stage .panel-sf {
+  display: block;
+  animation: stagePanelIn 0.45s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes stagePanelIn {
+  0% { opacity: 0; transform: translateY(12px) scale(0.98); }
+  100% { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+/* Grid ná»™i dung bÃªn trong SÃ¢n Kháº¥u */
+.stage-grid {
+  display: grid;
+  grid-template-columns: 340px 1fr;
+  gap: 32px;
+  align-items: start;
+}
+
+.stage-portrait-wrap {
+  position: relative;
+  border-radius: 18px;
+  overflow: hidden;
+  background: #0d1322;
+  border: 1px solid rgba(201, 169, 110, 0.35);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+  margin-bottom: 16px;
+}
+
+.stage-portrait-wrap.theme-cryo-glow { border-color: rgba(56, 189, 248, 0.5); box-shadow: 0 0 30px rgba(56, 189, 248, 0.2); }
+.stage-portrait-wrap.theme-pyro-glow { border-color: rgba(249, 115, 22, 0.5); box-shadow: 0 0 30px rgba(249, 115, 22, 0.2); }
+.stage-portrait-wrap.theme-shadow-glow { border-color: rgba(168, 85, 247, 0.5); box-shadow: 0 0 30px rgba(168, 85, 247, 0.2); }
+.stage-portrait-wrap.theme-electro-glow { border-color: rgba(234, 179, 8, 0.5); box-shadow: 0 0 30px rgba(234, 179, 8, 0.2); }
+
+.stage-char-img {
+  width: 100%;
+  height: 380px;
+  object-fit: cover;
+  object-position: top center;
+  display: block;
+}
+
+.stage-portrait-caption {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 16px;
+  background: linear-gradient(180deg, transparent 0%, rgba(10, 15, 29, 0.95) 80%);
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.stage-vision-pill {
+  align-self: flex-start;
+  padding: 4px 10px;
+  border-radius: 12px;
+  font-size: 0.74rem;
+  font-weight: 700;
+}
+
+.stage-char-title {
+  color: #f8fafc;
+  font-size: 1.15rem;
+}
+
+.stage-cv-text {
+  color: #94a3b8;
+  font-size: 0.78rem;
+}
+
+/* Tháº§n khÃ­ tráº¥n phÃ¡i */
+.stage-relic-box {
+  padding: 16px;
+  border-radius: 14px;
+  background: rgba(15, 23, 42, 0.85);
+  border: 1px solid rgba(201, 169, 110, 0.25);
+}
+
+.stage-relic-header {
+  font-size: 0.72rem;
+  font-weight: 800;
+  color: #c9a96e;
+  letter-spacing: 0.8px;
+  margin-bottom: 8px;
+}
+
+.stage-relic-content {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.stage-relic-content img {
+  border-radius: 10px;
+  border: 1px solid rgba(201, 169, 110, 0.4);
+  flex-shrink: 0;
+}
+
+.stage-relic-content strong {
+  display: block;
+  color: #f8fafc;
+  font-size: 0.88rem;
+  margin-bottom: 2px;
+}
+
+.stage-relic-content span {
+  display: block;
+  color: #94a3b8;
+  font-size: 0.75rem;
+  line-height: 1.35;
+}
+
+/* Cá»™t pháº£i Lore & Ká»¹ nÄƒng */
+.stage-lore-side {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.stage-quote-box {
+  padding: 14px 18px;
+  border-left: 3px solid #c9a96e;
+  background: rgba(201, 169, 110, 0.08);
+  border-radius: 0 10px 10px 0;
+  color: #f3e5ab;
+  font-style: italic;
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+.stage-lore-text {
+  padding: 16px 20px;
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.stage-lore-text h4 {
+  color: #f8fafc;
+  font-size: 1.05rem;
+  margin: 0 0 8px 0;
+}
+
+.stage-lore-text p {
+  margin: 0;
+  color: #cbd5e1;
+  font-size: 0.9rem;
+  line-height: 1.65;
+}
+
+.stage-skills-matrix h4 {
+  color: #f3e5ab;
+  font-size: 1.05rem;
+  margin: 0 0 12px 0;
+}
+
+.stage-skill-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 14px;
+}
+
+.stage-skill-card {
+  padding: 14px 16px;
+  border-radius: 12px;
+  background: rgba(15, 23, 42, 0.7);
+  border: 1px solid rgba(201, 169, 110, 0.2);
+  transition: all 0.25s ease;
+}
+
+.stage-skill-card:hover {
+  border-color: #c9a96e;
+  transform: translateY(-2px);
+  background: rgba(24, 34, 60, 0.85);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.4);
+}
+
+.skill-card-top {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 8px;
+}
+
+.hotkey-badge {
+  width: 26px;
+  height: 26px;
+  border-radius: 6px;
+  background: linear-gradient(135deg, rgba(201, 169, 110, 0.3), rgba(201, 169, 110, 0.1));
+  border: 1px solid rgba(201, 169, 110, 0.6);
+  color: #fef08a;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.78rem;
+  font-weight: 800;
+  flex-shrink: 0;
+}
+
+.skill-card-top strong {
+  color: #f8fafc;
+  font-size: 0.88rem;
+  flex: 1;
+}
+
+.cd-tag {
+  color: #94a3b8;
+  font-size: 0.72rem;
+  font-weight: 600;
+}
+
+.stage-skill-card p {
+  margin: 0;
+  color: #94a3b8;
+  font-size: 0.8rem;
+  line-height: 1.5;
+}
+
+@media (max-width: 900px) {
+  .stage-grid {
+    grid-template-columns: 1fr;
+  }
+  .stage-portrait-wrap {
+    max-width: 340px;
+    margin: 0 auto 16px auto;
+  }
+  .genshin-inline-character-stage {
+    padding: 24px 18px;
+  }
+}
+

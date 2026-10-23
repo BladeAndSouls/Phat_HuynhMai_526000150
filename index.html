@@ -1287,24 +1287,28 @@
     </section>
 
     <!-- ====================================================================
-         CLASSES / HEROES SECTION (<section id="classes">)
-         Sử dụng CSS Grid linh hoạt & hiệu ứng Hover thẻ bài viết
-         ==================================================================== -->
-    <section id="classes" class="section classes-section" aria-label="Các hệ phái nhân vật" data-aos="fade-up">
+         CLASSES / HEROES SECTION (    <section id="classes" class="section classes-section" aria-label="Các hệ phái nhân vật" data-aos="fade-up">
       <div class="container">
         
         <div class="section-title-wrap" data-aos="fade-up">
           <span class="section-tag">Hệ Thống Nghề Nghiệp</span>
-          <h2 class="section-title">Chọn Lựa <span class="text-gradient">Hệ Phái Của Bạn</span></h2>
+          <h2 class="section-title">Hệ Phái Võ Học &bull; <span class="text-gradient">Tuyệt Kỹ Chiến Đấu</span></h2>
           <p class="section-subtitle">
-            Mỗi hệ phái sở hữu phong cách chiến đấu, chuỗi combo chiêu thức và vai trò độc nhất vô nhị trong tổ đội.
+            Nhấp trực tiếp vào các phím chiêu <strong>Q, E, R, TAB</strong> trên mỗi thẻ để xem phân tích tuyệt kỹ, hoặc nhấp nút chọn môn phái để mở Sân Khấu Hồ Sơ Toàn Cảnh phong cách Genshin Impact.
           </p>
         </div>
 
+        <!-- Radio ẩn điều khiển Sân Khấu Nhân Vật Genshin Toàn Cảnh (Inline Showcase) -->
+        <input type="radio" name="genshin-char-tab" id="char-tab-bm" checked class="genshin-char-radio">
+        <input type="radio" name="genshin-char-tab" id="char-tab-fm" class="genshin-char-radio">
+        <input type="radio" name="genshin-char-tab" id="char-tab-as" class="genshin-char-radio">
+        <input type="radio" name="genshin-char-tab" id="char-tab-sf" class="genshin-char-radio">
+
+        <!-- 4 Class Cards Với Bộ Phím Chiêu Tương Tác Q, E, R, TAB Nhấp Chuột Ra Chi Tiết -->
         <div class="classes-grid">
           
           <!-- Class Card 1: Kiếm Sư -->
-          <article class="class-card" data-aos="fade-up" data-aos-delay="100">
+          <article class="class-card card-cryo" data-aos="fade-up" data-aos-delay="100">
             <span class="sword-slash-beam" aria-hidden="true"></span>
             <div class="class-card-image">
               <img src="assets/images/char-blade-master.svg" alt="Hệ phái Kiếm Sư (Blade Master)" width="400" height="500" loading="lazy">
@@ -1320,32 +1324,71 @@
                 <span class="cv-badge">CV: Kenjiro Tsuda (Nhật Bản)</span>
               </div>
               <blockquote class="class-voice-quote">
-                "Nhất kiếm đoạn tuyệt vạn trùng sầu, kiếm khí quy tông định càn khôn."
+                “Nhất kiếm đoạn tuyệt vạn trùng sầu, kiếm khí quy tông định càn khôn.”
               </blockquote>
               <p class="class-desc">
                 Bậc thầy kiếm đạo sở hữu khả năng đỡ đòn hoàn hảo, phản kích sấm sét và khống chế kiếm khí trận vô song.
               </p>
 
-              <!-- Tuyệt Kỹ Võ Học (Animated Skill Slots) -->
-              <div class="class-skills-preview">
-                <span class="skill-badge" title="Phong Thần Trảm (Phím Q)">
-                  <span class="skill-key">Q</span>
-                  <span class="skill-cooldown-ring"></span>
-                </span>
-                <span class="skill-badge" title="Bạt Kiếm Thức (Phím E)">
-                  <span class="skill-key">E</span>
-                  <span class="skill-cooldown-ring"></span>
-                </span>
-                <span class="skill-badge" title="Thiên Kiếm Trận (Phím R)">
-                  <span class="skill-key">R</span>
-                  <span class="skill-cooldown-ring"></span>
-                </span>
-                <span class="skill-badge" title="Phá Cương Quyết (Phím Tab)">
-                  <span class="skill-key">Tab</span>
-                  <span class="skill-cooldown-ring"></span>
-                </span>
+              <!-- BỘ PHÍM KỸ NĂNG TƯƠNG TÁC (NHẤP VÀO XUẤT HIỆN CHI TIẾT TỨC THÌ) -->
+              <div class="card-skills-interactive-wrap">
+                <input type="radio" name="bm-skill" id="bm-sk-q" checked class="card-skill-radio">
+                <input type="radio" name="bm-skill" id="bm-sk-e" class="card-skill-radio">
+                <input type="radio" name="bm-skill" id="bm-sk-r" class="card-skill-radio">
+                <input type="radio" name="bm-skill" id="bm-sk-tab" class="card-skill-radio">
+
+                <div class="class-skills-nav">
+                  <span class="skills-nav-label">Nhấp phím xem chiêu:</span>
+                  <div class="skills-btn-group">
+                    <label for="bm-sk-q" class="skill-key-btn key-q" title="Nhấp xem chiêu Q: Phong Thần Trảm">
+                      <span class="key-letter">Q</span>
+                    </label>
+                    <label for="bm-sk-e" class="skill-key-btn key-e" title="Nhấp xem chiêu E: Bạt Kiếm Thức">
+                      <span class="key-letter">E</span>
+                    </label>
+                    <label for="bm-sk-r" class="skill-key-btn key-r" title="Nhấp xem chiêu R: Thiên Kiếm Trận">
+                      <span class="key-letter">R</span>
+                    </label>
+                    <label for="bm-sk-tab" class="skill-key-btn key-tab" title="Nhấp xem chiêu TAB: Vạn Kiếm Quy Tông">
+                      <span class="key-letter">TAB</span>
+                    </label>
+                  </div>
+                </div>
+
+                <!-- Khung hiển thị chi tiết chiêu thức đang chọn -->
+                <div class="skill-detail-display-box">
+                  <div class="skill-detail-item detail-q">
+                    <div class="skill-dt-header">
+                      <strong class="skill-dt-name">Q: Phong Thần Trảm</strong>
+                      <span class="skill-dt-cd">Hồi: 6s &bull; Sát thương Băng</span>
+                    </div>
+                    <p class="skill-dt-desc">Lướt kiếm thần tốc qua mục tiêu, gây <strong>350% Sát Thương Băng</strong> và tăng 35% tốc đánh trong 6s.</p>
+                  </div>
+                  <div class="skill-detail-item detail-e">
+                    <div class="skill-dt-header">
+                      <strong class="skill-dt-name">E: Bạt Kiếm Thức</strong>
+                      <span class="skill-dt-cd">Hồi: 1.5s &bull; Đỡ đòn &amp; Phản kích</span>
+                    </div>
+                    <p class="skill-dt-desc">Thế thủ phòng ngự tuyệt đối, <strong>chặn 100% sát thương</strong> phía trước và phản đòn làm choáng 2s.</p>
+                  </div>
+                  <div class="skill-detail-item detail-r">
+                    <div class="skill-dt-header">
+                      <strong class="skill-dt-name">R: Thiên Kiếm Trận</strong>
+                      <span class="skill-dt-cd">Hồi: 18s &bull; Hất tung không chiến</span>
+                    </div>
+                    <p class="skill-dt-desc">Cắm kiếm tạo kiếm trận, <strong>hất tung đối thủ 3m lên không trung</strong> mở khóa combo Không Chiến.</p>
+                  </div>
+                  <div class="skill-detail-item detail-tab">
+                    <div class="skill-dt-header">
+                      <strong class="skill-dt-name">TAB: Vạn Kiếm Quy Tông</strong>
+                      <span class="skill-dt-cd">Hồi: 45s &bull; Tuyệt kỹ tối thượng</span>
+                    </div>
+                    <p class="skill-dt-desc">Triệu hồi 1.000 phi kiếm dội xuống, gây <strong>1.450% Sát Thương</strong> đóng băng vĩnh cửu diện rộng.</p>
+                  </div>
+                </div>
               </div>
 
+              <!-- Thanh chỉ số -->
               <div class="class-stats-list">
                 <div class="class-stat-row">
                   <span>Sát Thương</span>
@@ -1361,16 +1404,15 @@
                 </div>
               </div>
 
-              <!-- Nút Xem Chi Tiết Kiếm Sư -->
-              <a href="#class-modal-blade-master" class="btn btn-gold btn-shimmer class-explore-btn" title="Bấm để xem chi tiết tuyệt kỹ &amp; cốt truyện Kiếm Sư">
-                <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" width="16" height="16"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
-                <span>Khám Phá Chi Tiết Môn Phái &rarr;</span>
-              </a>
+              <!-- Nút chuyển Sân Khấu Hồ Sơ Toàn Cảnh Bên Dưới -->
+              <label for="char-tab-bm" class="btn btn-gold btn-shimmer class-stage-trigger-btn" title="Xem hồ sơ toàn cảnh môn phái Kiếm Sư bên dưới">
+                <span>Xem Hồ Sơ Môn Phái Toàn Cảnh &darr;</span>
+              </label>
             </div>
           </article>
 
           <!-- Class Card 2: Khí Công Sư -->
-          <article class="class-card" data-aos="fade-up" data-aos-delay="200">
+          <article class="class-card card-pyro" data-aos="fade-up" data-aos-delay="200">
             <span class="sword-slash-beam" aria-hidden="true"></span>
             <div class="class-card-image">
               <img src="assets/images/char-force-master.svg" alt="Hệ phái Khí Công Sư (Force Master)" width="400" height="500" loading="lazy">
@@ -1382,36 +1424,74 @@
               <span class="class-type-badge">Tầm Xa &bull; Băng Hỏa Ma Pháp</span>
               <h3 class="class-name">Khí Công Sư (Force Master)</h3>
               <div class="genshin-char-meta">
-                <span class="vision-badge vision-pyro">🔥 Hỏa &amp; Băng (Pyro/Cryo)</span>
+                <span class="vision-badge vision-pyro">🔥 Băng &amp; Hỏa (Pyro/Cryo)</span>
                 <span class="cv-badge">CV: Saori Hayami (Nhật Bản)</span>
               </div>
               <blockquote class="class-voice-quote">
-                "Băng hỏa tương dung, nghịch chuyển âm dương thiêu đốt vạn vật."
+                “Băng hỏa tương dung, nghịch chuyển âm dương thiêu đốt vạn vật.”
               </blockquote>
               <p class="class-desc">
                 Thao túng hai dòng nguyên tố Hỏa thiêu đốt mục tiêu và Băng đóng băng diện rộng, bảo kê đồng đội tuyệt đối.
               </p>
 
-              <!-- Tuyệt Kỹ Võ Học (Animated Skill Slots) -->
-              <div class="class-skills-preview">
-                <span class="skill-badge" title="Hỏa Long Trảm (Phím Q)">
-                  <span class="skill-key">Q</span>
-                  <span class="skill-cooldown-ring"></span>
-                </span>
-                <span class="skill-badge" title="Băng Hộ Thể (Phím E)">
-                  <span class="skill-key">E</span>
-                  <span class="skill-cooldown-ring"></span>
-                </span>
-                <span class="skill-badge" title="Băng Hỏa Liên Hoàn (Phím R)">
-                  <span class="skill-key">R</span>
-                  <span class="skill-cooldown-ring"></span>
-                </span>
-                <span class="skill-badge" title="Hỏa Thiền Trận (Phím Tab)">
-                  <span class="skill-key">Tab</span>
-                  <span class="skill-cooldown-ring"></span>
-                </span>
+              <!-- BỘ PHÍM KỸ NĂNG TƯƠNG TÁC KHÍ CÔNG SƯ -->
+              <div class="card-skills-interactive-wrap">
+                <input type="radio" name="fm-skill" id="fm-sk-q" checked class="card-skill-radio">
+                <input type="radio" name="fm-skill" id="fm-sk-e" class="card-skill-radio">
+                <input type="radio" name="fm-skill" id="fm-sk-r" class="card-skill-radio">
+                <input type="radio" name="fm-skill" id="fm-sk-tab" class="card-skill-radio">
+
+                <div class="class-skills-nav">
+                  <span class="skills-nav-label">Nhấp phím xem chiêu:</span>
+                  <div class="skills-btn-group">
+                    <label for="fm-sk-q" class="skill-key-btn key-q" title="Nhấp xem chiêu Q: Hỏa Long Trảm">
+                      <span class="key-letter">Q</span>
+                    </label>
+                    <label for="fm-sk-e" class="skill-key-btn key-e" title="Nhấp xem chiêu E: Băng Hộ Thể">
+                      <span class="key-letter">E</span>
+                    </label>
+                    <label for="fm-sk-r" class="skill-key-btn key-r" title="Nhấp xem chiêu R: Băng Hỏa Liên Hoàn">
+                      <span class="key-letter">R</span>
+                    </label>
+                    <label for="fm-sk-tab" class="skill-key-btn key-tab" title="Nhấp xem chiêu TAB: Hỏa Thiên Trận">
+                      <span class="key-letter">TAB</span>
+                    </label>
+                  </div>
+                </div>
+
+                <div class="skill-detail-display-box">
+                  <div class="skill-detail-item detail-q">
+                    <div class="skill-dt-header">
+                      <strong class="skill-dt-name">Q: Hỏa Long Trảm</strong>
+                      <span class="skill-dt-cd">Hồi: 3s &bull; Sát thương Hỏa thiêu đốt</span>
+                    </div>
+                    <p class="skill-dt-desc">Phóng rồng lửa thiêu đối thủ, gây <strong>420% Sát Thương Hỏa</strong> và duy trì 5 tầng hiệu ứng cháy.</p>
+                  </div>
+                  <div class="skill-detail-item detail-e">
+                    <div class="skill-dt-header">
+                      <strong class="skill-dt-name">E: Băng Hộ Thể</strong>
+                      <span class="skill-dt-cd">Hồi: 24s &bull; Đóng băng bất tử &amp; Hồi máu</span>
+                    </div>
+                    <p class="skill-dt-desc">Phong ấn bản thân trong kén băng, <strong>miễn nhiễm 100% sát thương trong 3s</strong> và hồi 25% máu.</p>
+                  </div>
+                  <div class="skill-detail-item detail-r">
+                    <div class="skill-dt-header">
+                      <strong class="skill-dt-name">R: Băng Hỏa Liên Hoàn</strong>
+                      <span class="skill-dt-cd">Hồi: 15s &bull; Bộc phá Âm Dương</span>
+                    </div>
+                    <p class="skill-dt-desc">Tạo phản ứng nổ nguyên tố băng hỏa, <strong>hất ngã toàn bộ mục tiêu trong bán kính 10m</strong>.</p>
+                  </div>
+                  <div class="skill-detail-item detail-tab">
+                    <div class="skill-dt-header">
+                      <strong class="skill-dt-name">TAB: Hỏa Thiên Trận</strong>
+                      <span class="skill-dt-cd">Hồi: 40s &bull; Diệt thế thiên hỏa</span>
+                    </div>
+                    <p class="skill-dt-desc">Triệu hồi thiên thạch rơi xuống trận địa, <strong>phá hủy 100% giáp Boss</strong> và thiêu rụi toàn bộ quái vật.</p>
+                  </div>
+                </div>
               </div>
 
+              <!-- Thanh chỉ số -->
               <div class="class-stats-list">
                 <div class="class-stat-row">
                   <span>Sát Thương</span>
@@ -1427,16 +1507,14 @@
                 </div>
               </div>
 
-              <!-- Nút Xem Chi Tiết Khí Công Sư -->
-              <a href="#class-modal-force-master" class="btn btn-gold btn-shimmer class-explore-btn" title="Bấm để xem chi tiết tuyệt kỹ &amp; cốt truyện Khí Công Sư">
-                <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" width="16" height="16"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
-                <span>Khám Phá Chi Tiết Môn Phái &rarr;</span>
-              </a>
+              <label for="char-tab-fm" class="btn btn-gold btn-shimmer class-stage-trigger-btn" title="Xem hồ sơ toàn cảnh môn phái Khí Công Sư bên dưới">
+                <span>Xem Hồ Sơ Môn Phái Toàn Cảnh &darr;</span>
+              </label>
             </div>
           </article>
 
           <!-- Class Card 3: Sát Thủ -->
-          <article class="class-card" data-aos="fade-up" data-aos-delay="300">
+          <article class="class-card card-shadow" data-aos="fade-up" data-aos-delay="300">
             <span class="sword-slash-beam" aria-hidden="true"></span>
             <div class="class-card-image">
               <img src="assets/images/char-assassin.svg" alt="Hệ phái Sát Thủ (Assassin)" width="400" height="500" loading="lazy">
@@ -1452,32 +1530,70 @@
                 <span class="cv-badge">CV: Yuichi Nakamura (Nhật Bản)</span>
               </div>
               <blockquote class="class-voice-quote">
-                "Bóng tối là nhà, lưỡi đoản kiếm khát máu chưa từng trảm hụt."
+                “Bóng tối là nhà, lưỡi đoản kiếm khát máu chưa từng trảm hụt.”
               </blockquote>
               <p class="class-desc">
                 Bậc thầy tàng hình trong bóng tối, đặt bẫy nổ, dịch chuyển tức thời và hạ gục đối thủ bằng nhát chém chí mạng.
               </p>
 
-              <!-- Tuyệt Kỹ Võ Học (Animated Skill Slots) -->
-              <div class="class-skills-preview">
-                <span class="skill-badge" title="Ẩn Thân Quyết (Phím Q)">
-                  <span class="skill-key">Q</span>
-                  <span class="skill-cooldown-ring"></span>
-                </span>
-                <span class="skill-badge" title="Độc Vụ Trận (Phím E)">
-                  <span class="skill-key">E</span>
-                  <span class="skill-cooldown-ring"></span>
-                </span>
-                <span class="skill-badge" title="Ám Sát Trảm (Phím R)">
-                  <span class="skill-key">R</span>
-                  <span class="skill-cooldown-ring"></span>
-                </span>
-                <span class="skill-badge" title="Hoán Đổi Vị Trí (Phím Tab)">
-                  <span class="skill-key">Tab</span>
-                  <span class="skill-cooldown-ring"></span>
-                </span>
+              <!-- BỘ PHÍM KỸ NĂNG TƯƠNG TÁC SÁT THỦ -->
+              <div class="card-skills-interactive-wrap">
+                <input type="radio" name="as-skill" id="as-sk-q" checked class="card-skill-radio">
+                <input type="radio" name="as-skill" id="as-sk-e" class="card-skill-radio">
+                <input type="radio" name="as-skill" id="as-sk-r" class="card-skill-radio">
+                <input type="radio" name="as-skill" id="as-sk-tab" class="card-skill-radio">
+
+                <div class="class-skills-nav">
+                  <span class="skills-nav-label">Nhấp phím xem chiêu:</span>
+                  <div class="skills-btn-group">
+                    <label for="as-sk-q" class="skill-key-btn key-q" title="Nhấp xem chiêu Q: Ẩn Thân Quyết">
+                      <span class="key-letter">Q</span>
+                    </label>
+                    <label for="as-sk-e" class="skill-key-btn key-e" title="Nhấp xem chiêu E: Độc Vụ Trận">
+                      <span class="key-letter">E</span>
+                    </label>
+                    <label for="as-sk-r" class="skill-key-btn key-r" title="Nhấp xem chiêu R: Ám Sát Trảm">
+                      <span class="key-letter">R</span>
+                    </label>
+                    <label for="as-sk-tab" class="skill-key-btn key-tab" title="Nhấp xem chiêu TAB: Hoán Đổi Vị Trí">
+                      <span class="key-letter">TAB</span>
+                    </label>
+                  </div>
+                </div>
+
+                <div class="skill-detail-display-box">
+                  <div class="skill-detail-item detail-q">
+                    <div class="skill-dt-header">
+                      <strong class="skill-dt-name">Q: Ẩn Thân Quyết</strong>
+                      <span class="skill-dt-cd">Hồi: 8s &bull; Tàng hình &amp; Bạo kích 100%</span>
+                    </div>
+                    <p class="skill-dt-desc">Ném bom khói biến mất vào hư không trong 6s, <strong>đòn đánh kế tiếp chắc chắn bạo kích 100%</strong>.</p>
+                  </div>
+                  <div class="skill-detail-item detail-e">
+                    <div class="skill-dt-header">
+                      <strong class="skill-dt-name">E: Độc Vụ Trận</strong>
+                      <span class="skill-dt-cd">Hồi: 12s &bull; Bẫy độc ăn mòn</span>
+                    </div>
+                    <p class="skill-dt-desc">Đặt bẫy khí độc tàng hình, phát nổ khi đối thủ bước vào, <strong>làm chậm 60% và giảm 45% phòng thủ</strong>.</p>
+                  </div>
+                  <div class="skill-detail-item detail-r">
+                    <div class="skill-dt-header">
+                      <strong class="skill-dt-name">R: Ám Sát Trảm</strong>
+                      <span class="skill-dt-cd">Hồi: 20s &bull; Xuyên tim đoạt mệnh</span>
+                    </div>
+                    <p class="skill-dt-desc">Tức thì dịch chuyển sau gáy kẻ địch, tung nhát chém xuyên tim gây <strong>680% Sát Thương Bạo Kích</strong>.</p>
+                  </div>
+                  <div class="skill-detail-item detail-tab">
+                    <div class="skill-dt-header">
+                      <strong class="skill-dt-name">TAB: Thế Thân Thuật</strong>
+                      <span class="skill-dt-cd">Hồi: 30s &bull; Thoát hiểm &amp; Làm mù</span>
+                    </div>
+                    <p class="skill-dt-desc">Khi bị tấn công sẽ hoán đổi vị trí với hình nhân gỗ, <strong>làm mù mắt đối thủ trong 3 giây</strong>.</p>
+                  </div>
+                </div>
               </div>
 
+              <!-- Thanh chỉ số -->
               <div class="class-stats-list">
                 <div class="class-stat-row">
                   <span>Sát Thương</span>
@@ -1493,16 +1609,14 @@
                 </div>
               </div>
 
-              <!-- Nút Xem Chi Tiết Sát Thủ -->
-              <a href="#class-modal-assassin" class="btn btn-gold btn-shimmer class-explore-btn" title="Bấm để xem chi tiết tuyệt kỹ &amp; cốt truyện Sát Thủ">
-                <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" width="16" height="16"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
-                <span>Khám Phá Chi Tiết Môn Phái &rarr;</span>
-              </a>
+              <label for="char-tab-as" class="btn btn-gold btn-shimmer class-stage-trigger-btn" title="Xem hồ sơ toàn cảnh môn phái Sát Thủ bên dưới">
+                <span>Xem Hồ Sơ Môn Phái Toàn Cảnh &darr;</span>
+              </label>
             </div>
           </article>
 
           <!-- Class Card 4: Quyền Sư -->
-          <article class="class-card" data-aos="fade-up" data-aos-delay="400">
+          <article class="class-card card-electro" data-aos="fade-up" data-aos-delay="400">
             <span class="sword-slash-beam" aria-hidden="true"></span>
             <div class="class-card-image">
               <img src="assets/images/char-soul-fighter.svg" alt="Hệ phái Quyền Sư (Soul Fighter)" width="400" height="500" loading="lazy">
@@ -1518,32 +1632,70 @@
                 <span class="cv-badge">CV: Akio Otsuka (Nhật Bản)</span>
               </div>
               <blockquote class="class-voice-quote">
-                "Quyền định giang sơn, cuồng long xuất hải bẻ gãy mọi quy tắc."
+                “Quyền định giang sơn, cuồng long xuất hải bẻ gãy mọi quy tắc.”
               </blockquote>
               <p class="class-desc">
                 Sức mạnh thể chất cuồng nộ kết hợp rồng lửa, quật ngã boss lớn và tạo lá chắn linh hồn bảo vệ toàn đội.
               </p>
 
-              <!-- Tuyệt Kỹ Võ Học (Animated Skill Slots) -->
-              <div class="class-skills-preview">
-                <span class="skill-badge" title="Long Quyền Bộc Phá (Phím Q)">
-                  <span class="skill-key">Q</span>
-                  <span class="skill-cooldown-ring"></span>
-                </span>
-                <span class="skill-badge" title="Thiết Bố Sam (Phím E)">
-                  <span class="skill-key">E</span>
-                  <span class="skill-cooldown-ring"></span>
-                </span>
-                <span class="skill-badge" title="Cuồng Long Thức (Phím R)">
-                  <span class="skill-key">R</span>
-                  <span class="skill-cooldown-ring"></span>
-                </span>
-                <span class="skill-badge" title="Khí Huyết Hồi Phục (Phím Tab)">
-                  <span class="skill-key">Tab</span>
-                  <span class="skill-cooldown-ring"></span>
-                </span>
+              <!-- BỘ PHÍM KỸ NĂNG TƯƠNG TÁC QUYỀN SƯ -->
+              <div class="card-skills-interactive-wrap">
+                <input type="radio" name="sf-skill" id="sf-sk-q" checked class="card-skill-radio">
+                <input type="radio" name="sf-skill" id="sf-sk-e" class="card-skill-radio">
+                <input type="radio" name="sf-skill" id="sf-sk-r" class="card-skill-radio">
+                <input type="radio" name="sf-skill" id="sf-sk-tab" class="card-skill-radio">
+
+                <div class="class-skills-nav">
+                  <span class="skills-nav-label">Nhấp phím xem chiêu:</span>
+                  <div class="skills-btn-group">
+                    <label for="sf-sk-q" class="skill-key-btn key-q" title="Nhấp xem chiêu Q: Long Quyền Bộc Phá">
+                      <span class="key-letter">Q</span>
+                    </label>
+                    <label for="sf-sk-e" class="skill-key-btn key-e" title="Nhấp xem chiêu E: Thiết Bố Sam">
+                      <span class="key-letter">E</span>
+                    </label>
+                    <label for="sf-sk-r" class="skill-key-btn key-r" title="Nhấp xem chiêu R: Cuồng Long Thức">
+                      <span class="key-letter">R</span>
+                    </label>
+                    <label for="sf-sk-tab" class="skill-key-btn key-tab" title="Nhấp xem chiêu TAB: Khí Huyết Hồi Phục">
+                      <span class="key-letter">TAB</span>
+                    </label>
+                  </div>
+                </div>
+
+                <div class="skill-detail-display-box">
+                  <div class="skill-detail-item detail-q">
+                    <div class="skill-dt-header">
+                      <strong class="skill-dt-name">Q: Long Quyền Bộc Phá</strong>
+                      <span class="skill-dt-cd">Hồi: 4s &bull; Phá vỡ giáp thủ</span>
+                    </div>
+                    <p class="skill-dt-desc">Đấm thẳng sấm sét phá hủy thế thủ của đối thủ, gây <strong>380% Sát Thương</strong> và đẩy lùi 10m.</p>
+                  </div>
+                  <div class="skill-detail-item detail-e">
+                    <div class="skill-dt-header">
+                      <strong class="skill-dt-name">E: Thiết Bố Sam</strong>
+                      <span class="skill-dt-cd">Hồi: 16s &bull; Giảm 65% sát thương</span>
+                    </div>
+                    <p class="skill-dt-desc">Gồng mình biến da thịt cứng như thép, <strong>giảm 65% mọi sát thương trong 5s</strong> và kháng khống chế.</p>
+                  </div>
+                  <div class="skill-detail-item detail-r">
+                    <div class="skill-dt-header">
+                      <strong class="skill-dt-name">R: Cuồng Long Thức</strong>
+                      <span class="skill-dt-cd">Hồi: 22s &bull; Quật ngã Boss lớn</span>
+                    </div>
+                    <p class="skill-dt-desc">Triệu hồi rồng sét vồ lấy mục tiêu, <strong>quật ngã cả Boss khổng lồ xuống đất trong 3s</strong>.</p>
+                  </div>
+                  <div class="skill-detail-item detail-tab">
+                    <div class="skill-dt-header">
+                      <strong class="skill-dt-name">TAB: Khí Huyết Hồi Phục</strong>
+                      <span class="skill-dt-cd">Hồi: 50s &bull; Hồi máu &amp; Hộ thuẫn</span>
+                    </div>
+                    <p class="skill-dt-desc">Phát tán chân khí bảo hộ, <strong>hồi 40% máu cho toàn đội</strong> và tạo lá chắn hấp thụ 10.000 sát thương.</p>
+                  </div>
+                </div>
               </div>
 
+              <!-- Thanh chỉ số -->
               <div class="class-stats-list">
                 <div class="class-stat-row">
                   <span>Sát Thương</span>
@@ -1559,15 +1711,272 @@
                 </div>
               </div>
 
-              <!-- Nút Xem Chi Tiết Quyền Sư -->
-              <a href="#class-modal-soul-fighter" class="btn btn-gold btn-shimmer class-explore-btn" title="Bấm để xem chi tiết tuyệt kỹ &amp; cốt truyện Quyền Sư">
-                <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" width="16" height="16"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
-                <span>Khám Phá Chi Tiết Môn Phái &rarr;</span>
-              </a>
+              <label for="char-tab-sf" class="btn btn-gold btn-shimmer class-stage-trigger-btn" title="Xem hồ sơ toàn cảnh môn phái Quyền Sư bên dưới">
+                <span>Xem Hồ Sơ Môn Phái Toàn Cảnh &darr;</span>
+              </label>
             </div>
           </article>
 
-        </div>
+        </div> <!-- /.classes-grid -->
+
+        <!-- ====================================================================
+             SÂN KHẤU TRÌNH DIỄN HỒ SƠ MÔN PHÁI TOÀN CẢNH GENSHIN HOYOVERSE (INLINE)
+             Xuất hiện trực tiếp trên trang khi bấm chọn môn phái - 100% Zero Popup
+             ==================================================================== -->
+        <div id="genshin-inline-stage" class="genshin-inline-character-stage">
+          
+          <div class="stage-control-bar">
+            <span class="stage-control-title">Chọn Môn Phái Để Xem Hồ Sơ Toàn Cảnh:</span>
+            <div class="genshin-stage-tabs">
+              <label for="char-tab-bm" class="stage-tab-pill tab-bm">
+                <img src="assets/images/avatar-kiem-su.jpg" alt="Kiếm Sư" width="28" height="28">
+                <span>Kiếm Sư (Băng)</span>
+              </label>
+              <label for="char-tab-fm" class="stage-tab-pill tab-fm">
+                <img src="assets/images/avatar-khi-cong-su.jpg" alt="Khí Công Sư" width="28" height="28">
+                <span>Khí Công Sư (Hỏa/Băng)</span>
+              </label>
+              <label for="char-tab-as" class="stage-tab-pill tab-as">
+                <img src="assets/images/avatar-thich-khach.jpg" alt="Sát Thủ" width="28" height="28">
+                <span>Sát Thủ (Ám)</span>
+              </label>
+              <label for="char-tab-sf" class="stage-tab-pill tab-sf">
+                <img src="assets/images/avatar-dao-ba.jpg" alt="Quyền Sư" width="28" height="28">
+                <span>Quyền Sư (Lôi)</span>
+              </label>
+            </div>
+          </div>
+
+          <!-- Màn Chiếu 1: Kiếm Sư -->
+          <div class="stage-showcase-panel panel-bm">
+            <div class="stage-grid">
+              <div class="stage-portrait-side">
+                <div class="stage-portrait-wrap theme-cryo-glow">
+                  <img src="assets/images/char-blade-master.svg" alt="Kiếm Sư" class="stage-char-img">
+                  <div class="stage-portrait-caption">
+                    <span class="stage-vision-pill vision-cryo">❄️ Băng (Cryo)</span>
+                    <strong class="stage-char-title">Kiếm Sư &bull; Blade Master</strong>
+                    <span class="stage-cv-text">CV: Kenjiro Tsuda (津田 健次郎)</span>
+                  </div>
+                </div>
+                <!-- Thần khí trấn phái -->
+                <div class="stage-relic-box">
+                  <div class="stage-relic-header">THẦN KHÍ TRẤN PHÁI TƯƠNG THÍCH:</div>
+                  <div class="stage-relic-content">
+                    <img src="assets/images/avatar-thanh-long-ton.jpg" alt="Thanh Long Băng Phách Kiếm" width="48" height="48">
+                    <div>
+                      <strong>Thanh Long Băng Phách Kiếm</strong>
+                      <span>Tăng 45% sát thương kiếm khí Băng trên không</span>
+                    </div>
+                  </div>
+                  <a href="#relics" class="btn btn-gold btn-sm" style="width:100%; justify-content:center; margin-top:10px;">Khám Phá Đài Thần Khí &rarr;</a>
+                </div>
+              </div>
+              <div class="stage-lore-side">
+                <div class="stage-quote-box">
+                  “Nhất kiếm đoạn tuyệt vạn trùng sầu, kiếm khí quy tông định càn khôn.”
+                </div>
+                <div class="stage-lore-text">
+                  <h4>📜 Nguồn Gốc Võ Đạo &bull; Hồng Môn Kiếm Tông</h4>
+                  <p>Kiếm Sư là môn phái đứng đầu tứ đại thế lực võ lâm Hồng Môn. Lấy tâm định kiếm, lấy kiếm ngự khí, mỗi kiếm sĩ đều phải trải qua thập niên khổ luyện dưới thác băng tuyết ngàn trượng ở Cực Bắc. Sở hữu khả năng bạt kiếm thần tốc cùng phản xạ vô song, Kiếm Sư có thể hóa giải mọi đòn tấn công vũ bão và lập tức phản công chém tan phòng tuyến đối phương.</p>
+                </div>
+                <div class="stage-skills-matrix">
+                  <h4>⚡ Toàn Bộ Kỹ Năng Tuyệt Học Chiến Đấu (Combat Talents)</h4>
+                  <div class="stage-skill-grid">
+                    <div class="stage-skill-card">
+                      <div class="skill-card-top"><span class="hotkey-badge">Q</span><strong>Phong Thần Trảm</strong><span class="cd-tag">6s</span></div>
+                      <p>Lướt xuyên đối thủ 0.2s, gây 350% Sát Thương Băng và tăng 35% tốc độ đánh trong 6 giây.</p>
+                    </div>
+                    <div class="stage-skill-card">
+                      <div class="skill-card-top"><span class="hotkey-badge">E</span><strong>Bạt Kiếm Thức</strong><span class="cd-tag">1.5s</span></div>
+                      <p>Thế thủ phòng ngự tuyệt đối, chặn 100% sát thương phía trước và phản đòn làm choáng 2s.</p>
+                    </div>
+                    <div class="stage-skill-card">
+                      <div class="skill-card-top"><span class="hotkey-badge">R</span><strong>Thiên Kiếm Trận</strong><span class="cd-tag">18s</span></div>
+                      <p>Cắm kiếm xuống đất hất tung đối thủ 3m lên không trung, mở khóa toàn bộ chuỗi Không Chiến.</p>
+                    </div>
+                    <div class="stage-skill-card">
+                      <div class="skill-card-top"><span class="hotkey-badge">TAB</span><strong>Vạn Kiếm Quy Tông</strong><span class="cd-tag">45s</span></div>
+                      <p>Triệu hồi 1.000 phi kiếm dội xuống diện rộng, gây 1.450% sát thương và đóng băng toàn trận địa.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Màn Chiếu 2: Khí Công Sư -->
+          <div class="stage-showcase-panel panel-fm">
+            <div class="stage-grid">
+              <div class="stage-portrait-side">
+                <div class="stage-portrait-wrap theme-pyro-glow">
+                  <img src="assets/images/char-force-master.svg" alt="Khí Công Sư" class="stage-char-img">
+                  <div class="stage-portrait-caption">
+                    <span class="stage-vision-pill vision-pyro">🔥 Băng &amp; Hỏa (Pyro/Cryo)</span>
+                    <strong class="stage-char-title">Khí Công Sư &bull; Force Master</strong>
+                    <span class="stage-cv-text">CV: Saori Hayami (早見 沙織)</span>
+                  </div>
+                </div>
+                <div class="stage-relic-box">
+                  <div class="stage-relic-header">THẦN KHÍ TRẤN PHÁI TƯƠNG THÍCH:</div>
+                  <div class="stage-relic-content">
+                    <img src="assets/images/avatar-ma-gioi-ton.jpg" alt="Xích Hỏa Ma Thần Nhẫn" width="48" height="48">
+                    <div>
+                      <strong>Xích Hỏa Ma Thần Nhẫn</strong>
+                      <span>Tăng 50% sát thương bộc phá nguyên tố Lửa &amp; Băng</span>
+                    </div>
+                  </div>
+                  <a href="#relics" class="btn btn-gold btn-sm" style="width:100%; justify-content:center; margin-top:10px;">Khám Phá Đài Thần Khí &rarr;</a>
+                </div>
+              </div>
+              <div class="stage-lore-side">
+                <div class="stage-quote-box">
+                  “Băng hỏa tương dung, nghịch chuyển âm dương thiêu đốt vạn vật.”
+                </div>
+                <div class="stage-lore-text">
+                  <h4>📜 Nguồn Gốc Võ Đạo &bull; Bát Quái Tiên Môn</h4>
+                  <p>Khí Công Sư nắm giữ bí pháp cổ xưa điều khiển hai cực Âm - Dương trời đất. Tay trái ngưng tụ hàn băng vạn trượng, tay phải triệu hồi ngọn lửa địa ngục. Khi phối hợp luân chuyển mượt mà giữa hai trạng thái Băng và Hỏa, Khí Công Sư có thể vừa gây ra lượng sát thương khủng khiếp từ tầm xa, vừa dựng tường băng che chở toàn bộ đồng đội.</p>
+                </div>
+                <div class="stage-skills-matrix">
+                  <h4>⚡ Toàn Bộ Kỹ Năng Tuyệt Học Chiến Đấu (Combat Talents)</h4>
+                  <div class="stage-skill-grid">
+                    <div class="stage-skill-card">
+                      <div class="skill-card-top"><span class="hotkey-badge">Q</span><strong>Hỏa Long Trảm</strong><span class="cd-tag">3s</span></div>
+                      <p>Phóng luồng rồng lửa thiêu đối thủ, gây 420% Sát Thương Hỏa và duy trì 5 tầng hiệu ứng cháy.</p>
+                    </div>
+                    <div class="stage-skill-card">
+                      <div class="skill-card-top"><span class="hotkey-badge">E</span><strong>Băng Hộ Thể</strong><span class="cd-tag">24s</span></div>
+                      <p>Phong ấn bản thân trong kén băng, miễn nhiễm 100% sát thương trong 3s và hồi 25% máu tối đa.</p>
+                    </div>
+                    <div class="stage-skill-card">
+                      <div class="skill-card-top"><span class="hotkey-badge">R</span><strong>Băng Hỏa Liên Hoàn</strong><span class="cd-tag">15s</span></div>
+                      <p>Kích hoạt phản ứng nổ nguyên tố Âm Dương, hất ngã toàn bộ mục tiêu trong bán kính 10m.</p>
+                    </div>
+                    <div class="stage-skill-card">
+                      <div class="skill-card-top"><span class="hotkey-badge">TAB</span><strong>Hỏa Thiên Trận</strong><span class="cd-tag">40s</span></div>
+                      <p>Triệu hồi thiên thạch rơi xuống trận địa, phá vỡ 100% giáp Boss và thiêu rụi toàn bộ quái vật.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Màn Chiếu 3: Sát Thủ -->
+          <div class="stage-showcase-panel panel-as">
+            <div class="stage-grid">
+              <div class="stage-portrait-side">
+                <div class="stage-portrait-wrap theme-shadow-glow">
+                  <img src="assets/images/char-assassin.svg" alt="Sát Thủ" class="stage-char-img">
+                  <div class="stage-portrait-caption">
+                    <span class="stage-vision-pill vision-shadow">🌑 Ám Ảnh (Shadow)</span>
+                    <strong class="stage-char-title">Sát Thủ &bull; Assassin</strong>
+                    <span class="stage-cv-text">CV: Yuichi Nakamura (中村 悠一)</span>
+                  </div>
+                </div>
+                <div class="stage-relic-box">
+                  <div class="stage-relic-header">THẦN KHÍ TRẤN PHÁI TƯƠNG THÍCH:</div>
+                  <div class="stage-relic-content">
+                    <img src="assets/images/avatar-u-minh-ton.jpg" alt="U Minh Vạn Kiếp Trảm" width="48" height="48">
+                    <div>
+                      <strong>U Minh Vạn Kiếp Trảm</strong>
+                      <span>Tăng 100% tỷ lệ sát thương chí mạng khi tấn công từ sau lưng</span>
+                    </div>
+                  </div>
+                  <a href="#relics" class="btn btn-gold btn-sm" style="width:100%; justify-content:center; margin-top:10px;">Khám Phá Đài Thần Khí &rarr;</a>
+                </div>
+              </div>
+              <div class="stage-lore-side">
+                <div class="stage-quote-box">
+                  “Bóng tối là nhà, lưỡi đoản kiếm khát máu chưa từng trảm hụt.”
+                </div>
+                <div class="stage-lore-text">
+                  <h4>📜 Nguồn Gốc Võ Đạo &bull; Ám Dạ Cổ Tông</h4>
+                  <p>Sát Thủ là bóng ma kinh hoàng trên chiến trường, xuất thân từ giáo phái Ám Dạ Cổ Tông. Sử dụng thuật tàng hình trong khói bụi, độc dược kịch độc cùng thuật thế thân phân bóng, Sát Thủ luôn xuất hiện bất ngờ sau lưng đối thủ khi họ sơ hở nhất để tung đòn đoạt mệnh tức thì.</p>
+                </div>
+                <div class="stage-skills-matrix">
+                  <h4>⚡ Toàn Bộ Kỹ Năng Tuyệt Học Chiến Đấu (Combat Talents)</h4>
+                  <div class="stage-skill-grid">
+                    <div class="stage-skill-card">
+                      <div class="skill-card-top"><span class="hotkey-badge">Q</span><strong>Ẩn Thân Quyết</strong><span class="cd-tag">8s</span></div>
+                      <p>Ném bom khói hòa tan vào bóng tối trong 6s, đòn đánh kế tiếp chắc chắn bạo kích 100%.</p>
+                    </div>
+                    <div class="stage-skill-card">
+                      <div class="skill-card-top"><span class="hotkey-badge">E</span><strong>Độc Vụ Trận</strong><span class="cd-tag">12s</span></div>
+                      <p>Đặt bẫy khí độc tàng hình, phát nổ khi đối thủ bước vào, làm chậm 60% và giảm 45% phòng ngự.</p>
+                    </div>
+                    <div class="stage-skill-card">
+                      <div class="skill-card-top"><span class="hotkey-badge">R</span><strong>Ám Sát Trảm</strong><span class="cd-tag">20s</span></div>
+                      <p>Tức thì dịch chuyển sau gáy kẻ địch, tung nhát chém xuyên tim gây 680% Sát Thương Bạo Kích.</p>
+                    </div>
+                    <div class="stage-skill-card">
+                      <div class="skill-card-top"><span class="hotkey-badge">TAB</span><strong>Thế Thân Thuật</strong><span class="cd-tag">30s</span></div>
+                      <p>Bị tấn công sẽ hoán đổi vị trí với hình nhân gỗ và làm mù mắt đối thủ trong 3 giây.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Màn Chiếu 4: Quyền Sư -->
+          <div class="stage-showcase-panel panel-sf">
+            <div class="stage-grid">
+              <div class="stage-portrait-side">
+                <div class="stage-portrait-wrap theme-electro-glow">
+                  <img src="assets/images/char-soul-fighter.svg" alt="Quyền Sư" class="stage-char-img">
+                  <div class="stage-portrait-caption">
+                    <span class="stage-vision-pill vision-electro">⚡ Cuồng Long (Electro)</span>
+                    <strong class="stage-char-title">Quyền Sư &bull; Soul Fighter</strong>
+                    <span class="stage-cv-text">CV: Akio Otsuka (大塚 明夫)</span>
+                  </div>
+                </div>
+                <div class="stage-relic-box">
+                  <div class="stage-relic-header">THẦN KHÍ TRẤN PHÁI TƯƠNG THÍCH:</div>
+                  <div class="stage-relic-content">
+                    <img src="assets/images/avatar-phi-thien-toc.jpg" alt="Hoàng Kim Thiên Cương Thần Kiếm" width="48" height="48">
+                    <div>
+                      <strong>Hoàng Kim Thiên Cương Thần Kiếm</strong>
+                      <span>Tăng 60% chỉ số Phòng Thủ &amp; Hộ Thuẫn Sấm Sét</span>
+                    </div>
+                  </div>
+                  <a href="#relics" class="btn btn-gold btn-sm" style="width:100%; justify-content:center; margin-top:10px;">Khám Phá Đài Thần Khí &rarr;</a>
+                </div>
+              </div>
+              <div class="stage-lore-side">
+                <div class="stage-quote-box">
+                  “Quyền định giang sơn, cuồng long xuất hải bẻ gãy mọi quy tắc.”
+                </div>
+                <div class="stage-lore-text">
+                  <h4>📜 Nguồn Gốc Võ Đạo &bull; Long Hồn Cương Quyền Tông</h4>
+                  <p>Quyền Sư tôi luyện thân thể đạt tới cảnh giới Mình Đồng Da Sắt. Sở hữu đôi quyền giáp sấm sét cùng khí huyết cuồn cuộn như biển đông, Quyền Sư là trụ cột vững chắc nhất trong mọi trận chiến săn Boss viễn cổ, vừa cản phá đòn tấn công chí mạng vừa hồi phục sinh mệnh cho đồng môn.</p>
+                </div>
+                <div class="stage-skills-matrix">
+                  <h4>⚡ Toàn Bộ Kỹ Năng Tuyệt Học Chiến Đấu (Combat Talents)</h4>
+                  <div class="stage-skill-grid">
+                    <div class="stage-skill-card">
+                      <div class="skill-card-top"><span class="hotkey-badge">Q</span><strong>Long Quyền Bộc Phá</strong><span class="cd-tag">4s</span></div>
+                      <p>Đấm thẳng sấm sét phá hủy thế thủ của đối thủ, gây 380% Sát Thương và đẩy lùi 10 mét.</p>
+                    </div>
+                    <div class="stage-skill-card">
+                      <div class="skill-card-top"><span class="hotkey-badge">E</span><strong>Thiết Bố Sam</strong><span class="cd-tag">16s</span></div>
+                      <p>Biến da thịt cứng như kim cương, giảm 65% mọi sát thương nhận vào trong 5 giây và kháng khống chế.</p>
+                    </div>
+                    <div class="stage-skill-card">
+                      <div class="skill-card-top"><span class="hotkey-badge">R</span><strong>Cuồng Long Thức</strong><span class="cd-tag">22s</span></div>
+                      <p>Triệu hồi chân long sấm sét vồ lấy kẻ địch, quật ngã cả Boss khổng lồ xuống đất trong 3 giây.</p>
+                    </div>
+                    <div class="stage-skill-card">
+                      <div class="skill-card-top"><span class="hotkey-badge">TAB</span><strong>Khí Huyết Hồi Phục</strong><span class="cd-tag">50s</span></div>
+                      <p>Phát tán chân khí bảo hộ, hồi ngay 40% máu cho toàn bộ đồng đội và tạo khiên sấm sét 10.000 dame.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div> <!-- /#genshin-inline-stage -->
 
       </div>
     </section>
@@ -2883,474 +3292,5 @@
   </div>
 
 
-  <!-- ====================================================================
-       HỆ THỐNG 4 MODAL CHI TIẾT HỆ PHÁI VÕ HỌC (GENSHIN HOYOVERSE CHARACTER SHOWCASE)
-       ==================================================================== -->
-
-  <!-- 1. MODAL CHI TIẾT KIẾM SƯ (BLADE MASTER) -->
-  <div id="class-modal-blade-master" class="hoyoverse-modal" role="dialog" aria-modal="true" aria-label="Hồ Sơ Môn Phái Kiếm Sư">
-    <a href="#close" class="modal-backdrop" aria-label="Đóng"></a>
-    <div class="hoyoverse-modal-box class-showcase-modal animate__animated animate__zoomIn theme-cryo">
-      <div class="modal-box-header">
-        <div class="char-showcase-title-wrap">
-          <span class="modal-box-tag vision-cryo">HỆ PHÁI TRƯỞNG &bull; VÕ ĐẠO CHÍNH TÔNG</span>
-          <h3 class="modal-box-title">Kiếm Sư (Blade Master)</h3>
-          <div class="genshin-char-meta">
-            <span class="vision-badge vision-cryo">❄️ Nguyên Tố Băng (Cryo)</span>
-            <span class="cv-badge">CV: Kenjiro Tsuda (津田 健次郎)</span>
-            <span class="role-badge">Vai Trò: Cận Chiến &bull; Phản Kích &bull; DPS Không Chiến</span>
-          </div>
-        </div>
-        <a href="#classes" class="modal-box-close" aria-label="Đóng">&times;</a>
-      </div>
-      <div class="modal-box-body char-showcase-body">
-        <div class="char-showcase-grid">
-          
-          <!-- Cột Trái: Trực Quan Nhân Vật & Thần Khí -->
-          <div class="char-visual-column">
-            <div class="char-portrait-card">
-              <img src="assets/images/char-blade-master.svg" alt="Kiếm Sư Toàn Cảnh" width="360" height="450" class="char-portrait-img">
-              <div class="char-avatar-floating">
-                <img src="assets/images/avatar-kiem-su.jpg" alt="Avatar Kiếm Sư" width="70" height="70">
-              </div>
-              <div class="char-quote-overlay">
-                <p>"Nhất kiếm đoạn tuyệt vạn trùng sầu, kiếm khí quy tông định càn khôn."</p>
-              </div>
-            </div>
-
-            <!-- Thần Khí Trấn Phái Khuyên Dùng -->
-            <div class="char-relic-card">
-              <span class="relic-recom-tag">THẦN KHÍ TRẤN PHÁI TƯƠNG THÍCH:</span>
-              <div class="relic-recom-row">
-                <img src="assets/images/avatar-thanh-long-ton.jpg" alt="Thần Khí Thanh Long" class="relic-mini-thumb" width="48" height="48">
-                <div class="relic-recom-meta">
-                  <strong>Thanh Long Băng Phách Kiếm</strong>
-                  <span>Tương thích kiếm khí Băng: +45% Sát thương không chiến</span>
-                </div>
-              </div>
-              <a href="#relics" class="btn btn-gold btn-sm" style="width:100%; justify-content:center; margin-top:8px;">Xem Pháp Khí Tại Đài Thần Khí</a>
-            </div>
-          </div>
-
-          <!-- Cột Phải: Cốt Truyện & Bộ 4 Kỹ Năng Võ Học Chi Tiết -->
-          <div class="char-info-column">
-            
-            <!-- Cốt truyện môn phái -->
-            <div class="char-lore-section">
-              <h4 class="char-sec-title">📜 Truyền Thừa Võ Đạo</h4>
-              <p>
-                Kiếm Sư là môn phái đứng đầu tứ đại thế lực võ lâm Hồng Môn. Lấy tâm định kiếm, lấy kiếm ngự khí, mỗi kiếm sĩ đều phải trải qua thập niên khổ luyện dưới thác băng tuyết ngàn trượng ở Cực Bắc. Sở hữu khả năng bạt kiếm thần tốc cùng phản xạ vô song, Kiếm Sư có thể hóa giải mọi đòn tấn công vũ bão và lập tức phản công chém tan phòng tuyến đối phương.
-              </p>
-            </div>
-
-            <!-- Bộ 4 Tuyệt Kỹ Chi Tiết (Q, E, R, TAB) -->
-            <div class="char-skills-section">
-              <h4 class="char-sec-title">⚡ Bộ Kỹ Năng Chiến Đấu Tuyệt Học (Combat Talents)</h4>
-              <div class="char-skill-cards-grid">
-                
-                <!-- Skill Q -->
-                <div class="char-skill-item">
-                  <div class="skill-item-header">
-                    <span class="skill-hotkey">Q</span>
-                    <strong class="skill-title">Phong Thần Trảm (Wind Slash)</strong>
-                    <span class="skill-cd">CD: 6s</span>
-                  </div>
-                  <p class="skill-desc">
-                    Lướt xuyên mục tiêu trong 0.2s với vận tốc âm thanh, gây <strong>350% Sát Thương Băng</strong> và tăng 35% tốc độ đánh cho bản thân trong 6 giây.
-                  </p>
-                </div>
-
-                <!-- Skill E -->
-                <div class="char-skill-item">
-                  <div class="skill-item-header">
-                    <span class="skill-hotkey">E</span>
-                    <strong class="skill-title">Bạt Kiếm Thức (Parry &amp; Counter)</strong>
-                    <span class="skill-cd">CD: 1.5s</span>
-                  </div>
-                  <p class="skill-desc">
-                    Chuyển sang thế thủ phòng ngự tuyệt đối, chặn 100% sát thương phía trước. Đỡ đòn thành công sẽ <strong>phản kích tức thì làm choáng kẻ địch 2 giây</strong>.
-                  </p>
-                </div>
-
-                <!-- Skill R -->
-                <div class="char-skill-item">
-                  <div class="skill-item-header">
-                    <span class="skill-hotkey">R</span>
-                    <strong class="skill-title">Thiên Kiếm Trận (Soaring Dragon)</strong>
-                    <span class="skill-cd">CD: 18s</span>
-                  </div>
-                  <p class="skill-desc">
-                    Cắm kiếm xuống đất phóng xuất kiếm khí rồng bay, <strong>hất tung mục tiêu lên không trung 3 mét</strong>, mở khóa toàn bộ chuỗi chiêu thức Không Chiến liên hoàn.
-                  </p>
-                </div>
-
-                <!-- Skill TAB -->
-                <div class="char-skill-item">
-                  <div class="skill-item-header">
-                    <span class="skill-hotkey">TAB</span>
-                    <strong class="skill-title">Phá Cương Quyết &bull; Vạn Kiếm Quy Tông</strong>
-                    <span class="skill-cd">CD: 45s</span>
-                  </div>
-                  <p class="skill-desc">
-                    Triệu hồi 1.000 phi kiếm từ chín tầng mây dội thẳng xuống chiến trường, gây <strong>1.450% Sát Thương Cực Hạn</strong> và đóng băng vĩnh cửu mọi kẻ địch trong vùng ảnh hưởng.
-                  </p>
-                </div>
-
-              </div>
-            </div>
-
-          </div>
-
-        </div>
-      </div>
-      <div class="modal-box-footer">
-        <a href="#download-modal-pc" class="btn btn-gold btn-shimmer">Tải Game Hóa Thân Kiếm Sư</a>
-        <a href="#classes" class="btn btn-secondary">Quay Lại Môn Phái</a>
-      </div>
-    </div>
-  </div>
-
-  <!-- 2. MODAL CHI TIẾT KHÍ CÔNG SƯ (FORCE MASTER) -->
-  <div id="class-modal-force-master" class="hoyoverse-modal" role="dialog" aria-modal="true" aria-label="Hồ Sơ Môn Phái Khí Công Sư">
-    <a href="#close" class="modal-backdrop" aria-label="Đóng"></a>
-    <div class="hoyoverse-modal-box class-showcase-modal animate__animated animate__zoomIn theme-pyro">
-      <div class="modal-box-header">
-        <div class="char-showcase-title-wrap">
-          <span class="modal-box-tag vision-pyro">HỆ PHÁI NGUYÊN TỐ &bull; ÂM DƯƠNG THÁI CỰC</span>
-          <h3 class="modal-box-title">Khí Công Sư (Force Master)</h3>
-          <div class="genshin-char-meta">
-            <span class="vision-badge vision-pyro">🔥❄️ Hỏa &amp; Băng (Pyro/Cryo)</span>
-            <span class="cv-badge">CV: Saori Hayami (早見 沙織)</span>
-            <span class="role-badge">Vai Trò: Tầm Xa &bull; Sát Thương Phép Diện Rộng &bull; Hộ Vệ</span>
-          </div>
-        </div>
-        <a href="#classes" class="modal-box-close" aria-label="Đóng">&times;</a>
-      </div>
-      <div class="modal-box-body char-showcase-body">
-        <div class="char-showcase-grid">
-          
-          <div class="char-visual-column">
-            <div class="char-portrait-card">
-              <img src="assets/images/char-force-master.svg" alt="Khí Công Sư Toàn Cảnh" width="360" height="450" class="char-portrait-img">
-              <div class="char-avatar-floating">
-                <img src="assets/images/avatar-khi-cong-su.jpg" alt="Avatar Khí Công Sư" width="70" height="70">
-              </div>
-              <div class="char-quote-overlay">
-                <p>"Băng hỏa tương dung, nghịch chuyển âm dương thiêu đốt vạn vật."</p>
-              </div>
-            </div>
-
-            <div class="char-relic-card">
-              <span class="relic-recom-tag">THẦN KHÍ TRẤN PHÁI TƯƠNG THÍCH:</span>
-              <div class="relic-recom-row">
-                <img src="assets/images/avatar-ma-gioi-ton.jpg" alt="Thần Khí Xích Hỏa" class="relic-mini-thumb" width="48" height="48">
-                <div class="relic-recom-meta">
-                  <strong>Xích Hỏa Ma Thần Nhẫn</strong>
-                  <span>Tăng 50% sát thương bộc phá nguyên tố Lửa &amp; Băng</span>
-                </div>
-              </div>
-              <a href="#relics" class="btn btn-gold btn-sm" style="width:100%; justify-content:center; margin-top:8px;">Xem Pháp Khí Tại Đài Thần Khí</a>
-            </div>
-          </div>
-
-          <div class="char-info-column">
-            
-            <div class="char-lore-section">
-              <h4 class="char-sec-title">📜 Truyền Thừa Võ Đạo</h4>
-              <p>
-                Khí Công Sư nắm giữ bí pháp cổ xưa điều khiển hai cực Âm - Dương trời đất. Tay trái ngưng tụ hàn băng vạn trượng, tay phải triệu hồi ngọn lửa địa ngục. Khi phối hợp luân chuyển mượt mà giữa hai trạng thái Băng và Hỏa, Khí Công Sư có thể vừa gây ra lượng sát thương khủng khiếp từ tầm xa, vừa dựng tường băng che chở toàn bộ đồng đội trước những đòn sát thủ nguy hiểm nhất.
-              </p>
-            </div>
-
-            <div class="char-skills-section">
-              <h4 class="char-sec-title">⚡ Bộ Kỹ Năng Chiến Đấu Tuyệt Học (Combat Talents)</h4>
-              <div class="char-skill-cards-grid">
-                
-                <div class="char-skill-item">
-                  <div class="skill-item-header">
-                    <span class="skill-hotkey">Q</span>
-                    <strong class="skill-title">Hỏa Long Trảm (Fire Dragon Strike)</strong>
-                    <span class="skill-cd">CD: 3s</span>
-                  </div>
-                  <p class="skill-desc">
-                    Phóng luồng rồng lửa thiêu đốt đối thủ, gây <strong>420% Sát Thương Hỏa</strong> và xếp chồng 5 tầng hiệu ứng Cháy Âm Hồn thiêu hủy sinh lực.
-                  </p>
-                </div>
-
-                <div class="char-skill-item">
-                  <div class="skill-item-header">
-                    <span class="skill-hotkey">E</span>
-                    <strong class="skill-title">Băng Hộ Thể (Frost Armor Barrier)</strong>
-                    <span class="skill-cd">CD: 24s</span>
-                  </div>
-                  <p class="skill-desc">
-                    Đóng băng bản thân trong lớp kén băng tuyết, <strong>miễn nhiễm 100% mọi sát thương trong 3s</strong> đồng thời hồi phục ngay 25% máu tối đa.
-                  </p>
-                </div>
-
-                <div class="char-skill-item">
-                  <div class="skill-item-header">
-                    <span class="skill-hotkey">R</span>
-                    <strong class="skill-title">Băng Hỏa Liên Hoàn (Dual Element Burst)</strong>
-                    <span class="skill-cd">CD: 15s</span>
-                  </div>
-                  <p class="skill-desc">
-                    Tung cầu lửa kết hợp cầu băng xoay tròn quanh kẻ địch, kích hoạt phản ứng <strong>Bộc Phá Âm Dương</strong> hất ngã toàn bộ mục tiêu trong 10m.
-                  </p>
-                </div>
-
-                <div class="char-skill-item">
-                  <div class="skill-item-header">
-                    <span class="skill-hotkey">TAB</span>
-                    <strong class="skill-title">Hỏa Thiên Trận &bull; Liệt Diệm Phấn Toái</strong>
-                    <span class="skill-cd">CD: 40s</span>
-                  </div>
-                  <p class="skill-desc">
-                    Triệu hồi thiên thạch lửa từ vũ trụ rơi xuống trận địa, phá vỡ 100% giáp hộ thể của Boss và <strong>thiêu rụi toàn bộ quái vật diện rộng</strong>.
-                  </p>
-                </div>
-
-              </div>
-            </div>
-
-          </div>
-
-        </div>
-      </div>
-      <div class="modal-box-footer">
-        <a href="#download-modal-pc" class="btn btn-gold btn-shimmer">Tải Game Hóa Thân Khí Công Sư</a>
-        <a href="#classes" class="btn btn-secondary">Quay Lại Môn Phái</a>
-      </div>
-    </div>
-  </div>
-
-  <!-- 3. MODAL CHI TIẾT SÁT THỦ (ASSASSIN) -->
-  <div id="class-modal-assassin" class="hoyoverse-modal" role="dialog" aria-modal="true" aria-label="Hồ Sơ Môn Phái Sát Thủ">
-    <a href="#close" class="modal-backdrop" aria-label="Đóng"></a>
-    <div class="hoyoverse-modal-box class-showcase-modal animate__animated animate__zoomIn theme-shadow">
-      <div class="modal-box-header">
-        <div class="char-showcase-title-wrap">
-          <span class="modal-box-tag vision-shadow">HỆ PHÁI BÓNG ĐÊM &bull; ÁM SÁT ĐOẠT MỆNH</span>
-          <h3 class="modal-box-title">Sát Thủ (Assassin)</h3>
-          <div class="genshin-char-meta">
-            <span class="vision-badge vision-shadow">🌑 Nguyên Tố Ám Ảnh (Shadow)</span>
-            <span class="cv-badge">CV: Yuichi Nakamura (中村 悠一)</span>
-            <span class="role-badge">Vai Trò: Đột Kích &bull; Tàng Hình Tức Thời &bull; Bạo Kích Cực Hạn</span>
-          </div>
-        </div>
-        <a href="#classes" class="modal-box-close" aria-label="Đóng">&times;</a>
-      </div>
-      <div class="modal-box-body char-showcase-body">
-        <div class="char-showcase-grid">
-          
-          <div class="char-visual-column">
-            <div class="char-portrait-card">
-              <img src="assets/images/char-assassin.svg" alt="Sát Thủ Toàn Cảnh" width="360" height="450" class="char-portrait-img">
-              <div class="char-avatar-floating">
-                <img src="assets/images/avatar-thich-khach.jpg" alt="Avatar Sát Thủ" width="70" height="70">
-              </div>
-              <div class="char-quote-overlay">
-                <p>"Bóng tối là nhà, lưỡi đoản kiếm khát máu chưa từng trảm hụt."</p>
-              </div>
-            </div>
-
-            <div class="char-relic-card">
-              <span class="relic-recom-tag">THẦN KHÍ TRẤN PHÁI TƯƠNG THÍCH:</span>
-              <div class="relic-recom-row">
-                <img src="assets/images/avatar-u-minh-ton.jpg" alt="Thần Khí U Minh" class="relic-mini-thumb" width="48" height="48">
-                <div class="relic-recom-meta">
-                  <strong>U Minh Vạn Kiếp Trảm</strong>
-                  <span>Tăng 100% tỷ lệ sát thương chí mạng khi tấn công từ sau lưng</span>
-                </div>
-              </div>
-              <a href="#relics" class="btn btn-gold btn-sm" style="width:100%; justify-content:center; margin-top:8px;">Xem Pháp Khí Tại Đài Thần Khí</a>
-            </div>
-          </div>
-
-          <div class="char-info-column">
-            
-            <div class="char-lore-section">
-              <h4 class="char-sec-title">📜 Truyền Thừa Võ Đạo</h4>
-              <p>
-                Sát Thủ là bóng ma kinh hoàng trên chiến trường, xuất thân từ giáo phái Ám Dạ Cổ Tông. Sử dụng thuật tàng hình trong khói bụi, độc dược kịch độc cùng thuật thế thân phân bóng, Sát Thủ luôn xuất hiện bất ngờ sau lưng đối thủ khi họ sơ hở nhất. Một nhát chém từ trong bóng tối của Sát Thủ đủ để kết liễu ngay lập tức những mục tiêu mỏng manh trước khi kịp hiểu điều gì vừa xảy ra.
-              </p>
-            </div>
-
-            <div class="char-skills-section">
-              <h4 class="char-sec-title">⚡ Bộ Kỹ Năng Chiến Đấu Tuyệt Học (Combat Talents)</h4>
-              <div class="char-skill-cards-grid">
-                
-                <div class="char-skill-item">
-                  <div class="skill-item-header">
-                    <span class="skill-hotkey">Q</span>
-                    <strong class="skill-title">Ẩn Thân Quyết (Shadow Veil Stealth)</strong>
-                    <span class="skill-cd">CD: 8s</span>
-                  </div>
-                  <p class="skill-desc">
-                    Ném bom khói hòa tan vào bóng tối trong 6s, <strong>đòn đánh kế tiếp chắc chắn bạo kích 100%</strong> và tăng 40% tốc độ di chuyển.
-                  </p>
-                </div>
-
-                <div class="char-skill-item">
-                  <div class="skill-item-header">
-                    <span class="skill-hotkey">E</span>
-                    <strong class="skill-title">Độc Vụ Trận (Corrosive Poison Mine)</strong>
-                    <span class="skill-cd">CD: 12s</span>
-                  </div>
-                  <p class="skill-desc">
-                    Đặt bẫy khí độc tàng hình dưới đất, phát nổ khi mục tiêu bước vào, <strong>làm chậm 60% và giảm 45% phòng ngự đối phương</strong>.
-                  </p>
-                </div>
-
-                <div class="char-skill-item">
-                  <div class="skill-item-header">
-                    <span class="skill-hotkey">R</span>
-                    <strong class="skill-title">Ám Sát Trảm (Backstab Heartseeker)</strong>
-                    <span class="skill-cd">CD: 20s</span>
-                  </div>
-                  <p class="skill-desc">
-                    Tức thì dịch chuyển ra sau gáy mục tiêu, tung nhát đoản kiếm xuyên tim gây <strong>680% Sát Thương Bạo Kích Điểm Yếu</strong>.
-                  </p>
-                </div>
-
-                <div class="char-skill-item">
-                  <div class="skill-item-header">
-                    <span class="skill-hotkey">TAB</span>
-                    <strong class="skill-title">Hoán Đổi Vị Trí &bull; Thế Thân Thuật</strong>
-                    <span class="skill-cd">CD: 30s</span>
-                  </div>
-                  <p class="skill-desc">
-                    Bị tấn công sẽ lập tức thế thân bằng hình nhân gỗ, <strong>hoán đổi vị trí với kẻ thù</strong> và làm mù mắt đối thủ trong 3 giây.
-                  </p>
-                </div>
-
-              </div>
-            </div>
-
-          </div>
-
-        </div>
-      </div>
-      <div class="modal-box-footer">
-        <a href="#download-modal-pc" class="btn btn-gold btn-shimmer">Tải Game Hóa Thân Sát Thủ</a>
-        <a href="#classes" class="btn btn-secondary">Quay Lại Môn Phái</a>
-      </div>
-    </div>
-  </div>
-
-  <!-- 4. MODAL CHI TIẾT QUYỀN SƯ (SOUL FIGHTER) -->
-  <div id="class-modal-soul-fighter" class="hoyoverse-modal" role="dialog" aria-modal="true" aria-label="Hồ Sơ Môn Phái Quyền Sư">
-    <a href="#close" class="modal-backdrop" aria-label="Đóng"></a>
-    <div class="hoyoverse-modal-box class-showcase-modal animate__animated animate__zoomIn theme-electro">
-      <div class="modal-box-header">
-        <div class="char-showcase-title-wrap">
-          <span class="modal-box-tag vision-electro">HỆ PHÁI THỂ THUẬT &bull; KIM CƯƠNG BẤT HOẠI</span>
-          <h3 class="modal-box-title">Quyền Sư (Soul Fighter)</h3>
-          <div class="genshin-char-meta">
-            <span class="vision-badge vision-electro">⚡ Nguyên Tố Cuồng Long (Electro)</span>
-            <span class="cv-badge">CV: Akio Otsuka (大塚 明夫)</span>
-            <span class="role-badge">Vai Trò: Đỡ Đòn / Tanker &bull; Cận Chiến Bạo Lực &bull; Hồi Phục Đội</span>
-          </div>
-        </div>
-        <a href="#classes" class="modal-box-close" aria-label="Đóng">&times;</a>
-      </div>
-      <div class="modal-box-body char-showcase-body">
-        <div class="char-showcase-grid">
-          
-          <div class="char-visual-column">
-            <div class="char-portrait-card">
-              <img src="assets/images/char-soul-fighter.svg" alt="Quyền Sư Toàn Cảnh" width="360" height="450" class="char-portrait-img">
-              <div class="char-avatar-floating">
-                <img src="assets/images/avatar-dao-ba.jpg" alt="Avatar Quyền Sư" width="70" height="70">
-              </div>
-              <div class="char-quote-overlay">
-                <p>"Quyền định giang sơn, cuồng long xuất hải bẻ gãy mọi quy tắc."</p>
-              </div>
-            </div>
-
-            <div class="char-relic-card">
-              <span class="relic-recom-tag">THẦN KHÍ TRẤN PHÁI TƯƠNG THÍCH:</span>
-              <div class="relic-recom-row">
-                <img src="assets/images/avatar-phi-thien-toc.jpg" alt="Thần Khí Hoàng Kim" class="relic-mini-thumb" width="48" height="48">
-                <div class="relic-recom-meta">
-                  <strong>Hoàng Kim Thiên Cương Thần Kiếm</strong>
-                  <span>Tăng 60% chỉ số Phòng Thủ &amp; Hộ Thuẫn Sấm Sét</span>
-                </div>
-              </div>
-              <a href="#relics" class="btn btn-gold btn-sm" style="width:100%; justify-content:center; margin-top:8px;">Xem Pháp Khí Tại Đài Thần Khí</a>
-            </div>
-          </div>
-
-          <div class="char-info-column">
-            
-            <div class="char-lore-section">
-              <h4 class="char-sec-title">📜 Truyền Thừa Võ Đạo</h4>
-              <p>
-                Quyền Sư tôi luyện thân thể đạt tới cảnh giới Mình Đồng Da Sắt. Sở hữu đôi quyền giáp sấm sét cùng khí huyết cuồn cuộn như biển đông, Quyền Sư là trụ cột không thể thiếu trong mọi tổ đội khi đối đầu với những Tà Thần viễn cổ. Không chỉ áp chế đối thủ bằng những cú đấm uy lực ngàn cân, Quyền Sư còn có thể phát tán chân khí hồi phục vết thương cho tất cả huynh đệ đồng môn.
-              </p>
-            </div>
-
-            <div class="char-skills-section">
-              <h4 class="char-sec-title">⚡ Bộ Kỹ Năng Chiến Đấu Tuyệt Học (Combat Talents)</h4>
-              <div class="char-skill-cards-grid">
-                
-                <div class="char-skill-item">
-                  <div class="skill-item-header">
-                    <span class="skill-hotkey">Q</span>
-                    <strong class="skill-title">Long Quyền Bộc Phá (Iron Thunder Punch)</strong>
-                    <span class="skill-cd">CD: 4s</span>
-                  </div>
-                  <p class="skill-desc">
-                    Đấm thẳng sấm sét phá hủy hoàn toàn thế thủ của đối thủ, gây <strong>380% Sát Thương</strong> và đẩy lùi mục tiêu 10 mét.
-                  </p>
-                </div>
-
-                <div class="char-skill-item">
-                  <div class="skill-item-header">
-                    <span class="skill-hotkey">E</span>
-                    <strong class="skill-title">Thiết Bố Sam (Iron Shirt Defense)</strong>
-                    <span class="skill-cd">CD: 16s</span>
-                  </div>
-                  <p class="skill-desc">
-                    Gồng mình biến da thịt cứng như kim cương, <strong>giảm 65% mọi sát thương nhận vào trong 5 giây</strong> và miễn nhiễm hiệu ứng khống chế.
-                  </p>
-                </div>
-
-                <div class="char-skill-item">
-                  <div class="skill-item-header">
-                    <span class="skill-hotkey">R</span>
-                    <strong class="skill-title">Cuồng Long Thức (Dragon Awakening Slam)</strong>
-                    <span class="skill-cd">CD: 22s</span>
-                  </div>
-                  <p class="skill-desc">
-                    Triệu hồi chân long sấm sét vồ lấy kẻ địch, <strong>quật ngã cả Boss khổng lồ xuống đất trong 3 giây</strong> cho đồng đội dồn sát thương.
-                  </p>
-                </div>
-
-                <div class="char-skill-item">
-                  <div class="skill-item-header">
-                    <span class="skill-hotkey">TAB</span>
-                    <strong class="skill-title">Khí Huyết Hồi Phục &bull; Đại Hộ Thuẫn</strong>
-                    <span class="skill-cd">CD: 50s</span>
-                  </div>
-                  <p class="skill-desc">
-                    Phát tán chân khí bảo hộ, <strong>hồi phục ngay 40% máu cho toàn bộ thành viên tổ đội</strong> và tạo khiên sấm sét hấp thụ 10.000 sát thương.
-                  </p>
-                </div>
-
-              </div>
-            </div>
-
-          </div>
-
-        </div>
-      </div>
-      <div class="modal-box-footer">
-        <a href="#download-modal-pc" class="btn btn-gold btn-shimmer">Tải Game Hóa Thân Quyền Sư</a>
-        <a href="#classes" class="btn btn-secondary">Quay Lại Môn Phái</a>
-      </div>
-    </div>
-  </div>
-
-</body>
+  </body>
 </html>

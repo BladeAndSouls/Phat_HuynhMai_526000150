@@ -377,6 +377,26 @@ Dự án được xây dựng với vai trò của một **Kỹ sư Thiết kế
 
 ---
 
+### Giai đoạn 18: Tái Thiết Kế Mục Hệ Phái (#classes) Thành Sân Khấu Nội Tuyến Genshin Impact & Bộ Phím Q/E/R/TAB Tương Tác Trực Tiếp (100% Zero Popup)
+- **Mục tiêu:** Thực hiện trọn vẹn yêu cầu: *"lỗi rồi, đọc lại và fix đi"*.
+- **Phân tích nguyên nhân:** 
+  1. Người dùng đã chỉ đạo rõ ràng từ trước: *"loại bỏ video bật ra... và học tập cái trang này: https://genshin.hoyoverse.com/vi/home"*, do đó việc hiển thị cửa sổ popup modal che toàn màn hình là không đúng với mong muốn trải nghiệm nội tuyến (inline) liền mạch của trang chủ Genshin Impact.
+  2. Trong ảnh chụp của người dùng, hàng 4 phím kỹ năng `[Q] [E] [R] [TAB]` trên từng thẻ nhân vật trước đó là thẻ tĩnh không bấm được. Người dùng muốn nhấp trực tiếp vào các nút này và các thẻ để xuất hiện chi tiết nội dung ngay tại chỗ.
+- **Các giải pháp kỹ thuật triệt để (100% Zero JavaScript):**
+  1. **Xóa Bỏ Hoàn Toàn 4 Modal Popup Môn Phái Ở Cuối Trang:** Loại bỏ triệt để hiện tượng bật popup che khuất màn hình hay giật cuộn trang.
+  2. **Bộ Phím Kỹ Năng Q, E, R, TAB Tương Tác Trực Tiếp Trên Từng Thẻ (Interactive Skill Tabs):**
+     - Trên cả 4 thẻ Class Card, chuyển đổi 4 phím `Q`, `E`, `R`, `TAB` thành các nút bấm tương tác viền vàng phát sáng.
+     - Khi nhấp vào phím `Q`: Khung chi tiết bên dưới lập tức hiển thị tuyệt chiêu Q (Tên chiêu, thời gian hồi, mô tả sát thương).
+     - Khi nhấp sang `E`, `R`, `TAB`: Nội dung lập tức chuyển đổi mượt mà sang chiêu thức tương ứng ngay trên thẻ bài mà không hề tải lại hay nhảy trang.
+  3. **Xây Dựng Sân Khấu Trình Diễn Hồ Sơ Môn Phái Toàn Cảnh Nội Tuyến (Inline Genshin Character Stage):**
+     - Bố trí ngay bên dưới 4 thẻ môn phái trong Section `#classes`.
+     - Tích hợp thanh chọn Tab 4 nhân vật với Avatar tròn chuẩn HoYoverse.
+     - Khi chọn môn phái (hoặc nhấp nút *"Xem Hồ Sơ Môn Phái Toàn Cảnh &darr;"* trên thẻ bài): Sân khấu chuyển đổi ngay sang nhân vật đó với hình ảnh chân dung lớn, Vision nguyên tố phát sáng, CV lồng tiếng chính thức, Thần Khí trấn phái khuyên dùng, Cốt truyện truyền thừa võ đạo và Ma trận 4 kỹ năng chiến đấu đầy đủ.
+  4. **Cam Kết Ràng Buộc Kỹ Thuật:**
+     - 100% Zero JavaScript: Vận hành hoàn toàn bằng CSS Radio Hack và CSS Transitions 60FPS.
+
+---
+
 ## 3. BẢNG TỰ ĐÁNH GIÁ MỨC ĐỘ ĐÁP ỨNG YÊU CẦU ĐỀ BÀI
 
 | STT | Tiêu chí đánh giá của Giảng viên | Hiện trạng thực hiện trong dự án | Mức độ hoàn thành |
