@@ -25,6 +25,16 @@
 <body>
 
   <!-- ======================================================================
+       PURE CSS THEME SWITCHER CONTROLS (100% Zero JavaScript)
+       ====================================================================== -->
+  <input type="radio" name="site-theme" id="theme-cyan" class="theme-radio" checked aria-label="Theme Thanh Long (Hàn Băng & Kiếm Khí)">
+  <input type="radio" name="site-theme" id="theme-flame" class="theme-radio" aria-label="Theme Xích Hỏa (Liệt Diễm Ma Kiếm)">
+  <input type="radio" name="site-theme" id="theme-shadow" class="theme-radio" aria-label="Theme U Minh (Ám Ảnh Bóng Đêm)">
+  <input type="radio" name="site-theme" id="theme-gold" class="theme-radio" aria-label="Theme Hoàng Kim (Thiên Triều Thần Thánh)">
+
+  <div class="site-wrapper">
+
+  <!-- ======================================================================
        1. HEADER & NAVIGATION (<header>, <nav>)
        ====================================================================== -->
   <header class="site-header" role="banner">
@@ -54,6 +64,29 @@
           <li><a href="#specs" class="nav-link">Cấu Hình</a></li>
         </ul>
 
+        <!-- Bộ chọn Thần Khí Võ Học (Pure CSS Theme Switcher) -->
+        <div class="theme-switcher-bar" title="Chọn Thần Khí / Chủ Đề Màu Sắc">
+          <span class="theme-label-title">Võ Học:</span>
+          <div class="theme-btn-group">
+            <label for="theme-cyan" class="theme-btn theme-btn-cyan" title="Thanh Long (Hàn Băng & Kiếm Khí)">
+              <span class="theme-dot"></span>
+              <span class="theme-text">Thanh Long</span>
+            </label>
+            <label for="theme-flame" class="theme-btn theme-btn-flame" title="Xích Hỏa (Liệt Diễm Ma Kiếm)">
+              <span class="theme-dot"></span>
+              <span class="theme-text">Xích Hỏa</span>
+            </label>
+            <label for="theme-shadow" class="theme-btn theme-btn-shadow" title="U Minh (Ám Ảnh Bóng Đêm)">
+              <span class="theme-dot"></span>
+              <span class="theme-text">U Minh</span>
+            </label>
+            <label for="theme-gold" class="theme-btn theme-btn-gold" title="Hoàng Kim (Thiên Triều Thần Thánh)">
+              <span class="theme-dot"></span>
+              <span class="theme-text">Hoàng Kim</span>
+            </label>
+          </div>
+        </div>
+
         <!-- Nhóm nút CTA trên Header -->
         <div class="header-cta-group">
           <a href="#editions" class="btn btn-secondary">Đăng Ký Sớm</a>
@@ -77,6 +110,19 @@
          Áp dụng Animate.css cho tiêu đề, badge và nút kêu gọi hành động
          ==================================================================== -->
     <section id="hero" class="hero-section" aria-label="Khu vực mở đầu">
+      
+      <!-- Khí Huyết Tàn Ảnh (Ambient Floating Embers) -->
+      <div class="ambient-embers" aria-hidden="true">
+        <span class="ember ember-1"></span>
+        <span class="ember ember-2"></span>
+        <span class="ember ember-3"></span>
+        <span class="ember ember-4"></span>
+        <span class="ember ember-5"></span>
+        <span class="ember ember-6"></span>
+        <span class="ember ember-7"></span>
+        <span class="ember ember-8"></span>
+      </div>
+
       <div class="container hero-grid">
         
         <!-- Nội dung giới thiệu bên trái -->
@@ -127,6 +173,14 @@
 
         <!-- Khung ảnh Vector Hero bên phải -->
         <div class="hero-visual animate__animated animate__zoomIn animate__delay-1s">
+          <!-- Kiếm Trận Cổ Đại (Rotating Dragon Rune Array) -->
+          <div class="rune-array-container" aria-hidden="true">
+            <div class="rune-ring rune-ring-outer"></div>
+            <div class="rune-ring rune-ring-middle"></div>
+            <div class="rune-ring rune-ring-inner"></div>
+            <div class="rune-dragon-core"></div>
+          </div>
+
           <div class="hero-card-preview">
             <img src="assets/images/char-blade-master.svg" alt="Nhân vật Kiếm Sư huyền thoại Blade and Soul" width="460" height="600" loading="eager">
           </div>
@@ -152,6 +206,7 @@
 
         <!-- Thẻ bài viết ngữ nghĩa HTML5: <article> -->
         <article class="lore-article" data-aos="zoom-in">
+          <span class="sword-slash-beam" aria-hidden="true"></span>
           
           <div class="lore-content">
             <blockquote class="lore-quote">
@@ -211,6 +266,7 @@
           
           <!-- Class Card 1: Kiếm Sư -->
           <article class="class-card" data-aos="fade-up" data-aos-delay="100">
+            <span class="sword-slash-beam" aria-hidden="true"></span>
             <div class="class-card-image">
               <img src="assets/images/char-blade-master.svg" alt="Hệ phái Kiếm Sư (Blade Master)" width="400" height="500" loading="lazy">
             </div>
@@ -239,6 +295,7 @@
 
           <!-- Class Card 2: Khí Công Sư -->
           <article class="class-card" data-aos="fade-up" data-aos-delay="200">
+            <span class="sword-slash-beam" aria-hidden="true"></span>
             <div class="class-card-image">
               <img src="assets/images/char-force-master.svg" alt="Hệ phái Khí Công Sư (Force Master)" width="400" height="500" loading="lazy">
             </div>
@@ -267,6 +324,7 @@
 
           <!-- Class Card 3: Sát Thủ -->
           <article class="class-card" data-aos="fade-up" data-aos-delay="300">
+            <span class="sword-slash-beam" aria-hidden="true"></span>
             <div class="class-card-image">
               <img src="assets/images/char-assassin.svg" alt="Hệ phái Sát Thủ (Assassin)" width="400" height="500" loading="lazy">
             </div>
@@ -295,6 +353,7 @@
 
           <!-- Class Card 4: Quyền Sư -->
           <article class="class-card" data-aos="fade-up" data-aos-delay="400">
+            <span class="sword-slash-beam" aria-hidden="true"></span>
             <div class="class-card-image">
               <img src="assets/images/char-soul-fighter.svg" alt="Hệ phái Quyền Sư (Soul Fighter)" width="400" height="500" loading="lazy">
             </div>
@@ -345,6 +404,7 @@
           
           <!-- Feature 1 -->
           <div class="feature-card" data-aos="zoom-in" data-aos-delay="100">
+            <span class="sword-slash-beam" aria-hidden="true"></span>
             <div class="feature-media">
               <img src="assets/images/feature-combat.svg" alt="Hệ thống chiến đấu hành động không chiến" width="600" height="380" loading="lazy">
             </div>
@@ -358,6 +418,7 @@
 
           <!-- Feature 2 -->
           <div class="feature-card" data-aos="zoom-in" data-aos-delay="200">
+            <span class="sword-slash-beam" aria-hidden="true"></span>
             <div class="feature-media">
               <img src="assets/images/feature-world.svg" alt="Khinh công tự do trong thế giới mở" width="600" height="380" loading="lazy">
             </div>
@@ -371,6 +432,7 @@
 
           <!-- Feature 3 -->
           <div class="feature-card" data-aos="zoom-in" data-aos-delay="300">
+            <span class="sword-slash-beam" aria-hidden="true"></span>
             <div class="feature-media">
               <img src="assets/images/feature-pvp.svg" alt="Đấu trường Esports PvP liên server" width="600" height="380" loading="lazy">
             </div>
@@ -384,6 +446,7 @@
 
           <!-- Feature 4 -->
           <div class="feature-card" data-aos="zoom-in" data-aos-delay="400">
+            <span class="sword-slash-beam" aria-hidden="true"></span>
             <div class="feature-media">
               <img src="assets/images/feature-graphics.svg" alt="Đồ họa Unreal Engine 5 đỉnh cao" width="600" height="380" loading="lazy">
             </div>
@@ -419,6 +482,7 @@
           
           <!-- Edition 1: Miễn Phí -->
           <div class="edition-card" data-aos="fade-up" data-aos-delay="100">
+            <span class="sword-slash-beam" aria-hidden="true"></span>
             <div class="edition-header">
               <h3 class="edition-name">Standard Edition</h3>
               <p class="edition-desc">Trọn vẹn trải nghiệm cốt truyện &amp; tính năng</p>
@@ -447,6 +511,7 @@
 
           <!-- Edition 2: Deluxe (Nổi bật nhất) -->
           <div class="edition-card popular" data-aos="zoom-in" data-aos-delay="200">
+            <span class="sword-slash-beam" aria-hidden="true"></span>
             <span class="popular-badge">Phổ Biến Nhất</span>
             <div class="edition-header">
               <h3 class="edition-name">Founder's Deluxe</h3>
@@ -480,6 +545,7 @@
 
           <!-- Edition 3: Ultimate -->
           <div class="edition-card" data-aos="fade-up" data-aos-delay="300">
+            <span class="sword-slash-beam" aria-hidden="true"></span>
             <div class="edition-header">
               <h3 class="edition-name">Ultimate Collector</h3>
               <p class="edition-desc">Dành cho game thủ đam mê sưu tập đỉnh cao</p>
@@ -696,6 +762,24 @@
 
     </div>
   </footer>
+
+  <!-- ======================================================================
+       FLOATING THEME QUICK DOCK (Pure CSS Theme Switcher)
+       ====================================================================== -->
+  <aside class="floating-theme-dock" aria-label="Bộ chuyển đổi Thần Khí Màu Sắc">
+    <div class="dock-header" title="Thần Khí Võ Học">
+      <span class="dock-icon">⚔️</span>
+      <span class="dock-tooltip">Thần Khí Võ Học</span>
+    </div>
+    <div class="dock-options">
+      <label for="theme-cyan" class="dock-btn dock-btn-cyan" title="Thanh Long (Hàn Băng & Kiếm Khí)"></label>
+      <label for="theme-flame" class="dock-btn dock-btn-flame" title="Xích Hỏa (Liệt Diễm Ma Kiếm)"></label>
+      <label for="theme-shadow" class="dock-btn dock-btn-shadow" title="U Minh (Ám Ảnh Bóng Đêm)"></label>
+      <label for="theme-gold" class="dock-btn dock-btn-gold" title="Hoàng Kim (Thiên Triều Thần Thánh)"></label>
+    </div>
+  </aside>
+
+  </div> <!-- /.site-wrapper -->
 
 </body>
 </html>

@@ -134,6 +134,24 @@ Dự án được xây dựng với vai trò của một **Kỹ sư Thiết kế
   - `assets/images/feature-combat.svg`, `feature-world.svg`, `feature-pvp.svg`, `feature-graphics.svg`: Hình minh họa gameplay chi tiết.
   - Các icon tiện ích trong `assets/icons/`: Kiếm, Khiên, Download, Play, Trophy, CPU, Checkmark,...
 
+### Giai đoạn 6: Nâng Cấp Hệ Thống Multi-Theme & Hiệu Ứng Phong Cách Kiếm Hiệp (Martial Arts Stylized Effects - Zero JS)
+- **Mục tiêu:** Đáp ứng yêu cầu mở rộng: *"thêm theme, tạo hiệu ứng phong cách liên quan"* nhưng vẫn giữ trọn vẹn kỷ luật kỹ thuật **Zero JavaScript**.
+- **Kỹ thuật Prompting & Thực thi:**
+  1. **Hệ thống 4 Thần Khí Võ Học (Pure CSS Theme Switcher):**
+     - Thiết kế 4 bộ phối màu tương ứng với các trường phái võ học trong Blade & Soul:
+       - **Thanh Long (Default - Cyan & Indigo):** Hàn Băng & Kiếm Khí thanh thoát.
+       - **Xích Hỏa (Crimson Flame):** Liệt Diễm & Ma Kiếm cuồng bạo.
+       - **U Minh (Shadow Void):** Ám Ảnh & Ma Hoàng bóng đêm huyền bí.
+       - **Hoàng Kim (Celestial Gold):** Thiên Triều & Thần Thánh tôn nghiêm.
+     - Sử dụng bộ chọn CSS hiện đại `:has(#theme-*:checked)` kết hợp với Sibling Combinator (`#theme-*:checked ~ .site-wrapper`) để kích hoạt toàn bộ CSS Variables thay đổi tức thì trên giao diện mà không cần reload trang hay dùng 1 dòng JS nào.
+     - Tích hợp 2 giao diện điều khiển theme: Thanh chuyển nhanh trên Header và Dock Thần Khí nổi (Floating Quick Theme Dock) góc màn hình.
+  2. **Bộ hiệu ứng thị giác chuẩn Game Kiếm Hiệp:**
+     - **Kiếm Trận Cổ Đại (Rotating Dragon Rune Array):** Ma trận kiếm pháp xoay đảo chiều đồng tâm với hiệu ứng phát sáng đa tầng phía sau nhân vật chính.
+     - **Khí Huyết Tàn Ảnh (Ambient Floating Embers):** 8 hạt chân khí lơ lửng bay từ đáy màn hình với chuyển động vật lý ngẫu nhiên.
+     - **Vệt Trảm Kiếm (Sword Slash Beam):** Khi rê chuột (:hover) vào bất kỳ thẻ hệ phái, tính năng hay gói quà nào, một nhát chém kiếm quang quét chéo cực nhanh kèm hiệu ứng vệt sáng lóe.
+     - **Tiêu Đề Ánh Kim (Metallic Sword Gleam):** Luồng sáng kim loại di chuyển tuần hoàn ngang qua các tiêu đề chính.
+     - **Vòng Xung Kích Năng Lượng (CTA Energy Pulse Ring):** Vòng hào quang năng lượng tỏa liên tục từ nút bấm tải game chính.
+
 ---
 
 ## 3. BẢNG TỰ ĐÁNH GIÁ MỨC ĐỘ ĐÁP ỨNG YÊU CẦU ĐỀ BÀI

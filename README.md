@@ -47,6 +47,19 @@ Trang web sử dụng đúng ngữ nghĩa các thẻ chuẩn của HTML5 nhằm 
 - **Responsive hoàn chỉnh:** Đảm bảo hiển thị hoàn hảo từ màn hình di động nhỏ (360px), máy tính bảng (768px) đến màn hình máy tính để bàn độ phân giải cao (1920px+).
 
 ### 3. Tương tác & Hiệu ứng (Libraries & Pure CSS)
+- **Hệ thống 4 Thần Khí Võ Học (Pure CSS Multi-Theme Switcher):**
+  - **Thanh Long (Mặc định):** Phối màu Hàn Băng & Kiếm Khí (Cyan & Deep Cosmic Indigo).
+  - **Xích Hỏa:** Phối màu Liệt Diễm & Ma Kiếm (Crimson Flame & Burning Amber).
+  - **U Minh:** Phối màu Ám Ảnh & Ma Hoàng (Shadow Void & Electric Violet).
+  - **Hoàng Kim:** Phối màu Thiên Triều & Thần Thánh (Imperial Celestial Gold).
+  - *Cơ chế hoạt động:* Tận dụng bộ chọn CSS hiện đại `:has(#theme-*:checked)` và Sibling Combinator `#theme-*:checked ~ .site-wrapper` để chuyển đổi tức thì toàn bộ biến CSS trên website mà **hoàn toàn không dùng JavaScript**.
+  - Tích hợp 2 bộ điều khiển trực quan: Thanh chuyển nhanh trên Navigation Header và Dock Thần Khí nổi (Floating Theme Dock) tiện dụng.
+- **Bộ hiệu ứng thị giác phong cách Kiếm Hiệp:**
+  - **Kiếm Trận Cổ Đại (Rotating Dragon Rune Array):** Ma trận phong ấn xoay đồng tâm đa lớp huyền ảo phía sau nhân vật chính.
+  - **Khí Huyết Tàn Ảnh (Ambient Floating Embers):** Các đốm chân khí lơ lửng bay từ chân trang lên tạo chiều sâu không gian.
+  - **Vệt Trảm Kiếm (Sword Slash Beam):** Hiệu ứng đường chém kiếm quang quét chéo cực nhanh khi rê chuột (:hover) vào bất kỳ thẻ hệ phái, tính năng hay gói quà nào.
+  - **Tiêu Đề Ánh Kim (Metallic Sword Gleam):** Ánh chớp kim loại quét tuần hoàn ngang qua dòng chữ tiêu đề.
+  - **Vòng Xung Kích Năng Lượng (CTA Energy Pulse Ring):** Sóng năng lượng tỏa nhịp nhàng quanh các nút kêu gọi hành động.
 - **Tích hợp Animate.css:** Nhúng CDN chính thức, sử dụng các hiệu ứng `animate__fadeInDown`, `animate__fadeInUp`, `animate__zoomIn`, `animate__pulse`, `animate__infinite` cho các thành phần mở đầu Hero.
 - **Tích hợp AOS (Animate On Scroll) theo chuẩn "Không dùng JavaScript":**
   - Mọi section và card đều có đầy đủ thuộc tính `data-aos="fade-up"`, `data-aos="zoom-in"`, `data-aos-delay`.
@@ -58,7 +71,7 @@ Trang web sử dụng đúng ngữ nghĩa các thẻ chuẩn của HTML5 nhằm 
 
 ### 4. Ràng buộc quan trọng: "Không sử dụng JavaScript"
 - **Không có bất kỳ thẻ `<script>` hay file `.js` nào.**
-- Menu điều hướng trên thiết bị di động (Mobile Hamburger) được hiện thực 100% bằng kỹ thuật **Pure CSS Checkbox Hack** (`<input type="checkbox" id="nav-toggle">` kết hợp với bộ chọn anh em `~`).
+- Toàn bộ Theme Switcher, Menu điều hướng Mobile (Hamburger) và các hiệu ứng động được hiện thực 100% bằng **HTML5 & CSS3 thuần**.
 
 ---
 

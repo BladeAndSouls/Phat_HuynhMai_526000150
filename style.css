@@ -6,23 +6,103 @@
    ========================================================================== */
 
 /* ==========================================================================
-   1. CSS VARIABLES (:root)
+   1. CSS VARIABLES (:root) & THEME SYSTEM (PURE CSS ZERO JS)
    ========================================================================== */
-:root {
-  /* Color Palette - Neon Cyber Fantasy */
+
+/* Theme Radio Inputs (Completely Hidden) */
+.theme-radio {
+  position: fixed;
+  top: -100px;
+  left: -100px;
+  opacity: 0;
+  pointer-events: none;
+  z-index: -9999;
+}
+
+/* Base / Default Variables (Theme 1: Thanh Long - Hàn Băng & Kiếm Khí) */
+:root,
+body:has(#theme-cyan:checked),
+#theme-cyan:checked ~ .site-wrapper {
   --primary-color: #00f2fe;
   --primary-dark: #0284c7;
   --primary-glow: rgba(0, 242, 254, 0.45);
-  
   --secondary-color: #7f00ff;
   --secondary-light: #a855f7;
   --secondary-glow: rgba(127, 0, 255, 0.4);
-
   --accent-gold: #f59e0b;
   --accent-gold-glow: rgba(245, 158, 11, 0.4);
   --accent-red: #ef4444;
   --accent-red-glow: rgba(239, 68, 68, 0.4);
+  --border-focus: #00f2fe;
+  --border-glow: rgba(0, 242, 254, 0.4);
+  --theme-rune-color: #00f2fe;
+  --theme-slash-beam: rgba(0, 242, 254, 0.85);
+  --theme-particle: #00f2fe;
+  --theme-bg-glow: radial-gradient(circle at 50% 30%, rgba(0, 242, 254, 0.12) 0%, transparent 60%);
+  --theme-name: "Thanh Long";
+}
 
+/* Theme 2: Xích Hỏa (Liệt Diễm & Ma Kiếm - Crimson Flame) */
+body:has(#theme-flame:checked),
+#theme-flame:checked ~ .site-wrapper {
+  --primary-color: #ff3344;
+  --primary-dark: #b91c1c;
+  --primary-glow: rgba(255, 51, 68, 0.55);
+  --secondary-color: #ff7700;
+  --secondary-light: #ff9f1a;
+  --secondary-glow: rgba(255, 119, 0, 0.45);
+  --accent-gold: #ffb703;
+  --accent-gold-glow: rgba(255, 183, 3, 0.45);
+  --border-focus: #ff3344;
+  --border-glow: rgba(255, 51, 68, 0.45);
+  --theme-rune-color: #ff3344;
+  --theme-slash-beam: rgba(255, 60, 60, 0.9);
+  --theme-particle: #ff5500;
+  --theme-bg-glow: radial-gradient(circle at 50% 30%, rgba(255, 51, 68, 0.15) 0%, transparent 60%);
+  --theme-name: "Xích Hỏa";
+}
+
+/* Theme 3: U Minh (Ám Ảnh & Ma Hoàng Bóng Đêm - Shadow Void) */
+body:has(#theme-shadow:checked),
+#theme-shadow:checked ~ .site-wrapper {
+  --primary-color: #d946ef;
+  --primary-dark: #9333ea;
+  --primary-glow: rgba(217, 70, 239, 0.5);
+  --secondary-color: #8b5cf6;
+  --secondary-light: #c084fc;
+  --secondary-glow: rgba(139, 92, 246, 0.45);
+  --accent-gold: #f43f5e;
+  --accent-gold-glow: rgba(244, 63, 94, 0.45);
+  --border-focus: #d946ef;
+  --border-glow: rgba(217, 70, 239, 0.45);
+  --theme-rune-color: #d946ef;
+  --theme-slash-beam: rgba(217, 70, 239, 0.9);
+  --theme-particle: #a855f7;
+  --theme-bg-glow: radial-gradient(circle at 50% 30%, rgba(217, 70, 239, 0.15) 0%, transparent 60%);
+  --theme-name: "U Minh";
+}
+
+/* Theme 4: Hoàng Kim (Thiên Triều Thần Kiếm - Divine Celestial Gold) */
+body:has(#theme-gold:checked),
+#theme-gold:checked ~ .site-wrapper {
+  --primary-color: #ffd200;
+  --primary-dark: #d97706;
+  --primary-glow: rgba(255, 210, 0, 0.55);
+  --secondary-color: #f59e0b;
+  --secondary-light: #fbbf24;
+  --secondary-glow: rgba(245, 158, 11, 0.45);
+  --accent-gold: #ffe066;
+  --accent-gold-glow: rgba(255, 224, 102, 0.45);
+  --border-focus: #ffd200;
+  --border-glow: rgba(255, 210, 0, 0.45);
+  --theme-rune-color: #ffd200;
+  --theme-slash-beam: rgba(255, 220, 50, 0.95);
+  --theme-particle: #f59e0b;
+  --theme-bg-glow: radial-gradient(circle at 50% 30%, rgba(255, 210, 0, 0.15) 0%, transparent 60%);
+  --theme-name: "Hoàng Kim";
+}
+
+:root {
   /* Background Colors */
   --bg-deep: #05070d;
   --bg-main: #0a0e17;
@@ -33,8 +113,6 @@
 
   /* Border & Line Colors */
   --border-subtle: rgba(148, 163, 184, 0.12);
-  --border-glow: rgba(0, 242, 254, 0.4);
-  --border-focus: #00f2fe;
 
   /* Typography Colors */
   --text-pure: #ffffff;
@@ -333,6 +411,420 @@ summary:focus-visible {
 }
 
 /* ==========================================================================
+   5.1 THEME SWITCHER CONTROLS (HEADER BAR & FLOATING DOCK)
+   ========================================================================== */
+.site-wrapper {
+  transition: background-color 0.4s ease;
+}
+
+.theme-switcher-bar {
+  display: flex;
+  align-items: center;
+  gap: var(--space-xs);
+  background: rgba(15, 23, 42, 0.75);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-full);
+  padding: 3px 6px;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+.theme-label-title {
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  color: var(--text-muted);
+  padding-left: 6px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.theme-btn-group {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.theme-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 4px 10px;
+  border-radius: var(--radius-full);
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--text-muted);
+  cursor: pointer;
+  border: 1px solid transparent;
+  transition: all var(--transition-fast);
+  user-select: none;
+}
+
+.theme-btn:hover {
+  color: var(--text-pure);
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.theme-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.theme-btn-cyan .theme-dot { background: #00f2fe; box-shadow: 0 0 6px #00f2fe; }
+.theme-btn-flame .theme-dot { background: #ff3344; box-shadow: 0 0 6px #ff3344; }
+.theme-btn-shadow .theme-dot { background: #d946ef; box-shadow: 0 0 6px #d946ef; }
+.theme-btn-gold .theme-dot { background: #ffd200; box-shadow: 0 0 6px #ffd200; }
+
+/* Active Highlight for Header Theme Buttons */
+body:has(#theme-cyan:checked) .theme-btn-cyan,
+#theme-cyan:checked ~ .site-wrapper .theme-btn-cyan {
+  border-color: #00f2fe;
+  background: rgba(0, 242, 254, 0.18);
+  color: #fff;
+  box-shadow: 0 0 12px rgba(0, 242, 254, 0.35);
+}
+
+body:has(#theme-flame:checked) .theme-btn-flame,
+#theme-flame:checked ~ .site-wrapper .theme-btn-flame {
+  border-color: #ff3344;
+  background: rgba(255, 51, 68, 0.18);
+  color: #fff;
+  box-shadow: 0 0 12px rgba(255, 51, 68, 0.35);
+}
+
+body:has(#theme-shadow:checked) .theme-btn-shadow,
+#theme-shadow:checked ~ .site-wrapper .theme-btn-shadow {
+  border-color: #d946ef;
+  background: rgba(217, 70, 239, 0.18);
+  color: #fff;
+  box-shadow: 0 0 12px rgba(217, 70, 239, 0.35);
+}
+
+body:has(#theme-gold:checked) .theme-btn-gold,
+#theme-gold:checked ~ .site-wrapper .theme-btn-gold {
+  border-color: #ffd200;
+  background: rgba(255, 210, 0, 0.18);
+  color: #fff;
+  box-shadow: 0 0 12px rgba(255, 210, 0, 0.35);
+}
+
+/* Floating Quick Theme Dock */
+.floating-theme-dock {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: 999;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  background: rgba(10, 14, 23, 0.92);
+  border: 1px solid var(--border-glow);
+  padding: 10px 8px;
+  border-radius: var(--radius-full);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.75), 0 0 25px var(--primary-glow);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  transition: transform var(--transition-normal), box-shadow var(--transition-normal), border-color var(--transition-normal);
+}
+
+.floating-theme-dock:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.85), 0 0 35px var(--primary-glow);
+}
+
+.dock-header {
+  font-size: 1.15rem;
+  line-height: 1;
+  padding-bottom: 6px;
+  border-bottom: 1px solid var(--border-subtle);
+  position: relative;
+  cursor: pointer;
+}
+
+.dock-tooltip {
+  position: absolute;
+  right: 125%;
+  top: 50%;
+  transform: translateY(-50%) translateX(8px);
+  background: rgba(15, 23, 42, 0.95);
+  border: 1px solid var(--primary-color);
+  padding: 5px 12px;
+  border-radius: var(--radius-sm);
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--text-pure);
+  white-space: nowrap;
+  pointer-events: none;
+  opacity: 0;
+  transition: all var(--transition-fast);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+}
+
+.floating-theme-dock:hover .dock-tooltip {
+  opacity: 1;
+  transform: translateY(-50%) translateX(0);
+}
+
+.dock-options {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.dock-btn {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  cursor: pointer;
+  border: 2px solid transparent;
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast), border-color var(--transition-fast);
+  position: relative;
+}
+
+.dock-btn:hover {
+  transform: scale(1.2);
+}
+
+.dock-btn-cyan { background: linear-gradient(135deg, #00f2fe, #0284c7); }
+.dock-btn-flame { background: linear-gradient(135deg, #ff3344, #ff7700); }
+.dock-btn-shadow { background: linear-gradient(135deg, #d946ef, #8b5cf6); }
+.dock-btn-gold { background: linear-gradient(135deg, #ffd200, #f59e0b); }
+
+/* Active States for Dock Buttons */
+body:has(#theme-cyan:checked) .dock-btn-cyan,
+#theme-cyan:checked ~ .site-wrapper .dock-btn-cyan {
+  border-color: #fff;
+  box-shadow: 0 0 15px #00f2fe;
+  transform: scale(1.18);
+}
+
+body:has(#theme-flame:checked) .dock-btn-flame,
+#theme-flame:checked ~ .site-wrapper .dock-btn-flame {
+  border-color: #fff;
+  box-shadow: 0 0 15px #ff3344;
+  transform: scale(1.18);
+}
+
+body:has(#theme-shadow:checked) .dock-btn-shadow,
+#theme-shadow:checked ~ .site-wrapper .dock-btn-shadow {
+  border-color: #fff;
+  box-shadow: 0 0 15px #d946ef;
+  transform: scale(1.18);
+}
+
+body:has(#theme-gold:checked) .dock-btn-gold,
+#theme-gold:checked ~ .site-wrapper .dock-btn-gold {
+  border-color: #fff;
+  box-shadow: 0 0 15px #ffd200;
+  transform: scale(1.18);
+}
+
+/* ==========================================================================
+   5.2 STYLIZED GAME EFFECTS (KIẾM TRẬN, TÀN ẢNH, TRẢM QUANG, HÀO QUANG)
+   ========================================================================== */
+
+/* 1. KIẾM TRẬN CỔ ĐẠI (ROTATING ANCIENT DRAGON RUNE ARRAY) */
+.rune-array-container {
+  position: absolute;
+  width: 520px;
+  height: 520px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  z-index: 1;
+  opacity: 0.85;
+}
+
+.rune-ring {
+  position: absolute;
+  border-radius: 50%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  box-shadow: 0 0 20px var(--primary-glow);
+  transition: border-color var(--transition-normal), box-shadow var(--transition-normal);
+}
+
+.rune-ring-outer {
+  width: 500px;
+  height: 500px;
+  border: 1.5px dashed var(--theme-rune-color);
+  animation: rotateRuneOuter 35s linear infinite;
+}
+
+.rune-ring-middle {
+  width: 370px;
+  height: 370px;
+  border: 2px dotted var(--secondary-color);
+  animation: rotateRuneInner 22s linear infinite;
+}
+
+.rune-ring-inner {
+  width: 240px;
+  height: 240px;
+  border: 1.5px solid rgba(255, 255, 255, 0.25);
+  animation: pulseRune 4s ease-in-out infinite;
+}
+
+.rune-dragon-core {
+  position: absolute;
+  width: 150px;
+  height: 150px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: radial-gradient(circle, var(--primary-glow) 0%, transparent 70%);
+  border-radius: 50%;
+  animation: pulseCoreGlow 3s ease-in-out infinite alternate;
+}
+
+@keyframes rotateRuneOuter {
+  from { transform: translate(-50%, -50%) rotate(0deg); }
+  to { transform: translate(-50%, -50%) rotate(360deg); }
+}
+
+@keyframes rotateRuneInner {
+  from { transform: translate(-50%, -50%) rotate(360deg); }
+  to { transform: translate(-50%, -50%) rotate(0deg); }
+}
+
+@keyframes pulseRune {
+  0%, 100% { transform: translate(-50%, -50%) scale(0.96); opacity: 0.6; }
+  50% { transform: translate(-50%, -50%) scale(1.04); opacity: 1; }
+}
+
+@keyframes pulseCoreGlow {
+  from { opacity: 0.4; transform: translate(-50%, -50%) scale(0.85); }
+  to { opacity: 0.95; transform: translate(-50%, -50%) scale(1.15); }
+}
+
+/* 2. KHÍ HUYẾT TÀN ẢNH (AMBIENT FLOATING MARTIAL ARTS EMBERS) */
+.ambient-embers {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 2;
+}
+
+.ember {
+  position: absolute;
+  bottom: -20px;
+  border-radius: 50%;
+  background: var(--primary-color);
+  box-shadow: 0 0 10px var(--primary-color), 0 0 20px var(--secondary-color);
+  opacity: 0;
+  animation: floatEmber 9s infinite linear;
+  transition: background-color var(--transition-normal), box-shadow var(--transition-normal);
+}
+
+.ember-1 { left: 12%; width: 4px; height: 4px; animation-duration: 8s; animation-delay: 0s; }
+.ember-2 { left: 24%; width: 6px; height: 6px; animation-duration: 10s; animation-delay: 1.5s; }
+.ember-3 { left: 42%; width: 3px; height: 3px; animation-duration: 7s; animation-delay: 3s; }
+.ember-4 { left: 58%; width: 5px; height: 5px; animation-duration: 9.5s; animation-delay: 0.8s; }
+.ember-5 { left: 73%; width: 4px; height: 4px; animation-duration: 11s; animation-delay: 2.2s; }
+.ember-6 { left: 86%; width: 7px; height: 7px; animation-duration: 8.5s; animation-delay: 4.5s; }
+.ember-7 { left: 35%; width: 5px; height: 5px; animation-duration: 12s; animation-delay: 6s; }
+.ember-8 { left: 92%; width: 3px; height: 3px; animation-duration: 7.5s; animation-delay: 3.2s; }
+
+@keyframes floatEmber {
+  0% {
+    transform: translateY(0) translateX(0) scale(0.5);
+    opacity: 0;
+  }
+  20% {
+    opacity: 0.85;
+  }
+  80% {
+    opacity: 0.7;
+    transform: translateY(-80vh) translateX(35px) scale(1);
+  }
+  100% {
+    transform: translateY(-105vh) translateX(-25px) scale(0.2);
+    opacity: 0;
+  }
+}
+
+/* 3. VỆT TRẢM KIẾM (SWORD SLASH BEAM EFFECT ON CARDS) */
+.sword-slash-beam {
+  position: absolute;
+  top: -60%;
+  left: -130%;
+  width: 90px;
+  height: 220%;
+  background: linear-gradient(90deg, transparent 0%, rgba(255, 255, 255, 0.85) 50%, var(--theme-slash-beam) 75%, transparent 100%);
+  transform: rotate(35deg);
+  opacity: 0;
+  pointer-events: none;
+  z-index: 6;
+  filter: blur(1px);
+}
+
+.class-card:hover .sword-slash-beam,
+.feature-card:hover .sword-slash-beam,
+.edition-card:hover .sword-slash-beam,
+.lore-article:hover .sword-slash-beam {
+  animation: swordSlashSweep 0.75s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+@keyframes swordSlashSweep {
+  0% {
+    left: -130%;
+    opacity: 0;
+  }
+  25% {
+    opacity: 1;
+  }
+  100% {
+    left: 210%;
+    opacity: 0;
+  }
+}
+
+/* 4. TIÊU ĐỀ KIẾM KHÍ ÁNH KIM (METALLIC SWORD GLEAM ON TITLES) */
+.text-gradient {
+  background-image: linear-gradient(135deg, var(--primary-color) 0%, #ffffff 35%, var(--primary-color) 65%, var(--secondary-light) 100%);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: swordGleam 6s ease-in-out infinite;
+}
+
+@keyframes swordGleam {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+
+/* 5. VÒNG XUNG KÍCH NĂNG LƯỢNG (CTA ENERGY PULSE RING) */
+.btn-primary::after {
+  content: '';
+  position: absolute;
+  inset: -2px;
+  border-radius: inherit;
+  border: 2px solid var(--primary-color);
+  opacity: 0;
+  animation: ctaPulseRing 2.8s cubic-bezier(0.24, 0, 0.38, 1) infinite;
+  pointer-events: none;
+}
+
+@keyframes ctaPulseRing {
+  0% {
+    transform: scale(0.96);
+    opacity: 0.85;
+  }
+  100% {
+    transform: scale(1.28);
+    opacity: 0;
+  }
+}
+
+/* ==========================================================================
    6. BUTTONS & INTERACTIVE ELEMENTS (:hover, :focus)
    ========================================================================== */
 .btn {
@@ -436,9 +928,10 @@ summary:focus-visible {
   content: '';
   position: absolute;
   inset: 0;
-  background: radial-gradient(circle at 50% 30%, rgba(0, 242, 254, 0.08) 0%, transparent 60%),
+  background: var(--theme-bg-glow),
               linear-gradient(180deg, rgba(5, 7, 13, 0.4) 0%, var(--bg-deep) 100%);
   pointer-events: none;
+  transition: background 0.5s ease;
 }
 
 .hero-grid {
@@ -1371,5 +1864,44 @@ summary:focus-visible {
   .footer-bottom {
     flex-direction: column;
     text-align: center;
+  }
+
+  /* Mobile Theme Switcher & Rune Array Adjustments */
+  .theme-switcher-bar {
+    order: 2;
+    margin-top: var(--space-md);
+    margin-bottom: var(--space-md);
+    width: 100%;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  .theme-btn .theme-text {
+    font-size: 0.7rem;
+  }
+  .floating-theme-dock {
+    bottom: 16px;
+    right: 16px;
+    padding: 8px 6px;
+    gap: 6px;
+  }
+  .dock-btn {
+    width: 24px;
+    height: 24px;
+  }
+  .rune-array-container {
+    width: 320px;
+    height: 320px;
+  }
+  .rune-ring-outer {
+    width: 310px;
+    height: 310px;
+  }
+  .rune-ring-middle {
+    width: 240px;
+    height: 240px;
+  }
+  .rune-ring-inner {
+    width: 160px;
+    height: 160px;
   }
 }
