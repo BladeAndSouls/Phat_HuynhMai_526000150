@@ -1,0 +1,76 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 450" width="100%" height="100%">
+  <defs>
+    <linearGradient id="revengeBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#180005" />
+      <stop offset="50%" stop-color="#38040e" />
+      <stop offset="100%" stop-color="#050002" />
+    </linearGradient>
+    <linearGradient id="slashSlashBeam" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff" />
+      <stop offset="20%" stop-color="#ff0055" />
+      <stop offset="70%" stop-color="#990022" />
+      <stop offset="100%" stop-color="#40000a" />
+    </linearGradient>
+    <linearGradient id="celestialShatter" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#f59e0b" />
+      <stop offset="100%" stop-color="#fbbf24" />
+    </linearGradient>
+    <filter id="slashBloom">
+      <feGaussianBlur stdDeviation="8" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+  </defs>
+
+  <!-- Sky of Blood Background -->
+  <rect width="700" height="450" rx="16" fill="url(#revengeBg)" stroke="#e11d48" stroke-width="2" />
+
+  <!-- Burning Clouds -->
+  <path d="M 0,120 Q 180,60 350,110 T 700,70 L 700,0 L 0,0 Z" fill="#4c0519" opacity="0.6" />
+  <path d="M 0,220 Q 220,160 440,210 T 700,180 L 700,0 L 0,0 Z" fill="#881337" opacity="0.3" />
+
+  <!-- Shattered Heavenly Temple Barrier (Hộ Sơn Đại Trận Vỡ Nát) -->
+  <g opacity="0.7">
+    <!-- Hexagonal Rune Matrix Shattering -->
+    <polygon points="350,50 480,120 480,270 350,340 220,270 220,120" stroke="url(#celestialShatter)" stroke-width="2" fill="none" stroke-dasharray="8,6" />
+    <polygon points="350,80 440,135 440,245 350,300 260,245 260,135" stroke="#fef08a" stroke-width="1.5" fill="none" />
+    <!-- Cracks through the barrier -->
+    <path d="M 350,50 L 330,140 L 380,180 L 320,250 L 350,340" stroke="#fff" stroke-width="3" filter="url(#slashBloom)" />
+    <path d="M 330,140 L 250,160 M 380,180 L 450,170 M 320,250 L 240,270" stroke="#fff" stroke-width="2" />
+  </g>
+
+  <!-- Huge Crimson Sword Slashes - The Retribution (Vết Chém Phạt Thiên) -->
+  <!-- Slash 1 (Major Diagonal) -->
+  <path d="M 50,420 L 650,30" stroke="url(#slashSlashBeam)" stroke-width="14" stroke-linecap="round" filter="url(#slashBloom)" />
+  <path d="M 70,425 L 630,40" stroke="#ffffff" stroke-width="4" stroke-linecap="round" />
+  
+  <!-- Slash 2 (Cross Slash) -->
+  <path d="M 120,40 L 580,410" stroke="url(#slashSlashBeam)" stroke-width="10" stroke-linecap="round" filter="url(#slashBloom)" />
+  <path d="M 140,55 L 560,395" stroke="#ffe4e6" stroke-width="3" stroke-linecap="round" />
+
+  <!-- Impact Sparks & Blood Explosion -->
+  <g transform="translate(350, 220)">
+    <!-- Central blast point -->
+    <circle cx="0" cy="0" r="40" fill="#ffffff" filter="url(#slashBloom)" />
+    <circle cx="0" cy="0" r="70" fill="#ff0055" opacity="0.6" filter="url(#slashBloom)" />
+    <!-- Flying shrapnel & sparks -->
+    <polygon points="0,-120 8,-20 80,0 12,12 0,90 -12,12 -80,0 -8,-20" fill="#fbbf24" filter="url(#slashBloom)" />
+    <line x1="-120" y1="-80" x2="-40" y2="-20" stroke="#ff0055" stroke-width="4" stroke-linecap="round" />
+    <line x1="120" y1="80" x2="40" y2="20" stroke="#ff0055" stroke-width="4" stroke-linecap="round" />
+    <line x1="100" y1="-90" x2="30" y2="-25" stroke="#facc15" stroke-width="3" stroke-linecap="round" />
+    <line x1="-110" y1="100" x2="-35" y2="30" stroke="#facc15" stroke-width="3" stroke-linecap="round" />
+  </g>
+
+  <!-- Severed Golden Halo of False Righteousness (Vòng Kim Cô Đạo Mạo Bị Bẻ Gãy) -->
+  <g transform="translate(520, 140)">
+    <path d="M -40,-20 A 50,50 0 0,1 40,-20" stroke="#eab308" stroke-width="6" fill="none" stroke-linecap="round" filter="url(#slashBloom)" />
+    <path d="M -35,30 A 50,50 0 0,0 20,45" stroke="#ca8a04" stroke-width="5" fill="none" stroke-linecap="round" />
+    <!-- Blood dripping on golden relic -->
+    <path d="M 0,-20 L 0,15 M 25,-10 L 25,25" stroke="#e11d48" stroke-width="3" stroke-linecap="round" />
+  </g>
+
+  <!-- Chapter Tag -->
+  <g transform="translate(40, 380)">
+    <rect width="280" height="42" rx="8" fill="rgba(24, 0, 5, 0.9)" stroke="#e11d48" stroke-width="1.5" />
+    <text x="20" y="26" font-family="'Cinzel', serif" font-size="14" font-weight="900" fill="#ffe4e6">HỒI 4: HUYẾT TẨY BÁT HOANG — TRẢM TIÊN MÔN</text>
+  </g>
+</svg>

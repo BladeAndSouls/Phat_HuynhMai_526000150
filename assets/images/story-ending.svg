@@ -1,0 +1,99 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 450" width="100%" height="100%">
+  <defs>
+    <linearGradient id="endingSky" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#0f172a" />
+      <stop offset="50%" stop-color="#331422" />
+      <stop offset="85%" stop-color="#831843" />
+      <stop offset="100%" stop-color="#f43f5e" />
+    </linearGradient>
+    <linearGradient id="snowGround" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#e2e8f0" />
+      <stop offset="30%" stop-color="#94a3b8" />
+      <stop offset="100%" stop-color="#1e293b" />
+    </linearGradient>
+    <radialGradient id="sunDusk" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#ffe4e6" />
+      <stop offset="30%" stop-color="#fb7185" />
+      <stop offset="70%" stop-color="#be123c" stop-opacity="0.8" />
+      <stop offset="100%" stop-color="#000" stop-opacity="0" />
+    </radialGradient>
+    <filter id="softGlow">
+      <feGaussianBlur stdDeviation="5" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+  </defs>
+
+  <!-- Sky Background -->
+  <rect width="700" height="450" rx="16" fill="url(#endingSky)" stroke="#be123c" stroke-width="2" />
+
+  <!-- Bleeding Dusk Sun on Horizon -->
+  <circle cx="450" cy="270" r="90" fill="url(#sunDusk)" filter="url(#softGlow)" />
+
+  <!-- Distant Frozen Mountain Silhouettes -->
+  <polygon points="0,300 120,180 240,290 380,160 520,300 700,210 700,320 0,320" fill="#1e1b4b" opacity="0.7" />
+  <polygon points="80,310 200,220 320,310 460,200 600,310 700,250 700,330 0,330" fill="#0f172a" opacity="0.9" />
+
+  <!-- Snowy Ground Landscape -->
+  <path d="M 0,300 Q 200,280 400,310 T 700,300 L 700,450 L 0,450 Z" fill="url(#snowGround)" />
+
+  <!-- Lone Tomb of Little Sister Linh Nhi (Ngôi Mộ Hoang Nhỏ Của Linh Nhi) -->
+  <g transform="translate(180, 310)">
+    <!-- Mound -->
+    <path d="M -50,50 Q 0,10 50,50 Z" fill="#64748b" stroke="#475569" stroke-width="2" />
+    <!-- Snow covering mound -->
+    <path d="M -40,45 Q 0,15 40,45 Z" fill="#f8fafc" />
+    
+    <!-- Broken Sword thrust into the grave as headstone -->
+    <path d="M -3,20 L -3,-60 L 3,-60 L 3,20 Z" fill="#334155" stroke="#94a3b8" stroke-width="1.5" />
+    <line x1="-15" y1="-45" x2="15" y2="-45" stroke="#64748b" stroke-width="3" />
+    <!-- Broken ragged tip -->
+    <polygon points="-3,-60 0,-70 3,-60" fill="#94a3b8" />
+
+    <!-- White Mourning Ribbon fluttering in wind (Dải Băng Tang Trắng Bay Trong Gió Lạnh) -->
+    <path d="M 3,-45 C 30,-55 50,-35 80,-50 C 110,-65 140,-45 170,-60" stroke="#f8fafc" stroke-width="4" fill="none" stroke-linecap="round" filter="url(#softGlow)" />
+    <path d="M 3,-42 C 28,-48 45,-30 75,-42 C 100,-55 130,-40 155,-50" stroke="#e2e8f0" stroke-width="2.5" fill="none" stroke-linecap="round" opacity="0.8" />
+
+    <!-- Shattered Jade Pendant resting in the snow with a single blood drop -->
+    <circle cx="20" cy="38" r="8" fill="#10b981" stroke="#34d399" stroke-width="1" />
+    <path d="M 16,34 L 24,42" stroke="#e2e8f0" stroke-width="1.5" />
+    <circle cx="22" cy="40" r="2" fill="#ef4444" />
+  </g>
+
+  <!-- Solitary Figure Walking into the Distance (Bóng Lưng Tiêu Cửu U Độc Hành) -->
+  <g transform="translate(480, 260) scale(0.65)">
+    <!-- Silhouette of Traveler -->
+    <path d="M -15,100 L -8,30 L 0,0 L 8,30 L 15,100 Z" fill="#0f172a" />
+    <!-- Tattered Cloak fluttering back -->
+    <path d="M -8,30 C -40,50 -70,70 -90,95 C -60,85 -30,80 -5,80 Z" fill="#1e293b" opacity="0.9" />
+    <!-- White hair caught in wind -->
+    <path d="M 0,5 C -25,0 -45,-15 -60,-10 C -45,5 -20,10 0,15 Z" fill="#f8fafc" />
+    <!-- Long Sheathed Sword on Back -->
+    <line x1="-20" y1="90" x2="25" y2="-20" stroke="#475569" stroke-width="4" stroke-linecap="round" />
+    <!-- Footprints in Snow disappearing into the horizon -->
+    <ellipse cx="-20" cy="115" rx="5" ry="2" fill="#64748b" opacity="0.7" />
+    <ellipse cx="-45" cy="125" rx="6" ry="2.5" fill="#64748b" opacity="0.7" />
+    <ellipse cx="-75" cy="138" rx="7" ry="3" fill="#64748b" opacity="0.7" />
+    <ellipse cx="-110" cy="155" rx="8" ry="3.5" fill="#64748b" opacity="0.7" />
+  </g>
+
+  <!-- Cold Blizzard Snowflakes (Tuyết Trắng Rơi Đầy Trời) -->
+  <g fill="#ffffff" opacity="0.8">
+    <circle cx="80" cy="90" r="2.5" />
+    <circle cx="160" cy="140" r="1.5" />
+    <circle cx="250" cy="80" r="3" />
+    <circle cx="340" cy="170" r="2" />
+    <circle cx="430" cy="100" r="2.5" />
+    <circle cx="530" cy="190" r="3" />
+    <circle cx="610" cy="120" r="1.5" />
+    <circle cx="670" cy="220" r="2" />
+    <circle cx="120" cy="240" r="2" />
+    <circle cx="310" cy="270" r="1.5" />
+    <circle cx="580" cy="290" r="2.5" />
+  </g>
+
+  <!-- Chapter Tag -->
+  <g transform="translate(40, 380)">
+    <rect width="280" height="42" rx="8" fill="rgba(15, 23, 42, 0.9)" stroke="#94a3b8" stroke-width="1.5" />
+    <text x="20" y="26" font-family="'Cinzel', serif" font-size="14" font-weight="900" fill="#f8fafc">HỒI 5: ĐỘC HÀNH THIÊN ĐỊA — BI KỊCH KHÔNG LỐI</text>
+  </g>
+</svg>

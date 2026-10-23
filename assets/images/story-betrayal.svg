@@ -1,0 +1,95 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 450" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bgBetrayal" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1a0508" />
+      <stop offset="40%" stop-color="#2d0b13" />
+      <stop offset="100%" stop-color="#0a0204" />
+    </linearGradient>
+    <linearGradient id="bloodSlashGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ff1744" />
+      <stop offset="50%" stop-color="#d50000" />
+      <stop offset="100%" stop-color="#4a0007" />
+    </linearGradient>
+    <linearGradient id="boneGold" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#fff8e1" />
+      <stop offset="50%" stop-color="#ffd54f" />
+      <stop offset="100%" stop-color="#ff6f00" />
+    </linearGradient>
+    <radialGradient id="bloodGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#ff1744" stop-opacity="0.8" />
+      <stop offset="50%" stop-color="#b71c1c" stop-opacity="0.3" />
+      <stop offset="100%" stop-color="#000" stop-opacity="0" />
+    </radialGradient>
+    <filter id="goreBloom">
+      <feGaussianBlur stdDeviation="6" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="700" height="450" rx="16" fill="url(#bgBetrayal)" stroke="#7f1d1d" stroke-width="2" />
+
+  <!-- Ruined Palace Pillars with Cracks -->
+  <path d="M 80,0 L 80,450 M 140,0 L 140,450 M 560,0 L 560,450 M 620,0 L 620,450" stroke="#450a0a" stroke-width="4" opacity="0.6" />
+  
+  <!-- Blood Splatters & Stains -->
+  <path d="M 120,80 Q 150,110 180,95 T 230,120 Q 200,160 170,140 Z" fill="#b71c1c" opacity="0.5" />
+  <circle cx="280" cy="90" r="12" fill="#d50000" opacity="0.6" />
+  <circle cx="260" cy="115" r="7" fill="#b71c1c" opacity="0.5" />
+  <circle cx="295" cy="120" r="4" fill="#ff1744" opacity="0.7" />
+  
+  <!-- Wedding Lanterns Tattered and Dripping -->
+  <g transform="translate(160, 40)">
+    <line x1="0" y1="0" x2="0" y2="40" stroke="#7f1d1d" stroke-width="2" />
+    <ellipse cx="0" cy="60" rx="28" ry="36" fill="#7f1d1d" stroke="#ef4444" stroke-width="2" filter="url(#goreBloom)" opacity="0.8" />
+    <path d="M -15,70 L -10,120 M 15,70 L 10,120" stroke="#b71c1c" stroke-width="2" stroke-dasharray="3,3" />
+    <text x="-12" y="66" font-family="'Cinzel', serif" font-size="18" font-weight="900" fill="#fee2e2">HỶ</text>
+  </g>
+  <g transform="translate(540, 40)">
+    <line x1="0" y1="0" x2="0" y2="40" stroke="#7f1d1d" stroke-width="2" />
+    <ellipse cx="0" cy="60" rx="28" ry="36" fill="#7f1d1d" stroke="#ef4444" stroke-width="2" opacity="0.8" />
+    <path d="M -15,70 L -10,120 M 15,70 L 10,120" stroke="#b71c1c" stroke-width="2" stroke-dasharray="3,3" />
+    <text x="-12" y="66" font-family="'Cinzel', serif" font-size="18" font-weight="900" fill="#fee2e2">HỶ</text>
+  </g>
+
+  <!-- Big Blood Glow Core -->
+  <circle cx="350" cy="240" r="140" fill="url(#bloodGlow)" />
+
+  <!-- Chains of Seal (Xiềng Xích Trấn Áp) -->
+  <path d="M 50,380 C 180,320 280,260 350,230" stroke="#64748b" stroke-width="5" stroke-dasharray="10,6" opacity="0.7" />
+  <path d="M 650,380 C 520,320 420,260 350,230" stroke="#64748b" stroke-width="5" stroke-dasharray="10,6" opacity="0.7" />
+  <path d="M 120,40 C 220,120 300,180 350,230" stroke="#64748b" stroke-width="5" stroke-dasharray="10,6" opacity="0.7" />
+  <path d="M 580,40 C 480,120 400,180 350,230" stroke="#64748b" stroke-width="5" stroke-dasharray="10,6" opacity="0.7" />
+
+  <!-- The Extracted Sword Bone (Hỗn Nguyên Kiếm Cốt Bị Rút) -->
+  <g transform="translate(350, 220) rotate(-25)" filter="url(#goreBloom)">
+    <!-- Vertebrae / Spine Sword Shape -->
+    <path d="M 0,-150 L 16,-120 L 8,150 L 0,170 L -8,150 L -16,-120 Z" fill="url(#boneGold)" stroke="#fff" stroke-width="2" />
+    <!-- Segment rings -->
+    <circle cx="0" cy="-100" r="14" fill="#ff6f00" stroke="#fff" stroke-width="2" />
+    <circle cx="0" cy="-60" r="16" fill="#ffd54f" stroke="#fff" stroke-width="2" />
+    <circle cx="0" cy="-20" r="18" fill="#fff" stroke="#ff1744" stroke-width="3" />
+    <circle cx="0" cy="20" r="16" fill="#ffd54f" stroke="#fff" stroke-width="2" />
+    <circle cx="0" cy="60" r="14" fill="#ff6f00" stroke="#fff" stroke-width="2" />
+    <circle cx="0" cy="100" r="12" fill="#d50000" stroke="#fff" stroke-width="2" />
+    <!-- Crimson Aura radiating -->
+    <path d="M -40,-20 L 40,-20 M -35,20 L 35,20 M -30,60 L 30,60 M -25,-60 L 25,-60" stroke="#ff1744" stroke-width="4" stroke-linecap="round" />
+  </g>
+
+  <!-- Violent Blood Slash cutting through the scene -->
+  <path d="M 60,390 Q 320,240 640,90" stroke="url(#bloodSlashGrad)" stroke-width="8" stroke-linecap="round" filter="url(#goreBloom)" />
+  <path d="M 120,410 Q 340,250 600,130" stroke="#ffffff" stroke-width="2.5" opacity="0.8" />
+
+  <!-- Shattered Wine Cup & Broken Jade Pendant -->
+  <g transform="translate(230, 360)">
+    <path d="M -20,20 L -10,-10 L 15,5 L 5,25 Z" fill="#94a3b8" stroke="#cbd5e1" stroke-width="1.5" />
+    <path d="M 15,-5 L 30,15 L 45,-10 Z" fill="#64748b" stroke="#cbd5e1" stroke-width="1.5" />
+    <path d="M 2,12 Q 30,40 60,25" stroke="#ef4444" stroke-width="5" stroke-linecap="round" />
+  </g>
+
+  <!-- Chapter Tag -->
+  <g transform="translate(40, 380)">
+    <rect width="260" height="42" rx="8" fill="rgba(15, 5, 8, 0.9)" stroke="#ef4444" stroke-width="1.5" />
+    <text x="20" y="26" font-family="'Cinzel', serif" font-size="14" font-weight="900" fill="#fee2e2">HỒI 1 &amp; 2: ĐOẠT CỐT BIẾN HUYẾT ĐÀN</text>
+  </g>
+</svg>

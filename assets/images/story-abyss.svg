@@ -1,0 +1,101 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 450" width="100%" height="100%">
+  <defs>
+    <linearGradient id="abyssBg" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#050209" />
+      <stop offset="50%" stop-color="#120422" />
+      <stop offset="100%" stop-color="#21001a" />
+    </linearGradient>
+    <linearGradient id="purpleFlame" x1="0%" y1="100%" x2="0%" y2="0%">
+      <stop offset="0%" stop-color="#3b0764" />
+      <stop offset="50%" stop-color="#a855f7" />
+      <stop offset="100%" stop-color="#f43f5e" />
+    </linearGradient>
+    <radialGradient id="eyeDemonGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#ff0055" />
+      <stop offset="60%" stop-color="#9333ea" stop-opacity="0.6" />
+      <stop offset="100%" stop-color="#000" stop-opacity="0" />
+    </radialGradient>
+    <filter id="abyssBloom">
+      <feGaussianBlur stdDeviation="7" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+  </defs>
+
+  <!-- Abyss Chasm Background -->
+  <rect width="700" height="450" rx="16" fill="url(#abyssBg)" stroke="#581c87" stroke-width="2" />
+
+  <!-- Chasm Spikes & Jagged Rocks -->
+  <polygon points="0,450 60,250 120,380 180,220 240,450" fill="#090111" stroke="#3b0764" stroke-width="1.5" />
+  <polygon points="460,450 520,200 580,360 640,240 700,450" fill="#090111" stroke="#3b0764" stroke-width="1.5" />
+  <polygon points="120,0 160,140 210,0" fill="#0c0217" />
+  <polygon points="490,0 540,160 600,0" fill="#0c0217" />
+
+  <!-- Ghostly Souls Rising (Trọc Khí & Oán Hồn) -->
+  <g opacity="0.4" filter="url(#abyssBloom)">
+    <path d="M 180,380 Q 150,290 190,220 T 170,140" stroke="#a855f7" stroke-width="6" fill="none" stroke-linecap="round" />
+    <path d="M 520,390 Q 550,280 500,200 T 530,110" stroke="#ec4899" stroke-width="5" fill="none" stroke-linecap="round" />
+    <path d="M 350,420 Q 320,330 360,260" stroke="#9333ea" stroke-width="7" fill="none" stroke-linecap="round" />
+  </g>
+
+  <!-- Forest of Broken Rusted Swords (Mộ Kiếm Dưới Vực) -->
+  <g stroke="#64748b" stroke-width="2">
+    <!-- Sword 1 -->
+    <path d="M 160,340 L 175,220 L 180,220 L 165,340" fill="#334155" />
+    <line x1="150" y1="240" x2="190" y2="245" stroke="#94a3b8" stroke-width="3" />
+    <!-- Sword 2 (Broken) -->
+    <path d="M 210,380 L 220,290 L 225,290 L 215,380" fill="#1e293b" />
+    <!-- Sword 3 (Right) -->
+    <path d="M 500,360 L 485,250 L 490,250 L 505,360" fill="#334155" />
+    <line x1="470" y1="270" x2="510" y2="265" stroke="#94a3b8" stroke-width="3" />
+    <!-- Sword 4 (Right Broken) -->
+    <path d="M 550,390 L 540,310 L 545,310 L 555,390" fill="#1e293b" />
+  </g>
+
+  <!-- Central Silhouette: White-Haired Tiêu Cửu U Rising -->
+  <g transform="translate(350, 230)">
+    <!-- Ominous Dark Flame Aura -->
+    <ellipse cx="0" cy="50" rx="90" ry="120" fill="url(#purpleFlame)" opacity="0.3" filter="url(#abyssBloom)" />
+    
+    <!-- Torso Silhouette -->
+    <path d="M -45,150 L -30,60 L 0,40 L 30,60 L 45,150 Z" fill="#05010a" stroke="#a855f7" stroke-width="1.5" />
+    
+    <!-- Exposed Iron-Fused Spine Glow (Rèn Kiếm Rỉ Sét Thành Khung Xương) -->
+    <g filter="url(#abyssBloom)">
+      <line x1="0" y1="45" x2="0" y2="150" stroke="#ff0055" stroke-width="5" />
+      <line x1="-15" y1="65" x2="15" y2="65" stroke="#a855f7" stroke-width="3" />
+      <line x1="-18" y1="90" x2="18" y2="90" stroke="#f43f5e" stroke-width="3" />
+      <line x1="-14" y1="115" x2="14" y2="115" stroke="#a855f7" stroke-width="3" />
+      <line x1="-10" y1="135" x2="10" y2="135" stroke="#ff0055" stroke-width="2" />
+    </g>
+
+    <!-- Head and Wild Pure White Hair (Tóc Trắng Tung Bay) -->
+    <path d="M -50,30 C -80,-10 -60,-80 -20,-75 C -10,-100 20,-100 30,-75 C 70,-80 80,-10 50,30 C 65,0 40,-40 25,-45 C 10,-55 -10,-55 -25,-45 C -40,-40 -65,0 -50,30 Z" fill="#f8fafc" filter="url(#abyssBloom)" />
+    <path d="M -40,35 C -65,0 -50,-50 -15,-50 C 0,-70 20,-70 30,-50 C 60,-50 65,0 40,35 C 50,10 30,-25 15,-30 C 0,-35 -15,-35 -30,-25 C -45,10 -35,30 -40,35 Z" fill="#cbd5e1" />
+    
+    <!-- Face Silhouette -->
+    <polygon points="-16,-20 16,-20 10,15 0,25 -10,15" fill="#0f051d" />
+
+    <!-- Burning Crimson Left Eye (Mắt Trái Ma Hỏa) -->
+    <circle cx="-7" cy="-5" r="30" fill="url(#eyeDemonGlow)" />
+    <circle cx="-7" cy="-5" r="4" fill="#ffffff" filter="url(#abyssBloom)" />
+    <path d="M -7,-5 Q -25,-30 -45,-40" stroke="#ff0055" stroke-width="3" fill="none" stroke-linecap="round" filter="url(#abyssBloom)" />
+
+    <!-- Bandage over Right Eye (Băng Tang Quấn Mắt Phải) -->
+    <line x1="0" y1="-10" x2="14" y2="0" stroke="#e2e8f0" stroke-width="3" />
+    <line x1="-2" y1="-5" x2="16" y2="5" stroke="#cbd5e1" stroke-width="2.5" />
+    
+    <!-- Blood Sword in Hand -->
+    <g transform="translate(60, 40) rotate(15)" filter="url(#abyssBloom)">
+      <path d="M 0,90 L 0,-130 L 7,-145 L 14,-130 L 14,90 Z" fill="#7f1d1d" stroke="#ef4444" stroke-width="2" />
+      <line x1="7" y1="-135" x2="7" y2="90" stroke="#fecdd3" stroke-width="2" />
+      <!-- Ragged cloth tied around hilt -->
+      <path d="M 0,90 Q 20,120 15,160 M 7,95 Q -10,130 5,170" stroke="#ffffff" stroke-width="2.5" fill="none" opacity="0.8" />
+    </g>
+  </g>
+
+  <!-- Chapter Tag -->
+  <g transform="translate(40, 380)">
+    <rect width="280" height="42" rx="8" fill="rgba(20, 5, 30, 0.9)" stroke="#a855f7" stroke-width="1.5" />
+    <text x="20" y="26" font-family="'Cinzel', serif" font-size="14" font-weight="900" fill="#f3e8ff">HỒI 3: VẠN KIẾP MA UYÊN — TÓC TRẮNG HÓA MA</text>
+  </g>
+</svg>

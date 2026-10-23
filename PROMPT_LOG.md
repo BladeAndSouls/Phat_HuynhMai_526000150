@@ -163,6 +163,37 @@ Dự án được xây dựng với vai trò của một **Kỹ sư Thiết kế
   6. **Thông Báo Hoạt Động Game Thủ Thời Gian Thực (`.live-activity-toast`):** Thẻ thông báo nổi ở góc trái màn hình tự động trượt vào, phát sáng và ẩn đi tuần hoàn (`toastSlidePulse`), mô phỏng hoạt động mua gói game của cộng đồng.
   7. **Rạp Chiếu Trailer Điện Ảnh Pure CSS (`.cinema-modal:target`):** Khung xem trailer 4K 120FPS mở ra khi nhấn *"Khám Phá Gameplay"*, hiển thị nút Play đập nhịp (`playPulse`) và 5 thanh sóng âm thanh Dolby Atmos chuyển động nhảy múa sống động (`soundwaveBounce`).
 
+### Giai đoạn 8: Tiểu Thuyết Tu Tiên Báo Thù & Cổ Thư Bí Điển 3D Pure CSS (Vạn Kiếp Trảm Tâm)
+- **Mục tiêu:** Đáp ứng yêu cầu mở rộng nội dung văn học mạng: xây dựng cốt truyện tu tiên báo thù lâm ly bi đát mang tên *« Vạn Kiếp Trảm Tâm — Huyết Ngân Ma Uyên »*, đồng thời số hóa thành Cổ Thư Tu Tiên Bí Điển tương tác lật sách 3D, đốm lửa ma hỏa bay lơ lửng, vết trảm kiếm quang và 4 tranh vector minh họa chi tiết.
+- **Các thành phần được triển khai:**
+  1. **Tài nguyên Vector Nghệ thuật Độc quyền:**
+     - `assets/images/story-betrayal.svg`: Hồi 1 & 2 — Đoạt Cốt Biến Huyết Đàn, chén rượu độc, lột sống kiếm cốt, tiểu sư muội vong mạng.
+     - `assets/images/story-abyss.svg`: Hồi 3 — Vạn Kiếp Ma Uyên, dĩ cốt đúc kiếm, một đêm bạc trắng mái đầu, mắt trái rực lửa ma hỏa.
+     - `assets/images/story-revenge.svg`: Hồi 4 — Huyết Tẩy Bát Hoang, kiếm trảm tiên môn, phá toái hộ sơn đại trận, bóc trần đạo mạo.
+     - `assets/images/story-ending.svg`: Hồi 5 — Độc Hành Thiên Địa, bia mộ hoang tuyết lạnh, dải băng tang bay trong cuồng phong hoàng hôn.
+  2. **Cơ chế Lật Sách 3D Pure CSS (Zero JavaScript):**
+     - Sử dụng hệ thống Radio buttons ẩn điều khiển 4 hồi truyện kết hợp thuộc tính `perspective: 2000px`, `transform: rotateY()` và `@keyframes bookPageFlip3D` mô phỏng chân thực cử động lật giở từng trang sách cổ cùng nếp gấp gáy sách trung tâm.
+     - Hạt đốm lửa ma hỏa bay lơ lửng xung quanh cuốn sách (`@keyframes emberRise`).
+     - Luồng kiếm trảm quét chéo xé rách không gian khi rê chuột (`@keyframes slashLaserCut`).
+     - Huyết ấn triện đỏ đóng dấu phong ấn từng hồi truyện (`.blood-seal-stamp`).
+
+### Giai đoạn 9: Đột Phá Thần Khí Võ Học Toàn Năng (Total Martial Transmutation System - Không Chỉ Đổi Màu)
+- **Mục tiêu:** Xử lý triệt để phản hồi người dùng: *"cái thần khí võ học của bạn tạo cho tôi, tôi ko muốn là chỉ là chuyển màu"*. Biến hệ thống Thần Khí thành một cuộc hoán chuyển toàn diện về cả khí tượng thiên địa, pháp thân nhân vật, giao diện HUD thời gian thực và hình học thẻ bài trên toàn bộ website.
+- **Kỹ thuật Triển khai (100% Zero JavaScript):**
+  1. **Pháp Vực Khí Tượng Thiên Địa Toàn Cảnh (`.martial-domain-atmosphere`):**
+     - **Thanh Long (Băng Kiếm):** Kích hoạt bão tuyết và tinh thể băng giá sắc nhọn rơi lơ lửng (`.frost-shard` với `@keyframes frostShardFall`), viền đóng băng quang học mờ (`.frost-vignette`).
+     - **Xích Hỏa (Ma Nhận):** Kích hoạt bão lửa dung nham và tàn tro núi lửa cuồn cuộn bay từ đáy (`.magma-ember` với `@keyframes magmaEmberErupt`), sóng nhiệt méo mó (`.magma-heat-distortion`), ranh giới dung nham rực cháy.
+     - **U Minh (Quỷ Trâm):** Kích hoạt sương độc tím đen cuộn sóng (`.void-mist-overlay`), oán hồn quỷ ảnh bay ngang (`.void-wraith`), mắt quỷ chớp rực sáng bí ẩn ở 4 góc màn hình (`.demon-eye-glint`).
+     - **Hoàng Kim (Thiên Kiếm):** Kích hoạt các chùm Thiên Quang rọi từ chín tầng trời (`.celestial-god-rays` với `@keyframes godRaysSweep`), cánh sen vàng bồng bềnh rơi nhịp nhàng (`.golden-petal`), hào quang thái dương vạn trượng.
+  2. **Bảng Pháp Thân Thần Khí HUD Thời Gian Thực (`.relic-stance-showcase`):**
+     - Tích hợp ngay dưới Hero Section, tự động hoán đổi hiển thị thẻ Thần Khí đang trang bị (Thanh Long Băng Phách Kiếm, Xích Hỏa Ma Thần Nhận, U Minh Vạn Kiếp Trâm, Hoàng Kim Thiên Cương Thần Kiếm).
+     - Hiển thị danh hiệu cảnh giới võ học, chuỗi buff chỉ số bị động (Tốc đánh, bạo kích, hút máu, miễn khống), và khẩu quyết tâm pháp tương ứng.
+  3. **Hào Quang Pháp Thân Nhân Vật Hero (`.hero-stance-aura`):**
+     - Đằng sau nhân vật Kiếm Sư xuất hiện hình bóng khí tức đặc trưng: Băng Long cuộn trào, Cánh Ma Thần vỗ lửa, Quỷ Ảnh vực thẳm và Vầng Thái Dương Thần Hoàn.
+  4. **Biến Đổi Động Kiếm Trận & Hình Học Thẻ Bài:**
+     - Kiếm trận cổ đại xoay với tốc độ và quy luật khác nhau: Thanh Long (35s thanh nhã), Xích Hỏa (12s cuồng bạo rực lửa), U Minh (18s đảo chiều ngược chiều kim đồng hồ hút chân khí), Hoàng Kim (45s tỏa kim quang thái dương).
+     - Cấu trúc góc bo thẻ (`border-radius`, `box-shadow`) tự động biến đổi: Cạnh sắc kim cương (Thanh Long), nham thạch nứt toác (Xích Hỏa), quỷ khí huyền bí (U Minh), dát vàng cổ điển hoàng gia (Hoàng Kim).
+
 ---
 
 ## 3. BẢNG TỰ ĐÁNH GIÁ MỨC ĐỘ ĐÁP ỨNG YÊU CẦU ĐỀ BÀI
