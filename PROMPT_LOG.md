@@ -152,6 +152,17 @@ Dự án được xây dựng với vai trò của một **Kỹ sư Thiết kế
      - **Tiêu Đề Ánh Kim (Metallic Sword Gleam):** Luồng sáng kim loại di chuyển tuần hoàn ngang qua các tiêu đề chính.
      - **Vòng Xung Kích Năng Lượng (CTA Energy Pulse Ring):** Vòng hào quang năng lượng tỏa liên tục từ nút bấm tải game chính.
 
+### Giai đoạn 7: Bổ Sung Toàn Diện Hệ Thống Hoạt Ảnh Điện Ảnh (Supplementary Cinematic Animations - Zero JS)
+- **Mục tiêu:** Mở rộng trải nghiệm thị giác đa tầng theo yêu cầu *"bổ sung animation"*, tạo chiều sâu sinh động như một trang chủ game AAA quốc tế, duy trì tuyệt đối kỷ luật kỹ thuật **Zero JavaScript**.
+- **Các hoạt ảnh mới được bổ sung:**
+  1. **Hero Character Levitation (`@keyframes heroLevitate`):** Nhân vật Kiếm Sư huyền thoại lơ lửng bồng bềnh trong không gian với bóng hào quang chân khí phập phồng chân thực.
+  2. **Con Trỏ Cuộn Trang Tương Tác (`.scroll-down-indicator`):** Thiết kế chuột quang học với con lăn chuyển động nhịp nhàng (`mouseWheelScroll`) cùng mũi tên chevron nhấp nháy dẫn hướng người xem xuống các section tiếp theo.
+  3. **Đèn Tín Hiệu Máy Chủ Thời Gian Thực (`.server-status-pill`):** Đèn beacon xanh lục phát sóng radar liên tục (`beaconWave`), thông báo trạng thái máy chủ Online với độ trễ siêu thấp 12ms.
+  4. **Khay Kỹ Năng Võ Học & Vòng Xoay Cooldown (`.class-skills-preview`):** Mỗi thẻ hệ phái được trang bị 4 tuyệt kỹ (Q, E, R, Tab) với vòng xoay hồi chiêu chuyển động vô tận khi kích hoạt (`cooldownSpin`).
+  5. **Tia Quét Trạng Thái Chỉ Số (`@keyframes statBarScan`):** Thanh hiển thị chỉ số Sát thương, Phòng thủ và Độ khó có vệt sáng quét ngang qua liên tục như màn hình phân tích HUD khoa học viễn tưởng.
+  6. **Thông Báo Hoạt Động Game Thủ Thời Gian Thực (`.live-activity-toast`):** Thẻ thông báo nổi ở góc trái màn hình tự động trượt vào, phát sáng và ẩn đi tuần hoàn (`toastSlidePulse`), mô phỏng hoạt động mua gói game của cộng đồng.
+  7. **Rạp Chiếu Trailer Điện Ảnh Pure CSS (`.cinema-modal:target`):** Khung xem trailer 4K 120FPS mở ra khi nhấn *"Khám Phá Gameplay"*, hiển thị nút Play đập nhịp (`playPulse`) và 5 thanh sóng âm thanh Dolby Atmos chuyển động nhảy múa sống động (`soundwaveBounce`).
+
 ---
 
 ## 3. BẢNG TỰ ĐÁNH GIÁ MỨC ĐỘ ĐÁP ỨNG YÊU CẦU ĐỀ BÀI
