@@ -306,6 +306,35 @@ Dự án được xây dựng với vai trò của một **Kỹ sư Thiết kế
 
 ---
 
+### Giai đoạn 15: Xây Dựng Hệ Thống Nội Dung Xuất Hiện Cho Toàn Bộ Các Nút Bấm (Pure CSS :target Zero JavaScript)
+- **Mục tiêu:** Thực hiện trọn vẹn yêu cầu: *"các nút hãy xây dựng nội dung xuất hiện , đừng để những nút đó không bấm được"*.
+- **Các giải pháp kỹ thuật và đột phá tương tác (100% Zero JavaScript):**
+  1. **Xóa Bỏ Hoàn Toàn Các Nút Tĩnh / Nút Không Có Phản Hồi:**
+     - 100% các nút và thẻ liên kết trên toàn bộ trang web (từ Header, Hero, Playlist Video, Bảng Tin Tức, Gói Game đến Đa Nền Tảng Tải Xuống) đều được gắn định danh liên kết và có nội dung thực tế xuất hiện ngay lập tức khi bấm.
+  2. **Hệ Thống Modal Chi Tiết Phong Cách HoYoverse (Pure CSS :target):**
+     - **Modal Đăng Ký Trước & Quà Tân Thủ (`#modal-preregister`):** Bấm vào nút *"Đăng Ký Sớm"* trên thanh Header Nav hoặc Hero Section sẽ hiển thị bảng thông báo chúc mừng gia nhập Tiên Giới, hiển thị mã Giftcode `BLADE-AWAKEN-VIP2026`, cùng danh sách 4 vật phẩm giá trị (Thú cưỡi Phi Mã Thần Tộc, 100 Vé Chiêu Mộ Thần Khí, 500.000 Vàng, Pháp Phục Hắc Long Vũ).
+     - **Chuỗi 5 Modal Đọc Bài Viết Tin Tức & Sự Kiện Chi Tiết (`#news-modal-1` đến `#news-modal-5`):**
+       - *Bài 1 (Sự Kiện Lớn):* Toàn bộ thể lệ chi tiết chuỗi sự kiện Thức Tỉnh Chân Long, bảng điểm danh 7 ngày nhận quà thần thoại.
+       - *Bài 2 (Thông Báo Cập Nhật 5.2):* Chi tiết nội dung bảo trì, khai mở Thần Khí U Minh, cân bằng môn phái và đền bù ngọc bích.
+       - *Bài 3 (Sự Kiện Đấu Trường):* Thể lệ giải đấu Esports PvP 1v1 Đại Hội Võ Thuật Thiên Kiêu với tổng giải thưởng 100.000.000 VNĐ.
+       - *Bài 4 (Cẩm Nang Võ Học):* Bài hướng dẫn từng bước chuỗi combo không chiến 12 chiêu liên hoàn của Kiếm Sư.
+       - *Bài 5 (Phúc Lợi Giftcode):* Hiển thị mã Giftcode `AWAKENING2026` với khung mã nổi bật và hướng dẫn 4 bước kích hoạt ingame.
+     - **Chuỗi 6 Modal Tải Game Đa Nền Tảng Chi Tiết (`#download-modal-pc` đến `#download-modal-cloud`):**
+       - *PC Windows:* 3 máy chủ tải tốc độ cao (CDN Siêu Tốc, Google Drive VIP, Bản Portable ZIP), dung lượng 42.5 GB, v5.2.0 DirectX 12.
+       - *PlayStation 5:* Trình diễn tối ưu DualSense Haptic Feedback và Ray Tracing 4K 60FPS.
+       - *iOS App Store:* Khung mã QR Code quét tải nhanh bằng Camera iPhone cùng gói quà Apple Exclusive.
+       - *Android Google Play:* Tùy chọn cài tự động qua Google Play hoặc tải trực tiếp file APK 2.8 GB.
+       - *Epic Games Store:* Nhận bản quyền miễn phí và gói quà Epic Starter Bundle trị giá 50$.
+       - *Cloud Gaming:* Khung giả lập phiên chơi Cloud Gaming 1080p 60FPS độ trễ 12ms trên trình duyệt web.
+     - **Chuỗi 3 Modal Chi Tiết Gói Game (`#edition-modal-standard`, `#edition-modal-deluxe`, `#edition-modal-ultimate`):**
+       - Hiển thị danh sách vật phẩm quà tặng đầy đủ và mã kích hoạt quà tặng tương ứng (`FREE-HERO-AWAKEN`, `DELUXE-VIP-AWAKEN`, `ULTIMATE-GOD-BLADE`).
+     - **4 Nút Playlist Video Gameplay Showcase:**
+       - Chuyển đổi thành 4 nút bấm tương tác xem từng clip gameplay (Clip 1: Trailer Thần Khí, Clip 2: Không Chiến Tự Do, Clip 3: Đấu Trường 1v1, Clip 4: Khinh Công Tiên Môn).
+  3. **Cam Kết Ràng Buộc Kỹ Thuật Tuyệt Đối:**
+     - 100% Zero JavaScript: Toàn bộ hiệu ứng mở modal, đóng modal (nhấp nút close hoặc click nền đen ngoài viền), trượt khung đọc bài viết và hiển thị mã code đều được xây dựng bằng Pure CSS `:target` và CSS Transitions mượt mà 60FPS.
+
+---
+
 ## 3. BẢNG TỰ ĐÁNH GIÁ MỨC ĐỘ ĐÁP ỨNG YÊU CẦU ĐỀ BÀI
 
 | STT | Tiêu chí đánh giá của Giảng viên | Hiện trạng thực hiện trong dự án | Mức độ hoàn thành |

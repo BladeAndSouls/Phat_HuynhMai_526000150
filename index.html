@@ -166,7 +166,7 @@
 
         <!-- Nhóm nút CTA trên Header -->
         <div class="header-cta-group">
-          <a href="#editions" class="btn btn-secondary">Đăng Ký Sớm</a>
+          <a href="#modal-preregister" class="btn btn-secondary">Đăng Ký Sớm</a>
           <a href="#download" class="btn btn-primary btn-shimmer">
             <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
             Tải Game
@@ -297,7 +297,7 @@
           </div>
 
           <div class="hero-action-group animate__animated animate__fadeInUp animate__delay-1s">
-            <a href="#download" class="btn btn-primary btn-shimmer animate__animated animate__pulse animate__infinite animate__slower">
+            <a href="#download-modal-pc" class="btn btn-primary btn-shimmer animate__animated animate__pulse animate__infinite animate__slower">
               <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
               Tải Game Miễn Phí
             </a>
@@ -1709,24 +1709,24 @@
             </div>
           </div>
 
-          <!-- Playlist Các Đoạn Clip Giới Thiệu Gameplay -->
+          <!-- Playlist Các Đoạn Clip Giới Thiệu Gameplay Có Tương Tác Bấm Được -->
           <div class="cinema-playlist-pills">
-            <span class="playlist-pill active" title="Clip 01: Trailer Chính Thức">
+            <a href="#gameplay-video" class="playlist-pill active" title="Xem Trailer Thần Khí Chính Thức">
               <span class="pill-dot"></span>
               <span>01. Trailer Thần Khí</span>
-            </span>
-            <span class="playlist-pill" title="Clip 02: Không Chiến Combo">
+            </a>
+            <a href="#video-clip-2" class="playlist-pill" title="Xem Clip Gameplay Không Chiến Tự Do">
               <span class="pill-dot"></span>
               <span>02. Không Chiến Tự Do</span>
-            </span>
-            <span class="playlist-pill" title="Clip 03: Đấu Trường PvP">
+            </a>
+            <a href="#video-clip-3" class="playlist-pill" title="Xem Clip Giải Đấu PvP 1v1">
               <span class="pill-dot"></span>
               <span>03. Đấu Trường 1v1</span>
-            </span>
-            <span class="playlist-pill" title="Clip 04: Bản Đồ Thế Giới Mở">
+            </a>
+            <a href="#video-clip-4" class="playlist-pill" title="Xem Clip Khinh Công Tiên Môn">
               <span class="pill-dot"></span>
               <span>04. Khinh Công Tiên Môn</span>
-            </span>
+            </a>
           </div>
 
         </div>
@@ -1766,7 +1766,7 @@
               <p class="featured-news-summary">
                 Mừng phiên bản Dragon's Awakening ra mắt toàn cầu, toàn bộ võ sĩ đăng nhập 7 ngày đầu tiên nhận trọn bộ trang phục Hắc Long Vũ vĩnh viễn và thú cưỡi Phi Mã Thần Tốc.
               </p>
-              <a href="#editions" class="news-read-more">
+              <a href="#news-modal-1" class="news-read-more" title="Xem toàn bộ chi tiết sự kiện và quà tặng">
                 <span>Xem Chi Tiết Sự Kiện</span>
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" width="16" height="16"><polyline points="9 18 15 12 9 6"></polyline></svg>
               </a>
@@ -1865,7 +1865,7 @@
                 <span>Không có trang phục giới hạn Founder</span>
               </div>
             </div>
-            <a href="#download" class="btn btn-secondary">Chơi Ngay</a>
+            <a href="#edition-modal-standard" class="btn btn-secondary" title="Nhận gói Standard Miễn Phí">Nhận Gói Standard</a>
           </div>
 
           <!-- Edition 2: Deluxe (Nổi bật nhất) -->
@@ -1903,7 +1903,7 @@
                 <span>Danh hiệu độc quyền: "Thiên Kiếm Xuất Thế"</span>
               </div>
             </div>
-            <a href="#download" class="btn btn-gold btn-shimmer">Nhận Gói Deluxe</a>
+            <a href="#edition-modal-deluxe" class="btn btn-gold btn-shimmer" title="Kích hoạt gói Deluxe VIP">Nhận Gói Deluxe</a>
           </div>
 
           <!-- Edition 3: Ultimate -->
@@ -1936,7 +1936,7 @@
                 <span>Artbook điện tử &amp; Bộ Original Soundtrack 4K</span>
               </div>
             </div>
-            <a href="#download" class="btn btn-secondary">Nhận Gói Ultimate</a>
+            <a href="#edition-modal-ultimate" class="btn btn-secondary" title="Kích hoạt gói Ultimate Collector">Nhận Gói Ultimate</a>
           </div>
 
         </div>
@@ -2247,6 +2247,616 @@
   </aside>
 
   </div> <!-- /.site-wrapper -->
+
+
+  <!-- ====================================================================
+       HỆ THỐNG CÁC MODAL TƯƠNG TÁC XUẤT HIỆN NỘI DUNG (100% PURE CSS :TARGET)
+       Đáp ứng yêu cầu: Bấm nút nào cũng xuất hiện nội dung đầy đủ chi tiết
+       ==================================================================== -->
+
+  <!-- MODAL: ĐĂNG KÝ SỚM / NHẬN QUÀ TÂN THỦ -->
+  <div id="modal-preregister" class="hoyoverse-modal" role="dialog" aria-modal="true" aria-label="Đăng Ký Sớm &amp; Nhận Quà Tân Thủ">
+    <a href="#close" class="modal-backdrop" aria-label="Đóng cửa sổ"></a>
+    <div class="hoyoverse-modal-box animate__animated animate__zoomIn">
+      <div class="modal-box-header">
+        <span class="modal-box-tag">GHI DANH TIÊN GIỚI • PHÚC LỢI TÂN THỦ</span>
+        <h3 class="modal-box-title">Đăng Ký Trước Thành Công!</h3>
+        <a href="#close" class="modal-box-close" aria-label="Đóng">&times;</a>
+      </div>
+      <div class="modal-box-body">
+        <div class="preregister-success-banner">
+          <div class="success-badge-icon">🎉</div>
+          <div class="success-badge-text">
+            <strong>Chào mừng Đại Hiệp đã gia nhập Blade &amp; Soul Awakening!</strong>
+            <p>Toàn bộ gói quà tân thủ trị giá 5.000.000 VNĐ đã được khóa cho tài khoản của bạn và sẵn sàng gửi về hòm thư khi máy chủ mở cửa.</p>
+          </div>
+        </div>
+
+        <div class="giftcode-reveal-card">
+          <span class="giftcode-label">MÃ GIFTCODE TÂN THỦ ĐỘC QUYỀN CỦA BẠN:</span>
+          <div class="giftcode-display">
+            <code>BLADE-AWAKEN-VIP2026</code>
+          </div>
+          <span class="giftcode-note">* Hãy ghi nhớ mã này hoặc chụp màn hình để nhập trong mục Cài Đặt &gt; Hỗ Trợ ingame.</span>
+        </div>
+
+        <h4 class="modal-section-title">Danh Sách Vật Phẩm Quà Tặng Nhận Được:</h4>
+        <div class="rewards-grid-4">
+          <div class="reward-card-item">
+            <span class="reward-item-icon">🐎</span>
+            <strong class="reward-item-name">Phi Mã Thần Tộc</strong>
+            <span class="reward-item-qty">Vĩnh Viễn (Thú Cưỡi)</span>
+          </div>
+          <div class="reward-card-item">
+            <span class="reward-item-icon">🎫</span>
+            <strong class="reward-item-name">100 Vé Chiêu Mộ</strong>
+            <span class="reward-item-qty">Quay Thần Khí Kim</span>
+          </div>
+          <div class="reward-card-item">
+            <span class="reward-item-icon">💰</span>
+            <strong class="reward-item-name">500.000 Vàng</strong>
+            <span class="reward-item-qty">Ngân lượng Tiên Giới</span>
+          </div>
+          <div class="reward-card-item">
+            <span class="reward-item-icon">👘</span>
+            <strong class="reward-item-name">Hắc Long Vũ</strong>
+            <span class="reward-item-qty">Pháp Phục Tuyệt Phẩm</span>
+          </div>
+        </div>
+      </div>
+      <div class="modal-box-footer">
+        <a href="#download-modal-pc" class="btn btn-gold btn-shimmer">Tải Game Ngay Để Sẵn Sàng</a>
+        <a href="#close" class="btn btn-secondary">Đóng Lại</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL: BÀI VIẾT TIN TỨC 1 (FEATURED EVENT) -->
+  <div id="news-modal-1" class="hoyoverse-modal" role="dialog" aria-modal="true" aria-label="Chi Tiết Sự Kiện Thức Tỉnh Chân Long">
+    <a href="#close" class="modal-backdrop" aria-label="Đóng"></a>
+    <div class="hoyoverse-modal-box news-article-modal animate__animated animate__zoomIn">
+      <div class="modal-box-header">
+        <span class="modal-box-tag cat-event">SỰ KIỆN TOÀN CẦU • ĐANG DIỄN RA</span>
+        <h3 class="modal-box-title">Sự Kiện Khởi Đầu: Thức Tỉnh Chân Long &bull; Nhận 100 Vé Chiêu Mộ</h3>
+        <a href="#close" class="modal-box-close" aria-label="Đóng">&times;</a>
+      </div>
+      <div class="modal-box-body news-article-content">
+        <div class="article-hero-banner">
+          <img src="assets/images/celestial-gate.jpg" alt="Sự Kiện Thức Tỉnh Chân Long" width="700" height="350" loading="lazy">
+          <div class="article-time-badge">Thời Gian: 24/10/2026 &ndash; 24/11/2026 (Toàn Máy Chủ)</div>
+        </div>
+        <div class="article-prose">
+          <h4>Kính chào các Quý Thiếu Hiệp,</h4>
+          <p>Nhân dịp phiên bản chính thức <strong>Blade &amp; Soul Awakening</strong> khai mở trên toàn thế giới, Ban Điều Hành trân trọng mang tới chuỗi sự kiện đặc biệt mang tên <em>"Thức Tỉnh Chân Long"</em> với tổng giá trị phần thưởng lên tới hàng tỷ đồng.</p>
+          
+          <h4>1. Thể Lệ Tham Gia:</h4>
+          <ul>
+            <li>Tất cả tài khoản đăng ký và tạo nhân vật từ ngày 24/10/2026 đều tự động được tham gia.</li>
+            <li>Đăng nhập liên tục 7 ngày để điểm danh nhận các mốc quà từ Sơ Cấp đến Thần Thoại.</li>
+            <li>Hoàn thành nhiệm vụ cốt truyện Chương 1 để nhận trọn bộ 100 Vé Chiêu Mộ Thần Khí.</li>
+          </ul>
+
+          <h4>2. Bảng Phần Thưởng 7 Ngày Điểm Danh:</h4>
+          <div class="table-responsive">
+            <table class="hoyoverse-table">
+              <thead>
+                <tr>
+                  <th>Ngày</th>
+                  <th>Phần Thưởng</th>
+                  <th>Số Lượng</th>
+                  <th>Ghi Chú</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr><td>Ngày 1</td><td>Vàng Khóa &amp; Đan Dược Thể Lực</td><td>50.000 Vàng + 5 Bình</td><td>Cần thiết cho tân thủ</td></tr>
+                <tr><td>Ngày 2</td><td>Pháp Bảo Hộ Thân Băng Huyết</td><td>1 Món</td><td>Tăng 15% phòng thủ</td></tr>
+                <tr><td>Ngày 3</td><td>Thú Cưỡi Phi Mã Thần Tộc</td><td>Vĩnh Viễn</td><td>Tốc độ chạy +60%</td></tr>
+                <tr><td>Ngày 5</td><td>Hòm Vũ Khí Hoàng Kim Tự Chọn</td><td>1 Rương</td><td>Cấp độ 60 Thần Phẩm</td></tr>
+                <tr><td>Ngày 7</td><td><strong>100 Vé Chiêu Mộ Thần Khí Hoàng Kim</strong></td><td>100 Vé</td><td>Bảo hiểm chắc chắn ra Thần Phẩm</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+      <div class="modal-box-footer">
+        <a href="#modal-preregister" class="btn btn-gold btn-shimmer">Đăng Ký Nhận Quà Ngay</a>
+        <a href="#news" class="btn btn-secondary">Quay Lại Tin Tức</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL: BÀI VIẾT TIN TỨC 2 (THÔNG BÁO BẢN CẬP NHẬT 5.2) -->
+  <div id="news-modal-2" class="hoyoverse-modal" role="dialog" aria-modal="true" aria-label="Thông Báo Cập Nhật 5.2">
+    <a href="#close" class="modal-backdrop" aria-label="Đóng"></a>
+    <div class="hoyoverse-modal-box news-article-modal animate__animated animate__zoomIn">
+      <div class="modal-box-header">
+        <span class="modal-box-tag cat-notice">THÔNG BÁO MÁY CHỦ • BẢN CẬP NHẬT</span>
+        <h3 class="modal-box-title">Chi Tiết Bản Cập Nhật 5.2: Khai Mở Thần Khí U Minh Vạn Kiếp Trảm</h3>
+        <a href="#close" class="modal-box-close" aria-label="Đóng">&times;</a>
+      </div>
+      <div class="modal-box-body news-article-content">
+        <div class="article-prose">
+          <p><strong>Thời gian hoàn tất bảo trì:</strong> 06:00 &ndash; 10:00 ngày 23/10/2026.</p>
+          <h4>Nội dung cập nhật trọng tâm:</h4>
+          <ul>
+            <li><strong>Mở Thần Khí Mới:</strong> U Minh Vạn Kiếp Trảm &ndash; Thần khí hệ Ám Ảnh dành riêng cho các sát thủ bóng đêm với tuyệt kỹ <em>Cửu U Hắc Long Ba</em>.</li>
+            <li><strong>Cân Bằng Môn Phái:</strong> Tăng 12% sát thương chí mạng cho Kiếm Sư trên không trung; Tối ưu hóa chuỗi combo của Khí Công Sư khi chuyển trạng thái Hỏa/Băng.</li>
+            <li><strong>Tối Ưu Hiệu Năng:</strong> Giảm 35% dung lượng VRAM tiêu thụ trên PC và tăng độ ổn định 60FPS mượt mà cho các thiết bị di động.</li>
+            <li><strong>Đền Bù Bảo Trì:</strong> 300 Ngọc Bích + 5 Vé Chiêu Mộ đã gửi vào hòm thư toàn server.</li>
+          </ul>
+        </div>
+      </div>
+      <div class="modal-box-footer">
+        <a href="#news" class="btn btn-secondary">Đóng</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL: BÀI VIẾT TIN TỨC 3 (SỰ KIỆN PVP 1V1 MÙA 5) -->
+  <div id="news-modal-3" class="hoyoverse-modal" role="dialog" aria-modal="true" aria-label="Đại Hội Võ Thuật Thiên Kiêu">
+    <a href="#close" class="modal-backdrop" aria-label="Đóng"></a>
+    <div class="hoyoverse-modal-box news-article-modal animate__animated animate__zoomIn">
+      <div class="modal-box-header">
+        <span class="modal-box-tag cat-event">ĐẠI HỘI VÕ THUẬT • ESPORTS PVP</span>
+        <h3 class="modal-box-title">Đại Hội Võ Thuật Thiên Kiêu: Khởi Tranh Vòng Loại 1v1 Mùa 5</h3>
+        <a href="#close" class="modal-box-close" aria-label="Đóng">&times;</a>
+      </div>
+      <div class="modal-box-body news-article-content">
+        <div class="article-prose">
+          <p>Giải đấu thể thao điện tử võ thuật đỉnh cao chính thức mở đăng ký cho tất cả kiếm sĩ đạt cấp 50 trở lên.</p>
+          <h4>Cơ Cấu Giải Thưởng:</h4>
+          <ul>
+            <li><strong>Quán Quân (Hạng 1):</strong> 100.000.000 VNĐ Tiền Mặt + Cúp Vàng Thiên Kiêu + Danh Hiệu Độc Quyền Vĩnh Viễn "Độc Cô Cầu Bại".</li>
+            <li><strong>Á Quân (Hạng 2):</strong> 40.000.000 VNĐ + 50.000 Ngọc Bích + Set Trang Phục Bạch Hổ.</li>
+            <li><strong>Quý Quân (Hạng 3):</strong> 20.000.000 VNĐ + 25.000 Ngọc Bích.</li>
+            <li><strong>Top 100:</strong> Nhận vé vào cổng máy chủ danh dự và khung avatar Hoàng Kim.</li>
+          </ul>
+        </div>
+      </div>
+      <div class="modal-box-footer">
+        <a href="#news" class="btn btn-secondary">Đóng</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL: BÀI VIẾT TIN TỨC 4 (CẨM NANG COMBO 12 CHIÊU) -->
+  <div id="news-modal-4" class="hoyoverse-modal" role="dialog" aria-modal="true" aria-label="Cẩm Nang Combo Kiếm Sư">
+    <a href="#close" class="modal-backdrop" aria-label="Đóng"></a>
+    <div class="hoyoverse-modal-box news-article-modal animate__animated animate__zoomIn">
+      <div class="modal-box-header">
+        <span class="modal-box-tag cat-guide">CẨM NANG VÕ HỌC • BÍ KÍP COMBO</span>
+        <h3 class="modal-box-title">Hướng Dẫn Chuỗi Combo Không Chiến Liên Hoàn 12 Chiêu Phái Kiếm Sư</h3>
+        <a href="#close" class="modal-box-close" aria-label="Đóng">&times;</a>
+      </div>
+      <div class="modal-box-body news-article-content">
+        <div class="article-prose">
+          <h4>Bí kíp thống trị võ lâm của Kiếm Sư (Blade Master):</h4>
+          <ol>
+            <li><strong>Bước 1 (Áp Sát &amp; Hất Tung):</strong> Sử dụng <em>Phi Kiếm Xung Phong (Phím 2)</em> tiếp cận mục tiêu trong nháy mắt, lập tức dùng <em>Thăng Long Trảm (Phím C)</em> đưa đối thủ lên không trung.</li>
+            <li><strong>Bước 2 (Không Chiến Liên Hoàn):</strong> Khi đối thủ lơ lửng, thi triển <em>Ngự Kiếm Phi Thăng (Phím RMB)</em> 3 đòn liên tiếp kết hợp <em>Thiên Lôi Phách (Phím 4)</em> giật điện gây choáng.</li>
+            <li><strong>Bước 3 (Kết Liễu Đoạt Mạng):</strong> Đạp kiếm từ trên không lao thẳng xuống đất với chiêu <em>Vạn Kiếm Quy Tông (Phím V)</em>, gây sát thương bộc phá diện rộng 360 độ!</li>
+          </ol>
+        </div>
+      </div>
+      <div class="modal-box-footer">
+        <a href="#news" class="btn btn-secondary">Đóng</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL: BÀI VIẾT TIN TỨC 5 (GIFTCODE PHÚC LỢI) -->
+  <div id="news-modal-5" class="hoyoverse-modal" role="dialog" aria-modal="true" aria-label="Giftcode Phúc Lợi Máy Chủ">
+    <a href="#close" class="modal-backdrop" aria-label="Đóng"></a>
+    <div class="hoyoverse-modal-box news-article-modal animate__animated animate__zoomIn">
+      <div class="modal-box-header">
+        <span class="modal-box-tag cat-reward">PHÚC LỢI TÂN THỦ • GIFTCODE CHÍNH THỨC</span>
+        <h3 class="modal-box-title">Nhập Giftcode "AWAKENING2026" Nhận 500.000 Vàng &amp; Đan Dược</h3>
+        <a href="#close" class="modal-box-close" aria-label="Đóng">&times;</a>
+      </div>
+      <div class="modal-box-body news-article-content">
+        <div class="giftcode-reveal-card">
+          <span class="giftcode-label">MÃ GIFTCODE ĐANG HOẠT ĐỘNG:</span>
+          <div class="giftcode-display">
+            <code>AWAKENING2026</code>
+          </div>
+          <span class="giftcode-note">Hạn sử dụng: Vĩnh viễn &bull; Áp dụng cho mọi người chơi máy chủ mới.</span>
+        </div>
+        <div class="article-prose">
+          <h4>Hướng dẫn 3 bước nhập mã trong game:</h4>
+          <p>1. Đăng nhập vào game Blade &amp; Soul Awakening và chọn nhân vật của bạn.<br>
+             2. Nhấn vào biểu tượng <strong>Cài Đặt (Bánh Răng)</strong> &gt; Chọn tab <strong>Hỗ Trợ / Tài Khoản</strong>.<br>
+             3. Bấm vào nút <strong>Đổi Mã Quà Tặng (Redeem Code)</strong>, nhập chính xác mã <code>AWAKENING2026</code> và bấm Xác Nhận.<br>
+             4. Mở <strong>Hòm Thư (Phím L)</strong> để nhận ngay 500.000 Vàng cùng gói 10 Đan Dược Bổ Khí.</p>
+        </div>
+      </div>
+      <div class="modal-box-footer">
+        <a href="#news" class="btn btn-secondary">Đóng</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL: TẢI BẢN PC WINDOWS 64-BIT -->
+  <div id="download-modal-pc" class="hoyoverse-modal" role="dialog" aria-modal="true" aria-label="Tải Bản Cài Đặt PC Windows">
+    <a href="#close" class="modal-backdrop" aria-label="Đóng"></a>
+    <div class="hoyoverse-modal-box animate__animated animate__zoomIn">
+      <div class="modal-box-header">
+        <span class="modal-box-tag">PHIÊN BẢN CHÍNH THỨC • PC CLIENT</span>
+        <h3 class="modal-box-title">Tải Blade &amp; Soul Awakening Cho PC Windows</h3>
+        <a href="#close" class="modal-box-close" aria-label="Đóng">&times;</a>
+      </div>
+      <div class="modal-box-body">
+        <div class="download-meta-banner">
+          <div class="dl-spec-pill">Dung lượng: <strong>42.5 GB</strong></div>
+          <div class="dl-spec-pill">Phiên bản: <strong>v5.2.0 (DirectX 12)</strong></div>
+          <div class="dl-spec-pill">Hệ điều hành: <strong>Windows 10/11 64-bit</strong></div>
+        </div>
+
+        <h4 class="modal-section-title">Chọn Máy Chủ Tải Xuống Tốc Độ Cao:</h4>
+        <div class="download-links-list">
+          <a href="https://github.com/BladeAndSouls/Phat_HuynhMai_526000150" target="_blank" rel="noopener noreferrer" class="download-link-item">
+            <span class="dl-item-icon">🚀</span>
+            <div class="dl-item-info">
+              <strong>Tải Trực Tiếp Bản Cài Đặt (CDN Siêu Tốc)</strong>
+              <span>Máy chủ VNG / HoYoverse CDN • Khuyên dùng cho mạng Viettel, VNPT, FPT</span>
+            </div>
+            <span class="btn btn-gold btn-sm">Tải Xuống</span>
+          </a>
+          <a href="https://github.com/BladeAndSouls/Phat_HuynhMai_526000150" target="_blank" rel="noopener noreferrer" class="download-link-item">
+            <span class="dl-item-icon">⚡</span>
+            <div class="dl-item-info">
+              <strong>Tải Qua Google Drive VIP</strong>
+              <span>Tốc độ tải tối đa băng thông • Hỗ trợ tiếp tục tải khi đứt mạng</span>
+            </div>
+            <span class="btn btn-secondary btn-sm">Tải Drive</span>
+          </a>
+          <a href="https://github.com/BladeAndSouls/Phat_HuynhMai_526000150" target="_blank" rel="noopener noreferrer" class="download-link-item">
+            <span class="dl-item-icon">📦</span>
+            <div class="dl-item-info">
+              <strong>Tải Bản Nén ZIP Không Cần Cài Đặt (Portable 64-bit)</strong>
+              <span>Chỉ cần giải nén và nhấn Play để chiến ngay</span>
+            </div>
+            <span class="btn btn-secondary btn-sm">Tải ZIP</span>
+          </a>
+        </div>
+      </div>
+      <div class="modal-box-footer">
+        <a href="#specs" class="btn btn-secondary">Kiểm Tra Cấu Hình Máy</a>
+        <a href="#close" class="btn btn-secondary">Đóng</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL: PLAYSTATION 5 & PS4 -->
+  <div id="download-modal-ps5" class="hoyoverse-modal" role="dialog" aria-modal="true" aria-label="Chi Tiết PlayStation 5">
+    <a href="#close" class="modal-backdrop" aria-label="Đóng"></a>
+    <div class="hoyoverse-modal-box animate__animated animate__zoomIn">
+      <div class="modal-box-header">
+        <span class="modal-box-tag">CONSOLE EDITION • PLAYSTATION STORE</span>
+        <h3 class="modal-box-title">Blade &amp; Soul Awakening &bull; PS5 / PS4</h3>
+        <a href="#close" class="modal-box-close" aria-label="Đóng">&times;</a>
+      </div>
+      <div class="modal-box-body">
+        <div class="console-highlight-card">
+          <div class="console-badge">🎮 TỐI ƯU HÓA ĐỘC QUYỀN PS5</div>
+          <p>Hỗ trợ đầy đủ công nghệ tay cầm <strong>DualSense Haptic Feedback</strong> (cảm nhận rung chấn từng đường kiếm chém và độ phản hồi lực khi giương cung), âm thanh vòm không gian 3D Audio Tempest, và hiển thị 4K HDR 60FPS siêu mượt.</p>
+        </div>
+        <p>Phiên bản PlayStation phát hành hoàn toàn miễn phí (Free-to-Play). Không bắt buộc có gói PlayStation Plus để tham gia chơi mạng.</p>
+      </div>
+      <div class="modal-box-footer">
+        <a href="https://store.playstation.com" target="_blank" rel="noopener noreferrer" class="btn btn-gold btn-shimmer">Mở PlayStation Store</a>
+        <a href="#close" class="btn btn-secondary">Đóng</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL: APP STORE IOS -->
+  <div id="download-modal-ios" class="hoyoverse-modal" role="dialog" aria-modal="true" aria-label="Tải App Store iOS">
+    <a href="#close" class="modal-backdrop" aria-label="Đóng"></a>
+    <div class="hoyoverse-modal-box animate__animated animate__zoomIn">
+      <div class="modal-box-header">
+        <span class="modal-box-tag">MOBILE EDITION • APPLE APP STORE</span>
+        <h3 class="modal-box-title">Tải Blade &amp; Soul Cho iOS (iPhone / iPad)</h3>
+        <a href="#close" class="modal-box-close" aria-label="Đóng">&times;</a>
+      </div>
+      <div class="modal-box-body qr-modal-body">
+        <div class="qr-code-box">
+          <div class="qr-code-placeholder">
+            <svg viewBox="0 0 100 100" width="140" height="140" fill="currentColor">
+              <rect x="10" y="10" width="25" height="25" rx="4"></rect>
+              <rect x="65" y="10" width="25" height="25" rx="4"></rect>
+              <rect x="10" y="65" width="25" height="25" rx="4"></rect>
+              <rect x="42" y="15" width="16" height="16"></rect>
+              <rect x="15" y="42" width="16" height="16"></rect>
+              <rect x="42" y="42" width="16" height="16"></rect>
+              <rect x="68" y="42" width="16" height="16"></rect>
+              <rect x="42" y="68" width="16" height="16"></rect>
+              <rect x="68" y="68" width="16" height="16"></rect>
+            </svg>
+          </div>
+          <span class="qr-caption">Dùng Camera iPhone Quét Mã QR Để Tải Nhanh</span>
+        </div>
+        <div class="qr-meta-info">
+          <h4>Yêu Cầu Thiết Bị:</h4>
+          <ul>
+            <li>Hệ điều hành iOS 16.0 trở lên.</li>
+            <li>Khuyên dùng từ iPhone 12 trở lên hoặc iPad dùng chip Apple M1/M2/M4.</li>
+            <li>Hỗ trợ màn hình 120Hz ProMotion siêu mượt.</li>
+            <li>Tặng ngay <strong>Avatar Viền Bạc Độc Quyền iOS</strong> cho người dùng Apple.</li>
+          </ul>
+        </div>
+      </div>
+      <div class="modal-box-footer">
+        <a href="https://www.apple.com/app-store/" target="_blank" rel="noopener noreferrer" class="btn btn-gold btn-shimmer">Mở Trang App Store</a>
+        <a href="#close" class="btn btn-secondary">Đóng</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL: GOOGLE PLAY ANDROID -->
+  <div id="download-modal-android" class="hoyoverse-modal" role="dialog" aria-modal="true" aria-label="Tải Android APK &amp; Google Play">
+    <a href="#close" class="modal-backdrop" aria-label="Đóng"></a>
+    <div class="hoyoverse-modal-box animate__animated animate__zoomIn">
+      <div class="modal-box-header">
+        <span class="modal-box-tag">MOBILE EDITION • GOOGLE PLAY &amp; APK</span>
+        <h3 class="modal-box-title">Tải Blade &amp; Soul Cho Android</h3>
+        <a href="#close" class="modal-box-close" aria-label="Đóng">&times;</a>
+      </div>
+      <div class="modal-box-body qr-modal-body">
+        <div class="qr-code-box">
+          <div class="qr-code-placeholder">
+            <svg viewBox="0 0 100 100" width="140" height="140" fill="currentColor">
+              <rect x="10" y="10" width="25" height="25" rx="4"></rect>
+              <rect x="65" y="10" width="25" height="25" rx="4"></rect>
+              <rect x="10" y="65" width="25" height="25" rx="4"></rect>
+              <rect x="42" y="15" width="16" height="16"></rect>
+              <rect x="15" y="42" width="16" height="16"></rect>
+              <rect x="42" y="42" width="16" height="16"></rect>
+              <rect x="68" y="42" width="16" height="16"></rect>
+              <rect x="42" y="68" width="16" height="16"></rect>
+              <rect x="68" y="68" width="16" height="16"></rect>
+            </svg>
+          </div>
+          <span class="qr-caption">Quét Mã QR Để Tải Cài Đặt Trực Tiếp (APK)</span>
+        </div>
+        <div class="qr-meta-info">
+          <h4>Hai Phương Thức Tải Cho Android:</h4>
+          <p><strong>1. Google Play Store:</strong> Cài đặt tự động, tự động cập nhật phiên bản mới nhất.</p>
+          <p><strong>2. File APK Cài Trực Tiếp (2.8 GB):</strong> Phù hợp cho máy không có dịch vụ Google Play, tốc độ tải nội địa cực nhanh.</p>
+          <div class="modal-action-inline">
+            <a href="https://play.google.com" target="_blank" rel="noopener noreferrer" class="btn btn-gold btn-sm">Mở Google Play</a>
+            <a href="https://github.com/BladeAndSouls/Phat_HuynhMai_526000150" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-sm">Tải APK Trực Tiếp</a>
+          </div>
+        </div>
+      </div>
+      <div class="modal-box-footer">
+        <a href="#close" class="btn btn-secondary">Đóng</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL: EPIC GAMES STORE -->
+  <div id="download-modal-epic" class="hoyoverse-modal" role="dialog" aria-modal="true" aria-label="Epic Games Store">
+    <a href="#close" class="modal-backdrop" aria-label="Đóng"></a>
+    <div class="hoyoverse-modal-box animate__animated animate__zoomIn">
+      <div class="modal-box-header">
+        <span class="modal-box-tag">PARTNER LAUNCHER • EPIC GAMES</span>
+        <h3 class="modal-box-title">Blade &amp; Soul Awakening &bull; Epic Games Store</h3>
+        <a href="#close" class="modal-box-close" aria-label="Đóng">&times;</a>
+      </div>
+      <div class="modal-box-body">
+        <p>Phiên bản phân phối chính hãng trên cổng game quốc tế <strong>Epic Games Store</strong>.</p>
+        <div class="epic-reward-badge">
+          <strong>ĐẶC QUYỀN EPIC EXCLUSIVE:</strong>
+          <p>Nhận ngay gói vật phẩm <em>Epic Starter Bundle trị giá 50$</em> gồm 500 V-Gold, Danh hiệu độc quyền "Hiệp Khách Epic", và Bộ cánh Thiên Thần Pha Lê.</p>
+        </div>
+      </div>
+      <div class="modal-box-footer">
+        <a href="https://store.epicgames.com" target="_blank" rel="noopener noreferrer" class="btn btn-gold btn-shimmer">Mở Epic Games Store</a>
+        <a href="#close" class="btn btn-secondary">Đóng</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL: CLOUD GAMING (CHƠI NGAY TRÊN WEB) -->
+  <div id="download-modal-cloud" class="hoyoverse-modal" role="dialog" aria-modal="true" aria-label="Cloud Gaming Trình Duyệt">
+    <a href="#close" class="modal-backdrop" aria-label="Đóng"></a>
+    <div class="hoyoverse-modal-box animate__animated animate__zoomIn">
+      <div class="modal-box-header">
+        <span class="modal-box-tag">CLOUD STREAMING • KHÔNG CẦN CÀI ĐẶT</span>
+        <h3 class="modal-box-title">Blade &amp; Soul Cloud Web Player</h3>
+        <a href="#close" class="modal-box-close" aria-label="Đóng">&times;</a>
+      </div>
+      <div class="modal-box-body">
+        <div class="cloud-screen-emulator">
+          <div class="cloud-stream-status">
+            <span class="live-pulse-dot"></span>
+            <span>MÁY CHỦ CLOUD GAMING VIỆT NAM (HÀ NỘI / TP.HCM) • ĐANG SẴN SÀNG</span>
+          </div>
+          <div class="cloud-ping-metrics">
+            <span>Độ phân giải: <strong>1080p 60FPS</strong></span>
+            <span>Độ trễ: <strong>12ms</strong> (Cực thấp)</span>
+            <span>Băng thông cần: <strong>&ge; 15 Mbps</strong></span>
+          </div>
+          <div class="cloud-ready-message">
+            Bạn có thể chơi Blade &amp; Soul Awakening ngay trên trình duyệt Chrome, Edge, Safari hoặc Cốc Cốc mà không cần tải bất kỳ tệp dữ liệu nào về máy tính!
+          </div>
+        </div>
+      </div>
+      <div class="modal-box-footer">
+        <a href="#gameplay-video" class="btn btn-gold btn-shimmer">Khởi Chạy Cloud Session Ngay</a>
+        <a href="#close" class="btn btn-secondary">Đóng</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL: GÓI STANDARD EDITION -->
+  <div id="edition-modal-standard" class="hoyoverse-modal" role="dialog" aria-modal="true" aria-label="Chi Tiết Gói Standard">
+    <a href="#close" class="modal-backdrop" aria-label="Đóng"></a>
+    <div class="hoyoverse-modal-box animate__animated animate__zoomIn">
+      <div class="modal-box-header">
+        <span class="modal-box-tag">PHIÊN BẢN CƠ BẢN • MIỄN PHÍ 0Đ</span>
+        <h3 class="modal-box-title">Kích Hoạt Gói Standard Edition</h3>
+        <a href="#close" class="modal-box-close" aria-label="Đóng">&times;</a>
+      </div>
+      <div class="modal-box-body">
+        <div class="edition-detail-hero">
+          <div class="edition-price-badge">MIỄN PHÍ TRỌN ĐỜI</div>
+          <p>Trải nghiệm trọn vẹn toàn bộ 100% cốt truyện Hồng Môn, 4 hệ phái võ học, và toàn bộ các tính năng thế giới mở MMORPG đỉnh cao mà không có bất kỳ rào cản phí nào.</p>
+        </div>
+        <div class="giftcode-reveal-card">
+          <span class="giftcode-label">MÃ KÍCH HOẠT GÓI MIỄN PHÍ:</span>
+          <div class="giftcode-display">
+            <code>FREE-HERO-AWAKEN</code>
+          </div>
+        </div>
+      </div>
+      <div class="modal-box-footer">
+        <a href="#download-modal-pc" class="btn btn-gold btn-shimmer">Tải Game Ngay</a>
+        <a href="#close" class="btn btn-secondary">Đóng</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL: GÓI DELUXE EDITION -->
+  <div id="edition-modal-deluxe" class="hoyoverse-modal" role="dialog" aria-modal="true" aria-label="Chi Tiết Gói Deluxe">
+    <a href="#close" class="modal-backdrop" aria-label="Đóng"></a>
+    <div class="hoyoverse-modal-box animate__animated animate__zoomIn">
+      <div class="modal-box-header">
+        <span class="modal-box-tag">PHIÊN BẢN DELUXE • PHỔ BIẾN NHẤT</span>
+        <h3 class="modal-box-title">Nhận Gói Deluxe Edition &bull; 499.000đ</h3>
+        <a href="#close" class="modal-box-close" aria-label="Đóng">&times;</a>
+      </div>
+      <div class="modal-box-body">
+        <div class="edition-detail-hero">
+          <div class="edition-price-badge price-gold">499.000 VNĐ</div>
+          <p>Trọn bộ trang bị ngoại trang cao cấp, thú cưỡi vĩnh viễn và đặc quyền VIP giúp bạn bứt phá lực chiến dẫn đầu máy chủ mới.</p>
+        </div>
+        <h4>Đặc Quyền Kèm Theo Gói:</h4>
+        <ul class="edition-perks-list">
+          <li>✨ Tặng Avatar Độc Quyền: <strong>Thanh Long Tôn Giả</strong> (Hào quang băng tuyết)</li>
+          <li>Set Trang Phục Huyền Thoại <strong>"Hắc Long Vũ"</strong> vĩnh viễn</li>
+          <li>Thú cưỡi <strong>Phi Mã Thần Tộc</strong> tốc độ di chuyển +60%</li>
+          <li><strong>30 Ngày Thẻ VIP Membership</strong> (Tăng 20% EXP và 20% tỷ lệ rơi đồ phó bản)</li>
+          <li>Danh hiệu vàng độc quyền: <em>"Thiên Kiếm Xuất Thế"</em></li>
+        </ul>
+        <div class="giftcode-reveal-card">
+          <span class="giftcode-label">MÃ NHẬN GÓI DELUXE DÀNH CHO BẠN:</span>
+          <div class="giftcode-display">
+            <code>DELUXE-VIP-AWAKEN</code>
+          </div>
+        </div>
+      </div>
+      <div class="modal-box-footer">
+        <a href="#download-modal-pc" class="btn btn-gold btn-shimmer">Xác Nhận Kích Hoạt Gói</a>
+        <a href="#close" class="btn btn-secondary">Đóng</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL: GÓI ULTIMATE EDITION -->
+  <div id="edition-modal-ultimate" class="hoyoverse-modal" role="dialog" aria-modal="true" aria-label="Chi Tiết Gói Ultimate">
+    <a href="#close" class="modal-backdrop" aria-label="Đóng"></a>
+    <div class="hoyoverse-modal-box animate__animated animate__zoomIn">
+      <div class="modal-box-header">
+        <span class="modal-box-tag">PHIÊN BẢN TỐI THƯỢNG • SƯU TẬP CAO CẤP</span>
+        <h3 class="modal-box-title">Nhận Gói Ultimate Collector &bull; 999.000đ</h3>
+        <a href="#close" class="modal-box-close" aria-label="Đóng">&times;</a>
+      </div>
+      <div class="modal-box-body">
+        <div class="edition-detail-hero">
+          <div class="edition-price-badge price-gold">999.000 VNĐ</div>
+          <p>Tuyệt phẩm dành cho những nhà sưu tập đam mê trải nghiệm đỉnh cao nhất của Blade &amp; Soul Awakening.</p>
+        </div>
+        <h4>Toàn Bộ Đặc Quyền VIP Vô Song:</h4>
+        <ul class="edition-perks-list">
+          <li>🌟 Tặng Avatar Tối Thượng: <strong>Phi Thiên Thần Nữ (Viền Vàng Hoàng Kim 3D)</strong></li>
+          <li>Toàn bộ quyền lợi vật phẩm của gói Deluxe Edition</li>
+          <li>Hiệu ứng hào quang Thần Khí tối thượng chiếu sáng quanh thân nhân vật</li>
+          <li>Vé đặc quyền vào cổng thử nghiệm Closed Beta sớm trước toàn cầu</li>
+          <li>Bộ Sách Tranh Điện Tử (Digital Artbook 4K) &amp; Album Nhạc Giao Hưởng OST chất lượng cao</li>
+        </ul>
+        <div class="giftcode-reveal-card">
+          <span class="giftcode-label">MÃ KÍCH HOẠT GÓI ULTIMATE:</span>
+          <div class="giftcode-display">
+            <code>ULTIMATE-GOD-BLADE</code>
+          </div>
+        </div>
+      </div>
+      <div class="modal-box-footer">
+        <a href="#download-modal-pc" class="btn btn-gold btn-shimmer">Xác Nhận Nhận Gói Tối Thượng</a>
+        <a href="#close" class="btn btn-secondary">Đóng</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL: VIDEO CLIP 2 (KHÔNG CHIẾN TỰ DO) -->
+  <div id="video-clip-2" class="hoyoverse-modal" role="dialog" aria-modal="true" aria-label="Clip Không Chiến Tự Do">
+    <a href="#close" class="modal-backdrop" aria-label="Đóng"></a>
+    <div class="hoyoverse-modal-box animate__animated animate__zoomIn">
+      <div class="modal-box-header">
+        <span class="modal-box-tag">GAMEPLAY CLIP 02 • COMBAT AIR-COMBO</span>
+        <h3 class="modal-box-title">Trình Diễn Không Chiến Tự Do &bull; Combo 12 Chiêu</h3>
+        <a href="#close" class="modal-box-close" aria-label="Đóng">&times;</a>
+      </div>
+      <div class="modal-box-body">
+        <div class="inline-cinema-viewport">
+          <iframe src="https://www.youtube-nocookie.com/embed/oHg5SJYRHA0?rel=0&amp;autoplay=1" title="Không Chiến Tự Do" width="100%" height="100%" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+        <p style="margin-top: 14px; color: #cbd5e1; font-size: 0.9rem;">
+          Hệ thống chiến đấu 3D thế hệ mới cho phép hất tung đối thủ, né tránh trên không bằng khinh công và kết liễu từ độ cao hàng chục mét với hiệu ứng vật lý Unreal Engine 5 chân thực.
+        </p>
+      </div>
+      <div class="modal-box-footer">
+        <a href="#gameplay-video" class="btn btn-secondary">Đóng</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL: VIDEO CLIP 3 (ĐẤU TRƯỜNG 1V1) -->
+  <div id="video-clip-3" class="hoyoverse-modal" role="dialog" aria-modal="true" aria-label="Clip Đấu Trường PvP 1v1">
+    <a href="#close" class="modal-backdrop" aria-label="Đóng"></a>
+    <div class="hoyoverse-modal-box animate__animated animate__zoomIn">
+      <div class="modal-box-header">
+        <span class="modal-box-tag">GAMEPLAY CLIP 03 • PVP ARENA 1V1</span>
+        <h3 class="modal-box-title">Đấu Trường Võ Thuật PvP 1v1 Đỉnh Cao</h3>
+        <a href="#close" class="modal-box-close" aria-label="Đóng">&times;</a>
+      </div>
+      <div class="modal-box-body">
+        <div class="inline-cinema-viewport">
+          <iframe src="https://www.youtube-nocookie.com/embed/oHg5SJYRHA0?rel=0&amp;autoplay=1" title="Đấu Trường 1v1" width="100%" height="100%" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+        <p style="margin-top: 14px; color: #cbd5e1; font-size: 0.9rem;">
+          Nơi bản lĩnh và kỹ năng ngự kiếm quyết định chiến thắng. Đấu trường 1v1 tự động cân bằng toàn bộ chỉ số trang bị để đem lại sự công bằng tuyệt đối cho mọi đấu thủ.
+        </p>
+      </div>
+      <div class="modal-box-footer">
+        <a href="#gameplay-video" class="btn btn-secondary">Đóng</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL: VIDEO CLIP 4 (KHINH CÔNG TIÊN MÔN) -->
+  <div id="video-clip-4" class="hoyoverse-modal" role="dialog" aria-modal="true" aria-label="Clip Khinh Công Tiên Môn">
+    <a href="#close" class="modal-backdrop" aria-label="Đóng"></a>
+    <div class="hoyoverse-modal-box animate__animated animate__zoomIn">
+      <div class="modal-box-header">
+        <span class="modal-box-tag">GAMEPLAY CLIP 04 • OPEN WORLD FLIGHT</span>
+        <h3 class="modal-box-title">Khinh Công Tiên Môn &bull; Thế Giới Mở 4K</h3>
+        <a href="#close" class="modal-box-close" aria-label="Đóng">&times;</a>
+      </div>
+      <div class="modal-box-body">
+        <div class="inline-cinema-viewport">
+          <iframe src="https://www.youtube-nocookie.com/embed/oHg5SJYRHA0?rel=0&amp;autoplay=1" title="Khinh Công Tiên Môn" width="100%" height="100%" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+        <p style="margin-top: 14px; color: #cbd5e1; font-size: 0.9rem;">
+          Tự do bay lượn xuyên qua tầng mây Cửu Trùng Thiên Môn, đạp nước lướt sóng qua biển Thần Long và vượt các vách núi hùng vĩ không giới hạn bản đồ.
+        </p>
+      </div>
+      <div class="modal-box-footer">
+        <a href="#gameplay-video" class="btn btn-secondary">Đóng</a>
+      </div>
+    </div>
+  </div>
 
 </body>
 </html>

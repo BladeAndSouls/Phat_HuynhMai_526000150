@@ -5696,3 +5696,600 @@ body:has(#theme-gold:checked) .dock-btn-gold,
   }
 }
 
+
+/* ============================================================
+   HOYOVERSE INTERACTIVE PURE CSS MODALS (:TARGET ZERO JS)
+   ============================================================ */
+
+.hoyoverse-modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(4, 7, 18, 0.88);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  z-index: 10000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px 16px;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity 0.35s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.35s ease;
+}
+
+.hoyoverse-modal:target {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+.hoyoverse-modal .modal-backdrop {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: transparent;
+  cursor: default;
+}
+
+.hoyoverse-modal-box {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: 760px;
+  max-height: 90vh;
+  overflow-y: auto;
+  background: linear-gradient(135deg, rgba(20, 28, 48, 0.98), rgba(10, 15, 29, 0.98));
+  border: 1px solid rgba(201, 169, 110, 0.45);
+  border-radius: 22px;
+  box-shadow: 0 25px 70px -10px rgba(0, 0, 0, 0.9),
+              0 0 45px rgba(201, 169, 110, 0.2),
+              inset 0 1px 0 rgba(255, 255, 255, 0.15);
+  padding: 32px;
+  transform: scale(0.92) translateY(25px);
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.hoyoverse-modal:target .hoyoverse-modal-box {
+  transform: scale(1) translateY(0);
+}
+
+.hoyoverse-modal-box.news-article-modal {
+  max-width: 860px;
+}
+
+/* Modal Header */
+.modal-box-header {
+  position: relative;
+  padding-bottom: 18px;
+  border-bottom: 1px solid rgba(201, 169, 110, 0.2);
+  margin-bottom: 22px;
+}
+
+.modal-box-tag {
+  display: inline-block;
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+  color: #c9a96e;
+  margin-bottom: 8px;
+}
+
+.modal-box-title {
+  font-size: 1.45rem;
+  font-weight: 800;
+  color: #f8fafc;
+  line-height: 1.35;
+  margin: 0;
+  padding-right: 36px;
+}
+
+.modal-box-close {
+  position: absolute;
+  top: -4px;
+  right: 0;
+  width: 38px;
+  height: 38px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.8rem;
+  line-height: 1;
+  color: #94a3b8;
+  text-decoration: none;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: all 0.25s ease;
+}
+
+.modal-box-close:hover {
+  color: #f3e5ab;
+  background: rgba(201, 169, 110, 0.2);
+  border-color: #c9a96e;
+  transform: rotate(90deg);
+}
+
+/* Modal Body & Elements */
+.modal-box-body {
+  color: #cbd5e1;
+  font-size: 0.95rem;
+  line-height: 1.7;
+}
+
+.modal-section-title {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #f3e5ab;
+  margin: 22px 0 14px 0;
+}
+
+/* Preregister Success Banner */
+.preregister-success-banner {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 18px 20px;
+  border-radius: 14px;
+  background: linear-gradient(135deg, rgba(34, 197, 94, 0.15), rgba(15, 23, 42, 0.6));
+  border: 1px solid rgba(34, 197, 94, 0.4);
+  margin-bottom: 22px;
+}
+
+.success-badge-icon {
+  font-size: 2.4rem;
+  flex-shrink: 0;
+}
+
+.success-badge-text strong {
+  display: block;
+  color: #86efac;
+  font-size: 1.05rem;
+  margin-bottom: 4px;
+}
+
+.success-badge-text p {
+  margin: 0;
+  font-size: 0.88rem;
+  color: #cbd5e1;
+}
+
+/* Giftcode Reveal Box */
+.giftcode-reveal-card {
+  padding: 18px 22px;
+  border-radius: 14px;
+  background: rgba(201, 169, 110, 0.08);
+  border: 2px dashed rgba(201, 169, 110, 0.5);
+  text-align: center;
+  margin: 20px 0;
+}
+
+.giftcode-label {
+  display: block;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  color: #c9a96e;
+  margin-bottom: 8px;
+}
+
+.giftcode-display code {
+  display: inline-block;
+  font-family: monospace, Courier, sans-serif;
+  font-size: 1.7rem;
+  font-weight: 900;
+  letter-spacing: 3px;
+  color: #fef08a;
+  background: rgba(10, 15, 29, 0.85);
+  padding: 8px 24px;
+  border-radius: 10px;
+  border: 1px solid rgba(253, 224, 71, 0.4);
+  box-shadow: 0 0 20px rgba(201, 169, 110, 0.3);
+}
+
+.giftcode-note {
+  display: block;
+  font-size: 0.76rem;
+  color: #94a3b8;
+  margin-top: 8px;
+  font-style: italic;
+}
+
+/* Rewards Grid 4 */
+.rewards-grid-4 {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 14px;
+  margin-top: 12px;
+}
+
+.reward-card-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 16px 12px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  transition: transform 0.25s ease, border-color 0.25s ease;
+}
+
+.reward-card-item:hover {
+  transform: translateY(-4px);
+  border-color: rgba(201, 169, 110, 0.5);
+  background: rgba(201, 169, 110, 0.08);
+}
+
+.reward-item-icon {
+  font-size: 2rem;
+  margin-bottom: 8px;
+}
+
+.reward-item-name {
+  color: #f8fafc;
+  font-size: 0.88rem;
+  margin-bottom: 2px;
+}
+
+.reward-item-qty {
+  color: #c9a96e;
+  font-size: 0.74rem;
+  font-weight: 600;
+}
+
+/* Article Modal Prose */
+.article-hero-banner {
+  position: relative;
+  border-radius: 14px;
+  overflow: hidden;
+  margin-bottom: 20px;
+  border: 1px solid rgba(201, 169, 110, 0.3);
+}
+
+.article-hero-banner img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+}
+
+.article-time-badge {
+  position: absolute;
+  bottom: 12px;
+  right: 14px;
+  padding: 6px 14px;
+  border-radius: 8px;
+  background: rgba(10, 15, 29, 0.9);
+  border: 1px solid rgba(201, 169, 110, 0.4);
+  color: #f3e5ab;
+  font-size: 0.78rem;
+  font-weight: 600;
+}
+
+.article-prose h4 {
+  color: #f8fafc;
+  font-size: 1.1rem;
+  margin: 18px 0 8px 0;
+}
+
+.article-prose ul, .article-prose ol {
+  padding-left: 22px;
+  margin: 10px 0;
+}
+
+.article-prose li {
+  margin-bottom: 6px;
+}
+
+/* Table Responsive */
+.table-responsive {
+  overflow-x: auto;
+  margin: 16px 0;
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.hoyoverse-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+  font-size: 0.88rem;
+}
+
+.hoyoverse-table th {
+  background: rgba(30, 41, 59, 0.9);
+  padding: 12px 14px;
+  color: #c9a96e;
+  font-weight: 700;
+  border-bottom: 1px solid rgba(201, 169, 110, 0.3);
+}
+
+.hoyoverse-table td {
+  padding: 12px 14px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  color: #cbd5e1;
+}
+
+.hoyoverse-table tr:nth-child(even) td {
+  background: rgba(255, 255, 255, 0.02);
+}
+
+/* Download Details */
+.download-meta-banner {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.dl-spec-pill {
+  padding: 6px 14px;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  font-size: 0.82rem;
+  color: #94a3b8;
+}
+
+.dl-spec-pill strong {
+  color: #f8fafc;
+}
+
+.download-links-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin: 16px 0;
+}
+
+.download-link-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 16px 20px;
+  border-radius: 14px;
+  background: rgba(15, 23, 42, 0.85);
+  border: 1px solid rgba(201, 169, 110, 0.25);
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.download-link-item:hover {
+  transform: translateX(6px);
+  border-color: #c9a96e;
+  background: rgba(24, 34, 60, 0.95);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+}
+
+.dl-item-icon {
+  font-size: 1.8rem;
+  flex-shrink: 0;
+}
+
+.dl-item-info {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  flex: 1;
+}
+
+.dl-item-info strong {
+  color: #f8fafc;
+  font-size: 0.95rem;
+}
+
+.dl-item-info span {
+  color: #94a3b8;
+  font-size: 0.78rem;
+}
+
+.btn-sm {
+  padding: 8px 18px;
+  font-size: 0.82rem;
+}
+
+/* QR Code Display */
+.qr-modal-body {
+  display: flex;
+  gap: 28px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.qr-code-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 18px;
+  border-radius: 16px;
+  background: rgba(15, 23, 42, 0.9);
+  border: 1px solid rgba(201, 169, 110, 0.35);
+  flex-shrink: 0;
+}
+
+.qr-code-placeholder {
+  padding: 12px;
+  border-radius: 10px;
+  background: #ffffff;
+  color: #0b0f19;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+
+.qr-caption {
+  font-size: 0.74rem;
+  color: #cbd5e1;
+  max-width: 160px;
+  line-height: 1.35;
+}
+
+.qr-meta-info {
+  flex: 1;
+  min-width: 260px;
+}
+
+.qr-meta-info h4 {
+  color: #f3e5ab;
+  margin: 0 0 10px 0;
+}
+
+.modal-action-inline {
+  display: flex;
+  gap: 10px;
+  margin-top: 16px;
+  flex-wrap: wrap;
+}
+
+/* Console & Epic Highlights */
+.console-highlight-card, .epic-reward-badge {
+  padding: 18px 20px;
+  border-radius: 14px;
+  background: rgba(59, 130, 246, 0.1);
+  border: 1px solid rgba(59, 130, 246, 0.35);
+  margin-bottom: 16px;
+}
+
+.console-badge {
+  color: #93c5fd;
+  font-size: 0.85rem;
+  font-weight: 700;
+  margin-bottom: 6px;
+}
+
+.epic-reward-badge strong {
+  color: #fde047;
+  display: block;
+  margin-bottom: 6px;
+}
+
+/* Cloud Stream Simulator */
+.cloud-screen-emulator {
+  padding: 24px;
+  border-radius: 16px;
+  background: #000;
+  border: 1px solid rgba(201, 169, 110, 0.4);
+  text-align: center;
+  box-shadow: inset 0 0 40px rgba(201, 169, 110, 0.1);
+}
+
+.cloud-stream-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 16px;
+  border-radius: 20px;
+  background: rgba(34, 197, 94, 0.15);
+  border: 1px solid rgba(34, 197, 94, 0.4);
+  color: #86efac;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.8px;
+  margin-bottom: 18px;
+}
+
+.cloud-ping-metrics {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-bottom: 18px;
+  font-size: 0.88rem;
+  color: #94a3b8;
+}
+
+.cloud-ping-metrics strong {
+  color: #f8fafc;
+}
+
+.cloud-ready-message {
+  color: #e2e8f0;
+  font-size: 0.92rem;
+  max-width: 520px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+/* Edition Detail Hero */
+.edition-detail-hero {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  padding: 16px 20px;
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  margin-bottom: 18px;
+}
+
+.edition-price-badge {
+  padding: 8px 18px;
+  border-radius: 10px;
+  background: rgba(201, 169, 110, 0.2);
+  border: 1px solid rgba(201, 169, 110, 0.5);
+  color: #f3e5ab;
+  font-size: 1.1rem;
+  font-weight: 800;
+  white-space: nowrap;
+}
+
+.edition-price-badge.price-gold {
+  background: linear-gradient(135deg, rgba(245, 158, 11, 0.3), rgba(234, 179, 8, 0.15));
+  border-color: #f59e0b;
+  color: #fde047;
+}
+
+.edition-perks-list {
+  padding-left: 22px;
+  margin: 12px 0 18px 0;
+  line-height: 1.8;
+}
+
+.edition-perks-list li {
+  color: #cbd5e1;
+}
+
+/* News List Item Enhancements */
+.news-item-arrow {
+  font-size: 1.2rem;
+  color: #c9a96e;
+  opacity: 0.7;
+  transition: transform 0.25s ease, opacity 0.25s ease;
+  margin-left: auto;
+}
+
+.news-list-item:hover .news-item-arrow {
+  opacity: 1;
+  transform: translateX(4px);
+}
+
+/* Modal Footer */
+.modal-box-footer {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 12px;
+  padding-top: 20px;
+  border-top: 1px solid rgba(201, 169, 110, 0.2);
+  margin-top: 24px;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 768px) {
+  .hoyoverse-modal-box {
+    padding: 20px 16px;
+  }
+  .modal-box-title {
+    font-size: 1.2rem;
+  }
+  .qr-modal-body {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
