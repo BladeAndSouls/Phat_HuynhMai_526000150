@@ -279,6 +279,33 @@ Dự án được xây dựng với vai trò của một **Kỹ sư Thiết kế
 
 ---
 
+### Giai đoạn 14: Loại Bỏ Video Popup & Tái Thiết Kế Giao Diện Toàn Diện Theo Phong Cách Genshin Impact (HoYoverse)
+- **Mục tiêu:** Thực hiện trọn vẹn yêu cầu: *"loại bỏ video bật ra trong khám phá game play, và học tập cái trang này : https://genshin.hoyoverse.com/vi/home. xem sửa được gì thì sửa"*.
+- **Các giải pháp kỹ thuật và đột phá thiết kế (100% Zero JavaScript):**
+  1. **Loại Bỏ Hoàn Toàn Video Popup Modal & Thay Thế Bằng Inline Cinema Showcase Stage (`#gameplay-video`):**
+     - Xóa bỏ cửa sổ popup modal trailer (`#trailer-modal`) tự bật lên khi nhấn vào các nút xem trailer.
+     - Xây dựng sân khấu chiếu video nội tuyến chuẩn điện ảnh 16:9 (`.inline-cinema-card` & `.inline-cinema-viewport`) nhúng video YouTube chính thức (`https://www.youtube.com/embed/oHg5SJYRHA0?rel=0`) trực tiếp trong luồng trang.
+     - Tích hợp thanh tiêu chuẩn rạp phim HoYoverse: huy hiệu phát sóng LIVE, badge công nghệ hiển thị 4K UHD 60FPS HDR, chuẩn âm thanh vòm Dolby Atmos, kèm thanh điều hướng playlist linh hoạt.
+  2. **Bảng Tin Tức & Sự Kiện HoYoverse Đẳng Cấp (`#news`):**
+     - Menu tab tin tức phong cách Genshin Impact: Mới Nhất, Thông Báo, Hoạt Động, Cẩm Nang.
+     - Bố cục lưới 2 cột bất đối xứng (2-Column Asymmetric News Board): Cột trái là thẻ Sự Kiện Nổi Bật kích thước lớn với hiệu ứng zoom quang học và gradient đen bóng; Cột phải là danh sách 4 tin tức được phân loại bằng huy hiệu màu sắc tương ứng (Đỏ - Sự Kiện, Tím - Cập Nhật, Lục - Cẩm Nang, Lam - Thông Báo).
+  3. **Hệ Thống Nhân Vật Đậm Phong Cách Genshin Impact (`#classes`):**
+     - Bổ sung huy hiệu Nguyên Tố Vision (Băng - Cryo, Hỏa - Pyro, Ám Ảnh - Shadow, Cuồng Long - Electro) với màu sắc hào quang phát sáng.
+     - Tích hợp thông tin Diễn viên lồng tiếng (Voice Actor / CV: Kenjiro Tsuda, Saori Hayami, Nakamura Yuichi, Akio Otsuka) chuẩn văn hóa Anime game HoYoverse.
+     - Bổ sung bong bóng thoại trích dẫn câu nói kinh điển của từng môn phái (`.class-voice-quote`).
+  4. **Khu Vực Tải Game Đa Nền Tảng Genshin (`#download`):**
+     - Lưới thẻ tải đa nền tảng hiện đại: PC Windows (Bản cài đặt 64-Bit), PlayStation 5 / PS4, iOS App Store, Android Google Play, Epic Games Store, và Cloud Gaming (Chơi ngay trên trình duyệt).
+  5. **Quy Chuẩn Cảnh Báo Pháp Lý Game Online 18+ Việt Nam (`<footer>`):**
+     - Thanh cảnh báo pháp lý chuẩn mực: Huy hiệu đỏ cảnh báo 18+ cùng thông điệp bắt buộc: *"Trò chơi dành cho người chơi từ 18 tuổi trở lên. Chơi quá 180 phút một ngày sẽ ảnh hưởng xấu đến sức khỏe"*.
+     - Ghi nhận thông tin phê duyệt nội dung kịch bản G1 và thông tin sinh viên Huỳnh Mai Phát - MSSV: 526000150.
+  6. **Thanh Tiện Ích Cộng Đồng Nổi Bên Phải Màn Hình (`.genshin-floating-dock`):**
+     - Thanh công cụ nổi kính mờ cố định cạnh phải màn hình (Right Floating Glassmorphic Dock) gồm 6 phím tắt tương tác: Video Gameplay 4K, YouTube Channel, Discord Server, Fanpage Facebook, Tải Game Nhanh, và Cuộn mượt về đầu trang.
+     - Hiệu ứng hover bung tooltip nhãn định danh từ bên trái siêu mượt mà hoàn toàn bằng Pure CSS.
+  7. **Ràng Buộc Kỹ Thuật Nghiêm Ngặt:**
+     - Giữ vững 100% Zero JavaScript: 0 thẻ `<script>`, 0 file `.js`, hoạt động hoàn toàn trên nền tảng HTML5 Semantic và CSS3 Animation hiện đại.
+
+---
+
 ## 3. BẢNG TỰ ĐÁNH GIÁ MỨC ĐỘ ĐÁP ỨNG YÊU CẦU ĐỀ BÀI
 
 | STT | Tiêu chí đánh giá của Giảng viên | Hiện trạng thực hiện trong dự án | Mức độ hoàn thành |
