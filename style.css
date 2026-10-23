@@ -3846,3 +3846,486 @@ body:has(#theme-gold:checked) .dock-btn-gold,
     align-items: flex-start;
   }
 }
+
+
+/* ==========================================================================
+   HỆ THỐNG AVATAR & CHÂN DUNG NHÂN VẬT THƯỢNG CỔ (PURE CSS DESIGN)
+   Bổ sung: Dàn Nhân Vật Trọng Tâm, Avatar Hệ Phái, Bảng Vàng PvP, Thần Khí & Gói Game
+   Sinh viên thực hiện: Huỳnh Mai Phát - MSSV: 526000150
+   ========================================================================== */
+
+/* 1. DÀN NHÂN VẬT TRỌNG TÂM: ÂN OÁN TÌNH THÙ (LORE DRAMATIS PERSONAE) */
+.lore-characters-showcase {
+  margin-top: var(--space-3xl);
+  padding: var(--space-2xl) var(--space-xl);
+  background: radial-gradient(circle at top center, rgba(30, 41, 59, 0.45) 0%, rgba(10, 15, 29, 0.85) 100%);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-xl);
+  backdrop-filter: blur(12px);
+  position: relative;
+  overflow: hidden;
+}
+
+.lore-characters-showcase::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 20%;
+  right: 20%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--primary-color), var(--gold-color), transparent);
+}
+
+.characters-header {
+  text-align: center;
+  max-width: 680px;
+  margin: 0 auto var(--space-2xl);
+}
+
+.characters-tag {
+  display: inline-block;
+  padding: 4px 14px;
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--gold-color);
+  background: rgba(245, 158, 11, 0.12);
+  border: 1px solid rgba(245, 158, 11, 0.35);
+  border-radius: 20px;
+  margin-bottom: var(--space-sm);
+}
+
+.characters-title {
+  font-size: clamp(1.4rem, 2.8vw, 1.95rem);
+  font-weight: 800;
+  margin-bottom: var(--space-xs);
+  letter-spacing: 0.5px;
+}
+
+.characters-subtitle {
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+
+.characters-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--space-lg);
+}
+
+.character-profile-card {
+  background: rgba(15, 23, 42, 0.75);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  padding: var(--space-xl) var(--space-md) var(--space-lg);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  transition: all var(--transition-normal);
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
+}
+
+.character-profile-card::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: var(--radius-lg);
+  border: 1px solid transparent;
+  transition: border-color var(--transition-normal);
+  pointer-events: none;
+}
+
+.character-profile-card:hover {
+  transform: translateY(-8px);
+  background: rgba(26, 36, 56, 0.9);
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.5), 0 0 20px rgba(var(--primary-rgb), 0.25);
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+.profile-avatar-wrap {
+  position: relative;
+  margin-bottom: var(--space-md);
+  width: 120px;
+  height: 120px;
+}
+
+.profile-avatar-img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid var(--border-medium);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.6);
+  transition: all var(--transition-normal);
+  display: block;
+}
+
+.character-profile-card:hover .profile-avatar-img {
+  transform: scale(1.06);
+  border-color: var(--gold-color);
+  box-shadow: 0 0 24px rgba(245, 158, 11, 0.5);
+}
+
+.profile-role-badge {
+  position: absolute;
+  bottom: -6px;
+  left: 50%;
+  transform: translateX(-50%);
+  white-space: nowrap;
+  font-size: 0.68rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  padding: 3px 10px;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.6);
+}
+
+.role-protagonist {
+  background: linear-gradient(135deg, #dc2626, #b91c1c);
+  color: #fff;
+  border: 1px solid #f87171;
+  box-shadow: 0 0 12px rgba(220, 38, 38, 0.5);
+}
+
+.role-betrayer {
+  background: linear-gradient(135deg, #0284c7, #0369a1);
+  color: #fff;
+  border: 1px solid #38bdf8;
+  box-shadow: 0 0 12px rgba(2, 132, 199, 0.5);
+}
+
+.role-villain {
+  background: linear-gradient(135deg, #7c3aed, #5b21b6);
+  color: #fff;
+  border: 1px solid #a78bfa;
+  box-shadow: 0 0 12px rgba(124, 58, 237, 0.5);
+}
+
+.role-innocent {
+  background: linear-gradient(135deg, #059669, #047857);
+  color: #fff;
+  border: 1px solid #34d399;
+  box-shadow: 0 0 12px rgba(5, 150, 105, 0.5);
+}
+
+.profile-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-grow: 1;
+  width: 100%;
+}
+
+.profile-name {
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: var(--text-pure);
+  margin-bottom: 2px;
+  letter-spacing: 0.3px;
+}
+
+.profile-alias {
+  font-size: 0.78rem;
+  color: var(--gold-color);
+  font-style: italic;
+  margin-bottom: var(--space-xs);
+  display: block;
+}
+
+.profile-desc {
+  font-size: 0.84rem;
+  color: var(--text-muted);
+  line-height: 1.55;
+  margin-bottom: var(--space-md);
+  flex-grow: 1;
+}
+
+.profile-fate-tag {
+  font-size: 0.72rem;
+  font-weight: 700;
+  padding: 4px 10px;
+  border-radius: 8px;
+  letter-spacing: 0.3px;
+  width: 100%;
+  text-align: center;
+}
+
+.fate-vengeance {
+  background: rgba(220, 38, 38, 0.15);
+  color: #fca5a5;
+  border: 1px solid rgba(220, 38, 38, 0.4);
+}
+
+.fate-ruined {
+  background: rgba(2, 132, 199, 0.15);
+  color: #7dd3fc;
+  border: 1px solid rgba(2, 132, 199, 0.4);
+}
+
+.fate-executed {
+  background: rgba(124, 58, 237, 0.15);
+  color: #c4b5fd;
+  border: 1px solid rgba(124, 58, 237, 0.4);
+}
+
+.fate-martyr {
+  background: rgba(5, 150, 105, 0.15);
+  color: #6ee7b7;
+  border: 1px solid rgba(5, 150, 105, 0.4);
+}
+
+/* 2. AVATAR BADGE TRÊN THẺ HỆ PHÁI (CLASSES AVATAR BADGE) */
+.class-avatar-badge {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  width: 58px;
+  height: 58px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 2.5px solid var(--gold-color);
+  box-shadow: 0 0 16px rgba(245, 158, 11, 0.45), 0 4px 12px rgba(0, 0, 0, 0.6);
+  z-index: 6;
+  transition: all var(--transition-normal);
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(6px);
+}
+
+.class-avatar-badge img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform var(--transition-normal);
+}
+
+.class-card:hover .class-avatar-badge {
+  transform: scale(1.12) rotate(6deg);
+  border-color: #fef08a;
+  box-shadow: 0 0 24px rgba(245, 158, 11, 0.7);
+}
+
+.class-card:hover .class-avatar-badge img {
+  transform: scale(1.08);
+}
+
+/* 3. BẢNG VÀNG THIÊN KIÊU ĐẤU TRƯỜNG ESPORTS (PVP HALL OF FAME) */
+.pvp-hall-of-fame {
+  margin-top: var(--space-md);
+  padding: var(--space-sm) var(--space-md);
+  background: rgba(0, 0, 0, 0.45);
+  border: 1px solid rgba(245, 158, 11, 0.25);
+  border-radius: var(--radius-md);
+  backdrop-filter: blur(8px);
+}
+
+.hall-of-fame-title {
+  display: block;
+  font-size: 0.8rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+  color: var(--gold-color);
+  margin-bottom: var(--space-xs);
+}
+
+.champion-avatars-row {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+  flex-wrap: wrap;
+  padding: 4px 0 8px;
+}
+
+.champ-item {
+  position: relative;
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+  transition: transform 0.25s ease;
+}
+
+.champ-item img {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid var(--border-medium);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+  transition: all 0.25s ease;
+}
+
+.champ-item:hover {
+  transform: translateY(-4px);
+}
+
+.champ-item:hover img {
+  transform: scale(1.15);
+  border-color: var(--gold-color);
+  box-shadow: 0 0 14px rgba(245, 158, 11, 0.6);
+}
+
+.champ-rank {
+  position: absolute;
+  bottom: -6px;
+  font-size: 0.62rem;
+  font-weight: 800;
+  padding: 1px 6px;
+  border-radius: 6px;
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+  white-space: nowrap;
+}
+
+.rank-1 {
+  background: linear-gradient(135deg, #f59e0b, #d97706);
+  color: #111;
+  box-shadow: 0 0 8px rgba(245, 158, 11, 0.7);
+}
+
+.rank-2 {
+  background: linear-gradient(135deg, #e2e8f0, #94a3b8);
+  color: #111;
+  box-shadow: 0 0 6px rgba(226, 232, 240, 0.5);
+}
+
+.rank-3 {
+  background: linear-gradient(135deg, #b45309, #78350f);
+  color: #fff;
+}
+
+.rank-4 {
+  background: linear-gradient(135deg, #0ea5e9, #0284c7);
+  color: #fff;
+}
+
+/* 4. CHÂN DUNG TÔNG SƯ THẦN KHÍ (RELIC MASTER BADGE) */
+.relic-master-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-sm);
+  padding: 6px 16px 6px 6px;
+  background: rgba(15, 23, 42, 0.85);
+  border: 1px solid var(--border-subtle);
+  border-radius: 30px;
+  margin-bottom: var(--space-sm);
+  backdrop-filter: blur(8px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.35);
+  width: fit-content;
+  transition: all var(--transition-normal);
+}
+
+.relic-master-badge:hover {
+  border-color: var(--primary-color);
+  transform: translateX(4px);
+  box-shadow: 0 0 16px var(--primary-glow);
+}
+
+.relic-master-avatar {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid var(--primary-color);
+  box-shadow: 0 0 8px var(--primary-glow);
+  display: block;
+  flex-shrink: 0;
+}
+
+.relic-master-info {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.25;
+}
+
+.master-role {
+  font-size: 0.68rem;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  color: var(--gold-color);
+}
+
+.master-name {
+  font-size: 0.92rem;
+  color: var(--text-pure);
+  font-weight: 800;
+}
+
+/* 5. PHẦN THƯỞNG AVATAR TRONG CÁC GÓI GAME (EDITION AVATAR PERK) */
+.edition-avatar-perk {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 14px;
+  background: rgba(245, 158, 11, 0.08);
+  border: 1px dashed rgba(245, 158, 11, 0.45);
+  border-radius: var(--radius-md);
+  margin-bottom: var(--space-sm);
+  transition: all var(--transition-normal);
+}
+
+.edition-avatar-perk:hover {
+  background: rgba(245, 158, 11, 0.14);
+  border-color: var(--gold-color);
+  transform: translateX(3px);
+}
+
+.perk-avatar-thumb {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid var(--gold-color);
+  box-shadow: 0 0 10px rgba(245, 158, 11, 0.35);
+  flex-shrink: 0;
+}
+
+.edition-avatar-perk span {
+  font-size: 0.84rem;
+  color: var(--text-pure);
+  line-height: 1.35;
+}
+
+.edition-avatar-perk strong {
+  color: var(--gold-color);
+}
+
+/* 6. TOAST AVATAR THÔNG BÁO HOẠT ĐỘNG (LIVE GAMING TOAST AVATAR) */
+.toast-avatar-img {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid var(--primary-color);
+  box-shadow: 0 0 12px var(--primary-glow);
+  display: block;
+}
+
+/* RESPONSIVE CHO LORE CHARACTERS SHOWCASE */
+@media (max-width: 1200px) {
+  .characters-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 576px) {
+  .characters-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .lore-characters-showcase {
+    padding: var(--space-lg) var(--space-md);
+  }
+
+  .profile-avatar-wrap {
+    width: 100px;
+    height: 100px;
+  }
+}

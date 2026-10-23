@@ -214,6 +214,29 @@ Dự án được xây dựng với vai trò của một **Kỹ sư Thiết kế
      - Nhấp vào bất kỳ Đài Thần Khí nào không chỉ hiển thị toàn bộ giới thiệu vũ khí đó mà còn đồng thời chuyển hóa toàn bộ giao diện, khí quyển và theme của toàn bộ website thành phong cách của Thần Khí đó.
      - Cơ chế kết nối 100% bằng Pure CSS Radio & Sibling Combinators, tuyệt đối không sử dụng bất kỳ dòng mã JavaScript nào.
 
+
+### Giai đoạn 11: Tích Hợp Hệ Thống Avatar & Chân Dung Nhân Vật Thượng Cổ Từ Composite Sprite Sheet
+- **Mục tiêu:** Thực hiện yêu cầu: *"sử dụng các hình ảnh dưới đây ( chỉnh sửa nếu ko phù hợp ngữ cảnh), thêm vào các tính năng cần thiết cần ảnh đại diện"*.
+- **Các bước xử lý và tích hợp chuyên sâu (100% Zero JavaScript):**
+  1. **Xử Lý & Cắt Tỉa Hình Ảnh Sprite Sheet Cỡ Lớn (`media_1792733441765_a3dfe82a.jpg`):**
+     - Sử dụng script xử lý đồ họa tự động (GDI+ .NET Graphics) chia tách và trích xuất thành công 18 ảnh đại diện chân dung chuẩn kích thước (300x300px) và 2 đại cảnh Cổng Trời Tiên Giới:
+       - 4 Nhân vật trọng tâm cốt truyện: Tiêu Cửu U (`avatar-tieu-cuu-u.jpg`), Liễu Như Yên (`avatar-nhu-yen.jpg`), Huyền Chân Đạo Tôn (`avatar-huyen-chan.jpg`), Tiểu Sư Muội Linh Nhi (`avatar-linh-nhi.jpg`).
+       - 4 Tông sư đại diện Hệ Phái: Kiếm Sư (`avatar-kiem-su.jpg`), Khí Công Sư (`avatar-khi-cong-su.jpg`), Sát Thủ (`avatar-thich-khach.jpg`), Quyền Sư (`avatar-dao-ba.jpg`).
+       - 4 Cao thủ Top Bảng Vàng Đấu Trường PvP Esports: Hạng 1 (`avatar-kiem-su.jpg`), Hạng 2 (`avatar-thich-khach.jpg`), Hạng 3 (`avatar-chien-binh-long.jpg`), Hạng 4 (`avatar-thuy-trieu.jpg`).
+       - 4 Tông sư thức tỉnh Thần Khí: Thanh Long Tôn Giả (`avatar-thanh-long-ton.jpg`), Xích Hỏa Ma Tôn (`avatar-ma-giao.jpg`), Cửu U Kiếm Chủ (`avatar-tieu-cuu-u.jpg`), Cửu Thiên Hộ Thần (`avatar-ho-than.jpg`).
+       - 3 Avatar độc quyền quà tặng các gói Founder: Standard (`avatar-cung-thu.jpg`), Deluxe (`avatar-thanh-long-ton.jpg`), Ultimate (`avatar-phi-thien-toc.jpg`).
+       - 2 Đại cảnh Tiên Giới: Khinh Công Tiên Môn Cửu Trùng (`celestial-temple-tower.jpg`), Cổng Trời Nam Thiên Môn UE5 (`celestial-gate.jpg`).
+  2. **Dàn Nhân Vật Trọng Tâm: Ân Oán Tình Thù (`.lore-characters-showcase`):**
+     - Bổ sung ngay dưới Cổ Thư Tu Tiên tại `#lore`, giới thiệu chi tiết 4 tuyến nhân vật với ảnh đại diện tròn viền phát sáng, danh hiệu vai trò (`.profile-role-badge`: Nhân Vật Chính, Kẻ Bội Phản, Ngụy Quân Tử, Ánh Sáng Duy Nhất) và nhãn số phận bi tráng (`.profile-fate-tag`).
+  3. **Hệ Thống Huy Hiệu Avatar Hệ Phái (`.class-avatar-badge`):**
+     - Đính kèm chân dung Tông Sư góc trên cùng bên phải thẻ hệ phái với viền vàng phát quang và hiệu ứng xoay phóng to khi rê chuột (`:hover`).
+  4. **Bảng Vàng Thiên Kiêu Đấu Trường Esports (`.pvp-hall-of-fame`):**
+     - Tích hợp tại Feature 3 giới thiệu Top 4 Đấu Thần liên server với huy hiệu xếp hạng Rank 1 (Gold), Rank 2 (Silver), Rank 3 (Bronze), Rank 4 (Diamond Cyan).
+  5. **Hồ Sơ Tông Sư Thần Khí & Phần Thưởng Avatar Gói Khởi Đầu:**
+     - Mỗi đài Thần Khí hiển thị huy hiệu Võ Giả Thức Tỉnh kèm chân dung nhân vật.
+     - Mỗi gói game Founder's Edition hiển thị ô quà tặng Avatar độc quyền tương ứng.
+     - Toast thông báo người chơi hoạt động thời gian thực (`.live-activity-toast`) chuyển từ icon thường sang ảnh đại diện võ sĩ chân thực.
+
 ---
 
 ## 3. BẢNG TỰ ĐÁNH GIÁ MỨC ĐỘ ĐÁP ỨNG YÊU CẦU ĐỀ BÀI
