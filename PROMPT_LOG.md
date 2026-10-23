@@ -1,4 +1,4 @@
-# NHẬT KÝ PROMPT ENGINEERING (PROMPT_LOG.md)
+﻿# NHẬT KÝ PROMPT ENGINEERING (PROMPT_LOG.md)
 
 - **Họ và tên sinh viên:** Huỳnh Mai Phát
 - **Mã số sinh viên (MSSV):** 526000150
@@ -236,6 +236,28 @@ Dự án được xây dựng với vai trò của một **Kỹ sư Thiết kế
      - Mỗi đài Thần Khí hiển thị huy hiệu Võ Giả Thức Tỉnh kèm chân dung nhân vật.
      - Mỗi gói game Founder's Edition hiển thị ô quà tặng Avatar độc quyền tương ứng.
      - Toast thông báo người chơi hoạt động thời gian thực (`.live-activity-toast`) chuyển từ icon thường sang ảnh đại diện võ sĩ chân thực.
+
+---
+
+### Giai đoạn 12: Đồ Họa Anime Hoạt Hình & Hiệu Ứng Bùng Nổ Xuất Thế Thần Khí (Đóng Băng Vỡ Màn Hình, Lửa Bùng Cháy Dung Nham, Hố Đen Ma Uyên, Sấm Sét Thái Dương & Đổ Bóng 3D)
+- **Mục tiêu:** Thực hiện trọn vẹn yêu cầu: *"các vũ hãy trang trí thêm bằng cách đổ bóng và hiệu ứng khi các vũ khí xuất hiện ( ví dụ lửa sẽ bùng cháy, bằng sẽ hiệu ứng đóng băng màn hình rồi vở ra,... rồi hãy fix các hình ảnh( làm hình ảnh biến thành phiên bản hoạt hình rồi tăng độ phân giải lên) vì bạn là 1 nhà desigh chuyên nghiệp"*.
+- **Các giải pháp kỹ thuật và đồ họa chuyên sâu (100% Zero JavaScript):**
+  1. **Nâng Cấp Toàn Bộ Ảnh Lên Phiên Bản Hoạt Hình Anime/Manhwa Độ Phân Giải Cao:**
+     - Sử dụng thuật toán xử lý ảnh chuyên nghiệp C# GDI+ đa luồng tăng độ phân giải toàn bộ 18 avatar lên chuẩn 600x600 px (tăng gấp 4 lần mật độ điểm ảnh) và các đại cảnh tiên giới lên 700x1200 px và 1000x650 px.
+     - Áp dụng ma trận màu ColorMatrix tăng độ bão hòa (+34% saturation) và độ tương phản (+24% contrast) tạo màu sắc rực rỡ, hút mắt theo phong cách Donghua / Anime tu tiên.
+     - Áp dụng bộ lọc Unsharp Mask làm sắc nét viền nét vẽ (line-art cel-shading), giúp các chi tiết tóc, kiếm và pháp y hiển thị sắc nét tinh xảo trên màn hình Retina/4K.
+     - Bổ sung bộ lọc CSS hoạt hình nâng cao (`filter:` contrast(1.16) saturate(1.24) brightness(1.03), `image-rendering: -webkit-optimize-contrast`) cùng hiệu ứng hào quang rung động `@keyframes animeAuraPulse`.
+  2. **Đổ Bóng Quang Học 3D Đa Tầng (Dramatic 3D Multi-tier Drop Shadows):**
+     - **Thanh Long Băng Phách Kiếm:** Đổ bóng 3 lớp màu Cyan cực quang kết hợp bóng tối sâu thẳm drop-shadow(0 0 25px rgba(6, 182, 212, 0.95)) drop-shadow(0 0 60px rgba(14, 165, 233, 0.75)) drop-shadow(0 30px 40px rgba(0, 0, 0, 0.95)).
+     - **Xích Hỏa Ma Thần Nhận:** Đổ bóng 3 lớp màu Hỏa diễm đỏ rực & cam nham thạch drop-shadow(0 0 30px rgba(239, 68, 68, 0.98)) drop-shadow(0 0 70px rgba(249, 115, 22, 0.85)) drop-shadow(0 30px 45px rgba(0, 0, 0, 0.95)).
+     - **U Minh Vạn Kiếp Trâm:** Đổ bóng ma uyên tím huyền bí drop-shadow(0 0 30px rgba(168, 85, 247, 0.98)) drop-shadow(0 0 70px rgba(126, 34, 206, 0.85)) drop-shadow(0 30px 45px rgba(0, 0, 0, 0.95)).
+     - **Hoàng Kim Thiên Cương Thần Kiếm:** Đổ bóng kim quang hoàng tộc drop-shadow(0 0 35px rgba(245, 158, 11, 0.98)) drop-shadow(0 0 75px rgba(234, 179, 8, 0.85)) drop-shadow(0 30px 45px rgba(0, 0, 0, 0.95)).
+     - **Bóng Tiếp Xúc Mặt Sàn (`.pedestal-ground-shadow`):** Khối bóng elip chân thực dưới bệ ngự kiếm tỏa năng lượng nguyên tố tương ứng.
+  3. **Hiệu Ứng Bùng Nổ Xuất Thế Khi Kích Hoạt Từng Thần Khí (Summon Burst FX):**
+     - **Băng (Thanh Long):** Lớp màng băng tuyết đóng băng toàn bộ khung sân khấu (`.ice-screen-freeze-layer`) với `@keyframes screenFreezeShatter` rồi vỡ vụn thành 8 mảnh băng 3D (`.ice-shard`) bắn văng tứ phía theo góc xoay 360 độ, kết hợp luồng khí hàn bốc lên từ lưỡi kiếm (`.blade-frost-vapors`).
+     - **Lửa (Xích Hỏa):** Sóng chấn động lửa cuồn cuộn (`.fire-screen-blast-layer`) bùng nổ, các lưỡi lửa ma vươn cao (`.flame-tongue`) và tàn tro dung nham rực sáng bay vụt lên cao (`.magma-ember-spark`), lưỡi đao trồi lên từ biển lửa `@keyframes weaponFlameEntrance`.
+     - **Ma Uyên (U Minh):** Hố đen hư không co rút giật ngược (`.void-screen-collapse-layer`), các xúc tu oán hồn tím đen xoay tròn phóng đại (`.void-wraith-tendril`), quỷ trâm xoay tít hiện ra từ vết rách không gian `@keyframes weaponVoidEntrance`.
+     - **Hoàng Kim (Thiên Cương):** Cột thiên kiếp kim quang từ chín tầng mây dội xuống (`.sunburst-screen-flash-layer`), chùm tia sáng thái dương bắn tỏa đa góc (`.solar-beam`) cùng vòng linh phù mặt trời xoay vần (`.blade-solar-halo`).
 
 ---
 
