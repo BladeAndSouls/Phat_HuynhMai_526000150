@@ -1,0 +1,98 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 700" width="100%" height="100%">
+  <defs>
+    <linearGradient id="voidBlade" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fdf4ff" />
+      <stop offset="30%" stop-color="#d946ef" />
+      <stop offset="70%" stop-color="#9333ea" />
+      <stop offset="100%" stop-color="#3b0764" />
+    </linearGradient>
+    <radialGradient id="shadowPedestal" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#d946ef" stop-opacity="0.6" />
+      <stop offset="60%" stop-color="#581c87" stop-opacity="0.2" />
+      <stop offset="100%" stop-color="transparent" />
+    </radialGradient>
+    <radialGradient id="evilEyeCore" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#ffffff" />
+      <stop offset="30%" stop-color="#f43f5e" />
+      <stop offset="70%" stop-color="#9333ea" />
+      <stop offset="100%" stop-color="#1e022e" />
+    </radialGradient>
+    <filter id="voidBloom">
+      <feGaussianBlur stdDeviation="7" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+  </defs>
+
+  <!-- Pedestal Nether Ground -->
+  <ellipse cx="300" cy="580" rx="230" ry="65" fill="url(#shadowPedestal)" filter="url(#voidBloom)" />
+  <ellipse cx="300" cy="580" rx="170" ry="40" stroke="#d946ef" stroke-width="2" fill="none" stroke-dasharray="14,6" opacity="0.8" />
+  <circle cx="300" cy="580" r="105" stroke="#a855f7" stroke-width="1.5" fill="none" stroke-dasharray="4,4" opacity="0.7" />
+
+  <!-- Ghostly Souls Rising -->
+  <g fill="#c084fc" filter="url(#voidBloom)">
+    <circle cx="130" cy="470" r="6" opacity="0.6" />
+    <circle cx="160" cy="330" r="8" opacity="0.5" fill="#f43f5e" />
+    <circle cx="470" cy="450" r="7" opacity="0.7" />
+    <circle cx="440" cy="280" r="5" opacity="0.8" fill="#d946ef" />
+    <circle cx="230" cy="190" r="9" opacity="0.4" />
+  </g>
+
+  <!-- SHADOW WEAPON: U Minh Vạn Kiếp Trâm / Phệ Hồn Luân -->
+  <g transform="translate(300, 310)">
+    
+    <!-- Outer Void Rift Aura -->
+    <circle cx="0" cy="0" r="190" fill="#3b0764" opacity="0.3" filter="url(#voidBloom)" />
+
+    <!-- Outer Rotating Chakram Blade Ring (Phệ Hồn Luân Hoàn) -->
+    <circle cx="0" cy="0" r="160" stroke="url(#voidBlade)" stroke-width="6" fill="none" filter="url(#voidBloom)" />
+    <circle cx="0" cy="0" r="145" stroke="#a855f7" stroke-width="2" fill="none" stroke-dasharray="8,8" />
+    
+    <!-- 8 Curved Scythe Blades extending from Chakram -->
+    <!-- Blade 1 -->
+    <path d="M 0,-160 C 40,-190 90,-210 130,-190 C 95,-175 60,-155 0,-155 Z" fill="url(#voidBlade)" stroke="#d946ef" stroke-width="1.5" />
+    <!-- Blade 2 -->
+    <path d="M 160,0 C 190,40 210,90 190,130 C 175,95 155,60 155,0 Z" fill="url(#voidBlade)" stroke="#d946ef" stroke-width="1.5" />
+    <!-- Blade 3 -->
+    <path d="M 0,160 C -40,190 -90,210 -130,190 C -95,175 -60,155 0,155 Z" fill="url(#voidBlade)" stroke="#d946ef" stroke-width="1.5" />
+    <!-- Blade 4 -->
+    <path d="M -160,0 C -190,-40 -210,-90 -190,-130 C -175,-95 -155,-60 -155,0 Z" fill="url(#voidBlade)" stroke="#d946ef" stroke-width="1.5" />
+
+    <!-- Central Scepter Shaft through Ring (Trâm Kiếm Xuyên Tâm) -->
+    <g transform="rotate(45)">
+      <!-- Long Spear Head (Mũi Trâm Sắc Nhọn) -->
+      <polygon points="0,-270 20,-170 8,170 0,270 -8,170 -20,-170" fill="url(#voidBlade)" stroke="#d946ef" stroke-width="2" />
+      <line x1="0" y1="-260" x2="0" y2="260" stroke="#ffffff" stroke-width="2.5" filter="url(#voidBloom)" />
+      
+      <!-- Purple Eldritch Talisman Runes -->
+      <g stroke="#ffffff" stroke-width="2" opacity="0.9" fill="none" filter="url(#voidBloom)">
+        <circle cx="0" cy="-110" r="8" />
+        <line x1="-8" y1="-70" x2="8" y2="-70" />
+        <line x1="0" y1="-80" x2="0" y2="-55" />
+        <circle cx="0" cy="110" r="8" />
+        <line x1="-8" y1="70" x2="8" y2="70" />
+        <line x1="0" y1="55" x2="0" y2="80" />
+      </g>
+    </g>
+
+    <!-- Central All-Seeing Nether Eye (Mắt Ma Uyên Trung Tâm) -->
+    <ellipse cx="0" cy="0" rx="42" ry="26" fill="#090111" stroke="#d946ef" stroke-width="3" filter="url(#voidBloom)" />
+    <ellipse cx="0" cy="0" rx="36" ry="20" fill="url(#evilEyeCore)" />
+    <!-- Slit Demonic Pupil -->
+    <ellipse cx="0" cy="0" rx="5" ry="16" fill="#000000" />
+    <circle cx="-3" cy="-3" r="3" fill="#ffffff" />
+
+    <!-- Ghostly Ribbons & Chains floating down -->
+    <path d="M -40,160 Q -70,220 -50,280 Q -30,320 -40,350" stroke="#a855f7" stroke-width="3" fill="none" opacity="0.8" />
+    <path d="M 40,160 Q 70,220 50,280 Q 30,320 40,350" stroke="#d946ef" stroke-width="3" fill="none" opacity="0.8" />
+  </g>
+
+  <!-- Weapon Specs Tag -->
+  <g transform="translate(50, 40)">
+    <rect width="210" height="38" rx="8" fill="rgba(20, 2, 35, 0.9)" stroke="#d946ef" stroke-width="1.5" />
+    <text x="18" y="24" font-family="'Cinzel', serif" font-size="13" font-weight="900" fill="#fdf4ff">U MINH VẠN KIẾP TRÂM</text>
+  </g>
+  <g transform="translate(420, 40)">
+    <rect width="130" height="38" rx="8" fill="rgba(20, 2, 35, 0.9)" stroke="#a855f7" stroke-width="1.5" />
+    <text x="16" y="24" font-family="'Cinzel', serif" font-size="13" font-weight="800" fill="#c084fc">THẦN PHẨM SSS</text>
+  </g>
+</svg>

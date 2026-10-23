@@ -3331,3 +3331,518 @@ body:has(#theme-gold:checked) .dock-btn-gold,
   color: #e2e8f0;
   text-shadow: 0 2px 8px rgba(0,0,0,0.8);
 }
+
+
+/* ==========================================================================
+   7.5 ĐẠI ĐIỆN THẦN KHÍ VÕ HỌC: BÁCH KHOA VŨ KHÍ THƯỢNG CỔ (<section id="relics">)
+   Trưng bày vũ khí 3D cận cảnh, nguồn gốc rèn đúc, bảng chỉ số chiến đấu
+   và cơ chế nhấp chọn để trang bị & kích hoạt theme toàn trang (100% Zero JS)
+   ========================================================================== */
+.relics-section {
+  background: radial-gradient(circle at 50% 15%, rgba(20, 28, 50, 0.75) 0%, var(--bg-deep) 90%);
+  border-top: 1px solid var(--border-subtle);
+  border-bottom: 1px solid var(--border-subtle);
+  position: relative;
+  overflow: hidden;
+}
+
+/* 4 Đài Thần Khí Lựa Chọn (Weapon Pedestals) */
+.relic-pedestals-nav {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--space-md);
+  margin-top: var(--space-xl);
+  margin-bottom: var(--space-2xl);
+}
+
+.pedestal-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: var(--space-xs);
+  padding: var(--space-lg) var(--space-md);
+  background: rgba(15, 23, 42, 0.75);
+  border: 1.5px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  cursor: pointer;
+  transition: all var(--transition-normal);
+  user-select: none;
+  position: relative;
+  overflow: hidden;
+  backdrop-filter: blur(10px);
+}
+
+.pedestal-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: transparent;
+  transition: background var(--transition-normal);
+}
+
+.pedestal-card:hover {
+  background: rgba(30, 41, 59, 0.85);
+  transform: translateY(-4px);
+  border-color: rgba(255, 255, 255, 0.3);
+}
+
+.pedestal-gem {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1.5px solid var(--border-subtle);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+  transition: all var(--transition-normal);
+}
+
+.pedestal-info {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.pedestal-type {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  color: var(--text-muted);
+  text-transform: uppercase;
+}
+
+.pedestal-name {
+  font-family: var(--font-heading);
+  font-size: 1.05rem;
+  font-weight: 800;
+  color: var(--text-pure);
+  margin: 0;
+}
+
+.pedestal-status-badge {
+  font-size: 0.7rem;
+  font-weight: 800;
+  letter-spacing: 1px;
+  padding: 3px 12px;
+  border-radius: var(--radius-full);
+  background: rgba(255, 255, 255, 0.08);
+  color: var(--text-dim);
+  border: 1px solid var(--border-subtle);
+  transition: all var(--transition-normal);
+  text-transform: uppercase;
+}
+
+/* TRẠNG THÁI ACTIVE CỦA ĐÀI THẦN KHÍ KHI CHỌN THEME RADIO */
+#theme-cyan:checked ~ .site-wrapper .pedestal-cyan,
+#theme-flame:checked ~ .site-wrapper .pedestal-flame,
+#theme-shadow:checked ~ .site-wrapper .pedestal-shadow,
+#theme-gold:checked ~ .site-wrapper .pedestal-gold {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.06), rgba(15, 23, 42, 0.95));
+  border-color: var(--primary-color);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.8), 0 0 30px var(--primary-glow);
+  transform: translateY(-5px);
+}
+
+#theme-cyan:checked ~ .site-wrapper .pedestal-cyan::before,
+#theme-flame:checked ~ .site-wrapper .pedestal-flame::before,
+#theme-shadow:checked ~ .site-wrapper .pedestal-shadow::before,
+#theme-gold:checked ~ .site-wrapper .pedestal-gold::before {
+  background: var(--primary-color);
+  box-shadow: 0 0 10px var(--primary-color);
+}
+
+#theme-cyan:checked ~ .site-wrapper .pedestal-cyan .pedestal-gem,
+#theme-flame:checked ~ .site-wrapper .pedestal-flame .pedestal-gem,
+#theme-shadow:checked ~ .site-wrapper .pedestal-shadow .pedestal-gem,
+#theme-gold:checked ~ .site-wrapper .pedestal-gold .pedestal-gem {
+  border-color: var(--primary-color);
+  box-shadow: 0 0 20px var(--primary-glow);
+  background: rgba(255, 255, 255, 0.15);
+  transform: scale(1.1);
+}
+
+#theme-cyan:checked ~ .site-wrapper .pedestal-cyan .pedestal-status-badge,
+#theme-flame:checked ~ .site-wrapper .pedestal-flame .pedestal-status-badge,
+#theme-shadow:checked ~ .site-wrapper .pedestal-shadow .pedestal-status-badge,
+#theme-gold:checked ~ .site-wrapper .pedestal-gold .pedestal-status-badge {
+  background: var(--primary-color);
+  color: #06080e;
+  border-color: transparent;
+  box-shadow: 0 0 12px var(--primary-glow);
+}
+
+/* KHUNG HIỂN THỊ HỒ SƠ VŨ KHÍ CHI TIẾT (Weapon Dossier Viewport) */
+.relic-dossier-viewport {
+  position: relative;
+  width: 100%;
+}
+
+.relic-dossier-panel {
+  display: none;
+  grid-template-columns: 0.9fr 1.1fr;
+  gap: var(--space-2xl);
+  background: linear-gradient(135deg, rgba(15, 23, 42, 0.95) 0%, rgba(8, 12, 22, 0.98) 100%);
+  border: 1.5px solid var(--border-glow);
+  border-radius: var(--radius-xl);
+  padding: var(--space-2xl);
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.85), 0 0 40px var(--primary-glow);
+  backdrop-filter: blur(14px);
+  overflow: hidden;
+}
+
+/* Hiển thị dossier tương ứng với Thần Khí đang chọn */
+#theme-cyan:checked ~ .site-wrapper .dossier-cyan,
+#theme-flame:checked ~ .site-wrapper .dossier-flame,
+#theme-shadow:checked ~ .site-wrapper .dossier-shadow,
+#theme-gold:checked ~ .site-wrapper .dossier-gold {
+  display: grid;
+  animation: dossierFadeIn 0.65s cubic-bezier(0.2, 0.9, 0.3, 1) forwards;
+}
+
+@keyframes dossierFadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(20px) scale(0.97);
+    filter: blur(4px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    filter: blur(0);
+  }
+}
+
+/* CỘT TRÁI: ĐÀI TRƯNG BÀY VŨ KHÍ 3D */
+.relic-visual-stage {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  background: radial-gradient(circle at center, rgba(30, 41, 59, 0.5) 0%, rgba(10, 15, 30, 0.9) 100%);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border-subtle);
+  padding: var(--space-xl);
+  overflow: hidden;
+}
+
+.weapon-altar-pedestal {
+  position: relative;
+  width: 100%;
+  max-width: 440px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.altar-energy-disk {
+  position: absolute;
+  bottom: 25px;
+  width: 280px;
+  height: 75px;
+  border-radius: 50%;
+  border: 2px dashed var(--primary-color);
+  box-shadow: 0 0 35px var(--primary-glow);
+  animation: altarDiskSpin 18s linear infinite;
+}
+
+.altar-cyan { border-color: #00f2fe; box-shadow: 0 0 35px rgba(0, 242, 254, 0.5); }
+.altar-flame { border-color: #ff3344; box-shadow: 0 0 35px rgba(255, 51, 68, 0.55); }
+.altar-shadow { border-color: #d946ef; box-shadow: 0 0 35px rgba(217, 70, 239, 0.5); }
+.altar-gold { border-color: #ffd200; box-shadow: 0 0 35px rgba(255, 210, 0, 0.55); }
+
+@keyframes altarDiskSpin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.weapon-model-wrapper {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  animation: weaponLevitate3D 3.5s infinite ease-in-out alternate;
+}
+
+.weapon-model-wrapper img {
+  width: 100%;
+  height: auto;
+  display: block;
+  filter: drop-shadow(0 15px 30px rgba(0, 0, 0, 0.8));
+  transition: transform var(--transition-slow);
+}
+
+.weapon-model-wrapper:hover img {
+  transform: scale(1.05) rotate(1deg);
+}
+
+@keyframes weaponLevitate3D {
+  0% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-16px) rotate(1.5deg); }
+  100% { transform: translateY(0) rotate(0deg); }
+}
+
+.weapon-interactive-hint {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: var(--space-lg);
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--text-main);
+  background: rgba(15, 23, 42, 0.8);
+  border: 1px solid var(--border-subtle);
+  padding: 6px 16px;
+  border-radius: var(--radius-full);
+}
+
+.hint-pulse-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--primary-color);
+  box-shadow: 0 0 8px var(--primary-color);
+  animation: hintDotPulse 1.5s infinite alternate;
+}
+
+.dot-flame { background: #ff3344; box-shadow: 0 0 8px #ff3344; }
+.dot-shadow { background: #d946ef; box-shadow: 0 0 8px #d946ef; }
+.dot-gold { background: #ffd200; box-shadow: 0 0 8px #ffd200; }
+
+@keyframes hintDotPulse {
+  0% { opacity: 0.4; transform: scale(0.8); }
+  100% { opacity: 1; transform: scale(1.2); }
+}
+
+/* CỘT PHẢI: HỒ SƠ CHI TIẾT VŨ KHÍ */
+.relic-details-body {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+  justify-content: center;
+}
+
+.relic-rank-badge-wrap {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  flex-wrap: wrap;
+}
+
+.relic-rank-badge {
+  font-size: 0.72rem;
+  font-weight: 900;
+  letter-spacing: 1.5px;
+  padding: 4px 12px;
+  border-radius: var(--radius-full);
+  background: rgba(0, 242, 254, 0.15);
+  color: #00f2fe;
+  border: 1px solid rgba(0, 242, 254, 0.4);
+}
+
+.badge-flame { background: rgba(255, 51, 68, 0.15); color: #ff3344; border-color: rgba(255, 51, 68, 0.4); }
+.badge-shadow { background: rgba(217, 70, 239, 0.15); color: #d946ef; border-color: rgba(217, 70, 239, 0.4); }
+.badge-gold { background: rgba(255, 210, 0, 0.15); color: #ffd200; border-color: rgba(255, 210, 0, 0.4); }
+
+.relic-forge-meta {
+  font-size: 0.75rem;
+  color: var(--text-dim);
+  font-weight: 600;
+}
+
+.relic-dossier-title {
+  font-family: var(--font-heading);
+  font-size: 1.85rem;
+  font-weight: 900;
+  color: var(--text-pure);
+  margin: 0;
+  line-height: 1.2;
+}
+
+.relic-tagline {
+  font-family: var(--font-heading);
+  font-style: italic;
+  font-size: 0.95rem;
+  color: var(--primary-color);
+  line-height: 1.6;
+  border-left: 3px solid var(--primary-color);
+  padding-left: var(--space-md);
+  margin: 0;
+}
+
+.relic-lore-box {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  padding: var(--space-md);
+}
+
+.relic-sub-heading {
+  font-family: var(--font-heading);
+  font-size: 0.85rem;
+  font-weight: 800;
+  letter-spacing: 1px;
+  color: var(--text-pure);
+  text-transform: uppercase;
+  margin-bottom: 6px;
+}
+
+.relic-lore-box p {
+  font-size: 0.88rem;
+  color: var(--text-muted);
+  line-height: 1.7;
+  margin: 0;
+}
+
+/* THUỘC TÍNH CHIẾN ĐẤU */
+.relic-attributes-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-sm) var(--space-lg);
+}
+
+.relic-attr-item {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.attr-header {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.8rem;
+}
+
+.attr-name {
+  color: var(--text-muted);
+  font-weight: 600;
+}
+
+.attr-value {
+  color: var(--text-pure);
+  font-weight: 800;
+}
+
+.attr-bar {
+  width: 100%;
+  height: 6px;
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: var(--radius-full);
+  overflow: hidden;
+}
+
+.attr-fill {
+  height: 100%;
+  border-radius: var(--radius-full);
+}
+
+.fill-cyan { background: linear-gradient(90deg, #0284c7, #00f2fe); box-shadow: 0 0 8px #00f2fe; }
+.fill-flame { background: linear-gradient(90deg, #b91c1c, #ff3344); box-shadow: 0 0 8px #ff3344; }
+.fill-shadow { background: linear-gradient(90deg, #7e22ce, #d946ef); box-shadow: 0 0 8px #d946ef; }
+.fill-gold { background: linear-gradient(90deg, #b45309, #ffd200); box-shadow: 0 0 8px #ffd200; }
+
+/* MA TRẬN 3 TUYỆT KỸ */
+.relic-skills-matrix {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.relic-skill-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.relic-skill-card {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-sm);
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-sm);
+  padding: 8px 12px;
+}
+
+.skill-key {
+  font-family: var(--font-heading);
+  font-size: 0.75rem;
+  font-weight: 900;
+  width: 24px;
+  height: 24px;
+  border-radius: 4px;
+  background: var(--primary-color);
+  color: #06080e;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 8px var(--primary-glow);
+  flex-shrink: 0;
+}
+
+.card-flame .skill-key { background: #ff3344; }
+.card-shadow .skill-key { background: #d946ef; }
+.card-gold .skill-key { background: #ffd200; }
+
+.skill-info {
+  font-size: 0.82rem;
+  line-height: 1.5;
+  color: var(--text-muted);
+}
+
+.skill-info strong {
+  color: var(--text-pure);
+  margin-right: 4px;
+}
+
+/* KHAY THAO TÁC NGỰ KIẾM */
+.relic-action-dock {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-md);
+  margin-top: var(--space-xs);
+  padding-top: var(--space-md);
+  border-top: 1px solid var(--border-subtle);
+}
+
+.equipped-badge {
+  font-size: 0.82rem;
+  font-weight: 800;
+  color: var(--primary-color);
+  letter-spacing: 0.5px;
+}
+
+/* RESPONSIVE CHO SECTION RELICS */
+@media (max-width: 992px) {
+  .relic-pedestals-nav {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .relic-dossier-panel {
+    grid-template-columns: 1fr;
+    gap: var(--space-xl);
+    padding: var(--space-xl);
+  }
+
+  .relic-attributes-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 576px) {
+  .relic-pedestals-nav {
+    grid-template-columns: 1fr;
+  }
+
+  .relic-action-dock {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}

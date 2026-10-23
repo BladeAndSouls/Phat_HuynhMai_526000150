@@ -194,6 +194,26 @@ Dự án được xây dựng với vai trò của một **Kỹ sư Thiết kế
      - Kiếm trận cổ đại xoay với tốc độ và quy luật khác nhau: Thanh Long (35s thanh nhã), Xích Hỏa (12s cuồng bạo rực lửa), U Minh (18s đảo chiều ngược chiều kim đồng hồ hút chân khí), Hoàng Kim (45s tỏa kim quang thái dương).
      - Cấu trúc góc bo thẻ (`border-radius`, `box-shadow`) tự động biến đổi: Cạnh sắc kim cương (Thanh Long), nham thạch nứt toác (Xích Hỏa), quỷ khí huyền bí (U Minh), dát vàng cổ điển hoàng gia (Hoàng Kim).
 
+### Giai đoạn 10: Xây Dựng Đại Điện Thần Khí Võ Học — Bách Khoa Vũ Khí Thượng Cổ (Giới Thiệu Vũ Khí Kèm Kích Hoạt Theme)
+- **Mục tiêu:** Đáp ứng trọn vẹn yêu cầu chính xác: *"thần khí võ học phải là nhấp vào rồi giới thiệu vũ khú ( thêm theme ), chứ ko phải chuyển màu"*.
+- **Các cải tiến kỹ thuật đột phá:**
+  1. **Khởi tạo 4 Tác phẩm Vector Vũ Khí Thần Khí Cận Cảnh Độc Quyền:**
+     - `assets/images/relic-sword-cyan.svg`: Thanh Long Băng Phách Kiếm (lưỡi băng tinh khắc cổ văn Chân Long, hộ thủ đầu rồng, chuôi kiếm vảy rồng).
+     - `assets/images/relic-saber-flame.svg`: Xích Hỏa Ma Thần Nhận (đao nham thạch rực lửa, răng cưa ma quỷ, rãnh dung nham bốc khói).
+     - `assets/images/relic-staff-shadow.svg`: U Minh Vạn Kiếp Trâm (phệ hồn luân xoay quanh mắt quỷ ma uyên, xích đen và oán linh).
+     - `assets/images/relic-blade-gold.svg`: Hoàng Kim Thiên Cương Thần Kiếm (đại kiếm hoàng gia dát vàng ròng thái dương, hộ thủ kim bằng, kinh văn thiên đạo).
+  2. **Khu vực Trưng Bày Độc Lập `<section id="relics">`:**
+     - Thiết kế 4 Đài Thần Khí Thượng Cổ tương tác: Nhấp chọn một đài Thần Khí bất kỳ sẽ ngay lập tức mở ra bảng hồ sơ kỹ thuật chi tiết của vũ khí đó (Dossier Console).
+     - **Cột Trái (Visual Stage):** Mô hình vũ khí lơ lửng trên đài năng lượng xoay đồng tâm 3D (`@keyframes weaponLevitate3D` và `@keyframes altarDiskSpin`).
+     - **Cột Phải (Dossier Specs):**
+       - Phẩm cấp vũ khí: Thần phẩm Thượng cổ &bull; Bậc 10/10.
+       - Truyền thuyết rèn đúc lịch sử và lò rèn viễn cổ.
+       - Bảng thanh chỉ số chiến đấu có thanh đo năng lượng động (Sát thương, tốc độ xuất chiêu, bạo kích, hút máu, miễn khống).
+       - Bảng ma trận 3 Tuyệt Kỹ Trấn Phái (phím Q, E, R) giải thích chi tiết hiệu ứng chiến đấu.
+  3. **Đồng Thời Áp Dụng Theme & Pháp Vực Toàn Trang:**
+     - Nhấp vào bất kỳ Đài Thần Khí nào không chỉ hiển thị toàn bộ giới thiệu vũ khí đó mà còn đồng thời chuyển hóa toàn bộ giao diện, khí quyển và theme của toàn bộ website thành phong cách của Thần Khí đó.
+     - Cơ chế kết nối 100% bằng Pure CSS Radio & Sibling Combinators, tuyệt đối không sử dụng bất kỳ dòng mã JavaScript nào.
+
 ---
 
 ## 3. BẢNG TỰ ĐÁNH GIÁ MỨC ĐỘ ĐÁP ỨNG YÊU CẦU ĐỀ BÀI

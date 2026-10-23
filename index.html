@@ -131,6 +131,7 @@
       <nav class="site-nav" role="navigation" aria-label="Menu chính">
         <ul class="nav-list">
           <li><a href="#hero" class="nav-link">Trang Chủ</a></li>
+          <li><a href="#relics" class="nav-link">Thần Khí</a></li>
           <li><a href="#lore" class="nav-link">Cốt Truyện</a></li>
           <li><a href="#classes" class="nav-link">Hệ Phái</a></li>
           <li><a href="#features" class="nav-link">Tính Năng</a></li>
@@ -348,7 +349,7 @@
       </div>
 
       <!-- Scroll Down Indicator (Pure CSS Animation) -->
-      <a href="#lore" class="scroll-down-indicator" aria-label="Cuộn xuống khám phá cốt truyện">
+      <a href="#relics" class="scroll-down-indicator" aria-label="Cuộn xuống khám phá Đại Điện Thần Khí">
         <span class="mouse-icon">
           <span class="mouse-wheel"></span>
         </span>
@@ -356,8 +357,471 @@
           <span></span>
           <span></span>
         </span>
-        <span class="scroll-text">Khám Phá Giang Hồ</span>
+        <span class="scroll-text">Khám Phá Thần Khí</span>
       </a>
+    </section>
+
+    <!-- ====================================================================
+         ĐẠI ĐIỆN THẦN KHÍ VÕ HỌC: BÁCH KHOA VŨ KHÍ THƯỢNG CỔ (<section id="relics">)
+         Nhấp vào vũ khí để xem chi tiết thông số, nguồn gốc, kỹ năng và kích hoạt theme
+         (100% Pure CSS - Không sử dụng JavaScript)
+         ==================================================================== -->
+    <section id="relics" class="section relics-section" aria-label="Đại Điện Thần Khí Võ Học" data-aos="fade-up">
+      <div class="container">
+        
+        <div class="section-title-wrap" data-aos="fade-up">
+          <span class="section-tag">Vũ Khí Trấn Thế &bull; Pháp Thân Thức Tỉnh</span>
+          <h2 class="section-title">Đại Điện <span class="text-gradient">Thần Khí Võ Học</span></h2>
+          <p class="section-subtitle">
+            Nhấp chọn từng bảo vật Thần Khí để chiêm ngưỡng vũ khí 3D cận cảnh, tra cứu nguồn gốc rèn đúc, bảng chỉ số chiến đấu và đồng thời <strong>kích hoạt Pháp Vực Theme</strong> tương ứng trên toàn bộ thế giới game.
+          </p>
+        </div>
+
+        <!-- BỘ CHỌN ĐÀI THẦN KHÍ (4 Divine Weapon Pedestals Tabs) -->
+        <div class="relic-pedestals-nav" role="tablist" aria-label="Chọn Thần Khí">
+          <label for="theme-cyan" class="pedestal-card pedestal-cyan" role="tab" title="Nhấp để trang bị &amp; khám phá Thanh Long Băng Kiếm">
+            <div class="pedestal-gem">⚔️</div>
+            <div class="pedestal-info">
+              <span class="pedestal-type">Hàn Băng Thần Kiếm</span>
+              <h3 class="pedestal-name">Thanh Long Băng Phách</h3>
+            </div>
+            <span class="pedestal-status-badge">Trang Bị &bull; Đổi Theme</span>
+          </label>
+
+          <label for="theme-flame" class="pedestal-card pedestal-flame" role="tab" title="Nhấp để trang bị &amp; khám phá Xích Hỏa Ma Nhận">
+            <div class="pedestal-gem">🔥</div>
+            <div class="pedestal-info">
+              <span class="pedestal-type">Liệt Diễm Ma Đao</span>
+              <h3 class="pedestal-name">Xích Hỏa Ma Thần Nhận</h3>
+            </div>
+            <span class="pedestal-status-badge">Trang Bị &bull; Đổi Theme</span>
+          </label>
+
+          <label for="theme-shadow" class="pedestal-card pedestal-shadow" role="tab" title="Nhấp để trang bị &amp; khám phá U Minh Quỷ Trâm">
+            <div class="pedestal-gem">👁️</div>
+            <div class="pedestal-info">
+              <span class="pedestal-type">Ám Ảnh Phệ Hồn Luân</span>
+              <h3 class="pedestal-name">U Minh Vạn Kiếp Trâm</h3>
+            </div>
+            <span class="pedestal-status-badge">Trang Bị &bull; Đổi Theme</span>
+          </label>
+
+          <label for="theme-gold" class="pedestal-card pedestal-gold" role="tab" title="Nhấp để trang bị &amp; khám phá Hoàng Kim Thiên Kiếm">
+            <div class="pedestal-gem">👑</div>
+            <div class="pedestal-info">
+              <span class="pedestal-type">Thiên Đạo Trọng Kiếm</span>
+              <h3 class="pedestal-name">Hoàng Kim Thiên Cương</h3>
+            </div>
+            <span class="pedestal-status-badge">Trang Bị &bull; Đổi Theme</span>
+          </label>
+        </div>
+
+        <!-- BẢNG GIỚI THIỆU CHI TIẾT VŨ KHÍ THẦN KHÍ (Detailed Arsenal Inspection Console) -->
+        <div class="relic-dossier-viewport">
+          
+          <!-- ================= VŨ KHÍ 1: THANH LONG BĂNG PHÁCH KIẾM ================= -->
+          <article class="relic-dossier-panel dossier-cyan" role="tabpanel">
+            <!-- Cột Trái: Trưng Bày Vũ Khí 3D Cận Cảnh -->
+            <div class="relic-visual-stage">
+              <div class="weapon-altar-pedestal">
+                <div class="altar-energy-disk altar-cyan"></div>
+                <div class="weapon-model-wrapper">
+                  <img src="assets/images/relic-sword-cyan.svg" alt="Thần Khí Thanh Long Băng Phách Kiếm" width="600" height="700" loading="lazy">
+                </div>
+              </div>
+              <div class="weapon-interactive-hint">
+                <span class="hint-pulse-dot"></span>
+                <span>Vũ Khí Đang Ngự &bull; Kích Hoạt Pháp Vực Băng Long Toàn Trang</span>
+              </div>
+            </div>
+
+            <!-- Cột Phải: Hồ Sơ Kỹ Thuật, Nguồn Gốc & Tuyệt Kỹ Võ Học -->
+            <div class="relic-details-body">
+              <div class="relic-rank-badge-wrap">
+                <span class="relic-rank-badge">THẦN PHẨM THƯỢNG CỔ &bull; BẬC 10/10</span>
+                <span class="relic-forge-meta">Lò Rèn: Cực Bắc Vạn Niên Băng Uyên</span>
+              </div>
+              <h3 class="relic-dossier-title">Thanh Long Băng Phách Kiếm</h3>
+              <p class="relic-tagline">"Đúc từ xương sống Chân Long thượng cổ chôn vùi dưới vạn trượng hàn băng, kiếm khí chém ra đóng băng cõi nhân sinh."</p>
+
+              <!-- Nguồn Gốc Rèn Đúc -->
+              <div class="relic-lore-box">
+                <h4 class="relic-sub-heading">Truyền Thuyết Rèn Đúc:</h4>
+                <p>
+                  Tương truyền ba vạn năm trước, Băng Long Viễn Cổ hóa đạo tại Cực Bắc, ngưng tụ chân tủy thành một khối Băng Phách Thần Tinh. Đệ nhất thần thợ Âu Dã Tử đã lấy hàn sương Cửu U rèn luyện suốt chín chín tám mốt ngày đêm mới thành kiếm hình. Kiếm xuất vỏ, vạn dặm đóng băng, tà ma yêu ma chạm vào tức khắc hồn phi phách tán.
+                </p>
+              </div>
+
+              <!-- Chỉ Số Chiến Đấu Thần Khí -->
+              <div class="relic-attributes-grid">
+                <div class="relic-attr-item">
+                  <div class="attr-header">
+                    <span class="attr-name">Sát Thương Kiếm Khí</span>
+                    <span class="attr-value">3,850 - 4,200</span>
+                  </div>
+                  <div class="attr-bar"><div class="attr-fill fill-cyan" style="width: 92%"></div></div>
+                </div>
+                <div class="relic-attr-item">
+                  <div class="attr-header">
+                    <span class="attr-name">Tốc Độ Xuất Chiêu</span>
+                    <span class="attr-value">+45% (Siêu Tốc)</span>
+                  </div>
+                  <div class="attr-bar"><div class="attr-fill fill-cyan" style="width: 95%"></div></div>
+                </div>
+                <div class="relic-attr-item">
+                  <div class="attr-header">
+                    <span class="attr-name">Tỉ Lệ Đóng Băng</span>
+                    <span class="attr-value">68% / Phát Chém</span>
+                  </div>
+                  <div class="attr-bar"><div class="attr-fill fill-cyan" style="width: 88%"></div></div>
+                </div>
+                <div class="relic-attr-item">
+                  <div class="attr-header">
+                    <span class="attr-name">Băng Long Trợ Chiến</span>
+                    <span class="attr-value">Tối Thượng</span>
+                  </div>
+                  <div class="attr-bar"><div class="attr-fill fill-cyan" style="width: 100%"></div></div>
+                </div>
+              </div>
+
+              <!-- 3 Tuyệt Kỹ Trấn Phái -->
+              <div class="relic-skills-matrix">
+                <h4 class="relic-sub-heading">Tuyệt Kỹ Trấn Phái:</h4>
+                <div class="relic-skill-list">
+                  <div class="relic-skill-card">
+                    <span class="skill-key">Q</span>
+                    <div class="skill-info">
+                      <strong>Hàn Băng Long Ngâm:</strong>
+                      <span>Phóng thích kiếm khí hình rồng băng, đóng băng toàn bộ kẻ địch trên đường thẳng 30 mét trong 2.5 giây.</span>
+                    </div>
+                  </div>
+                  <div class="relic-skill-card">
+                    <span class="skill-key">E</span>
+                    <div class="skill-info">
+                      <strong>Huyền Băng Hộ Thể:</strong>
+                      <span>Dựng kết giới băng tinh miễn nhiễm 100% sát thương trong 3 giây và phản kích kiếm khí sấm sét.</span>
+                    </div>
+                  </div>
+                  <div class="relic-skill-card">
+                    <span class="skill-key">R</span>
+                    <div class="skill-info">
+                      <strong>Vạn Kiếm Quy Băng (Nộ Khí):</strong>
+                      <span>Triệu hồi vạn chuôi băng kiếm từ trên không trung trút xuống, xóa sổ kết giới phòng ngự của đối phương.</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="relic-action-dock">
+                <span class="equipped-badge">✓ Đang Ngự Thần Khí &bull; Đã Áp Dụng Theme Thanh Long</span>
+                <a href="#hero" class="btn btn-secondary">Xem Pháp Thân Ở Hero</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- ================= VŨ KHÍ 2: XÍCH HỎA MA THẦN NHẬN ================= -->
+          <article class="relic-dossier-panel dossier-flame" role="tabpanel">
+            <!-- Cột Trái: Trưng Bày Vũ Khí 3D Cận Cảnh -->
+            <div class="relic-visual-stage">
+              <div class="weapon-altar-pedestal">
+                <div class="altar-energy-disk altar-flame"></div>
+                <div class="weapon-model-wrapper">
+                  <img src="assets/images/relic-saber-flame.svg" alt="Thần Khí Xích Hỏa Ma Thần Nhận" width="600" height="700" loading="lazy">
+                </div>
+              </div>
+              <div class="weapon-interactive-hint">
+                <span class="hint-pulse-dot dot-flame"></span>
+                <span>Vũ Khí Đang Ngự &bull; Kích Hoạt Pháp Vực Liệt Diễm Toàn Trang</span>
+              </div>
+            </div>
+
+            <!-- Cột Phải: Hồ Sơ Kỹ Thuật, Nguồn Gốc & Tuyệt Kỹ Võ Học -->
+            <div class="relic-details-body">
+              <div class="relic-rank-badge-wrap">
+                <span class="relic-rank-badge badge-flame">MA PHẨM VIỄN CỔ &bull; BẬC 10/10</span>
+                <span class="relic-forge-meta">Lò Rèn: Cửu U Liệt Diễm Huyết Trì</span>
+              </div>
+              <h3 class="relic-dossier-title">Xích Hỏa Ma Thần Nhận</h3>
+              <p class="relic-tagline">"Đao đúc bằng thiên thạch huyết ma rực cháy trong lòng núi lửa một ngàn năm, mỗi nhát chém xé toạc sinh mệnh thành tro tàn."</p>
+
+              <!-- Nguồn Gốc Rèn Đúc -->
+              <div class="relic-lore-box">
+                <h4 class="relic-sub-heading">Truyền Thuyết Rèn Đúc:</h4>
+                <p>
+                  Thanh ma đao này từng là vũ khí tàn sát thiên địa của Huyết Ma Thần. Lưỡi đao có rãnh magma đỏ rực luôn duy trì nhiệt độ hàng vạn độ C, khi vung lên tạo ra những vệt trảm xé rách không gian, khiến đất đá nứt toác chảy thành dung nham. Kẻ cầm đao tâm tính cuồng bạo, chiến lực tăng vô hạn khi nhuốm máu kẻ thù.
+                </p>
+              </div>
+
+              <!-- Chỉ Số Chiến Đấu Thần Khí -->
+              <div class="relic-attributes-grid">
+                <div class="relic-attr-item">
+                  <div class="attr-header">
+                    <span class="attr-name">Sát Thương Bạo Kích</span>
+                    <span class="attr-value">4,900 - 5,600 (Cực Đại)</span>
+                  </div>
+                  <div class="attr-bar"><div class="attr-fill fill-flame" style="width: 100%"></div></div>
+                </div>
+                <div class="relic-attr-item">
+                  <div class="attr-header">
+                    <span class="attr-name">Tỉ Lệ Chí Mạng</span>
+                    <span class="attr-value">+65% Bạo Kích</span>
+                  </div>
+                  <div class="attr-bar"><div class="attr-fill fill-flame" style="width: 94%"></div></div>
+                </div>
+                <div class="relic-attr-item">
+                  <div class="attr-header">
+                    <span class="attr-name">Thiêu Đốt Nham Thạch</span>
+                    <span class="attr-value">12% Máu / Giây</span>
+                  </div>
+                  <div class="attr-bar"><div class="attr-fill fill-flame" style="width: 90%"></div></div>
+                </div>
+                <div class="relic-attr-item">
+                  <div class="attr-header">
+                    <span class="attr-name">Huyết Nộ Cuồng Ma</span>
+                    <span class="attr-value">Bất Tử 5s</span>
+                  </div>
+                  <div class="attr-bar"><div class="attr-fill fill-flame" style="width: 98%"></div></div>
+                </div>
+              </div>
+
+              <!-- 3 Tuyệt Kỹ Trấn Phái -->
+              <div class="relic-skills-matrix">
+                <h4 class="relic-sub-heading">Tuyệt Kỹ Trấn Phái:</h4>
+                <div class="relic-skill-list">
+                  <div class="relic-skill-card card-flame">
+                    <span class="skill-key">Q</span>
+                    <div class="skill-info">
+                      <strong>Phần Thiên Liệt Trảm:</strong>
+                      <span>Chém nhát đao hình trăng khuyết bốc cháy ngùn ngụt, gây sát thương thiêu đốt lan tỏa toàn bản đồ.</span>
+                    </div>
+                  </div>
+                  <div class="relic-skill-card card-flame">
+                    <span class="skill-key">E</span>
+                    <div class="skill-info">
+                      <strong>Huyết Nộ Ma Thuẫn:</strong>
+                      <span>Kích nổ dung nham quanh thân thể hất văng mọi kẻ địch, chuyển hóa 30% sát thương nhận vào thành hồi máu.</span>
+                    </div>
+                  </div>
+                  <div class="relic-skill-card card-flame">
+                    <span class="skill-key">R</span>
+                    <div class="skill-info">
+                      <strong>Diệt Thế Ma Thần Nhận (Nộ Khí):</strong>
+                      <span>Triệu hồi đôi cánh ma thần khổng lồ giáng xuống nhát chém dung nham hủy diệt, bỏ qua 100% giáp kẻ thù.</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="relic-action-dock">
+                <span class="equipped-badge badge-flame">✓ Đang Ngự Thần Khí &bull; Đã Áp Dụng Theme Xích Hỏa</span>
+                <a href="#hero" class="btn btn-secondary">Xem Pháp Thân Ở Hero</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- ================= VŨ KHÍ 3: U MINH VẠN KIẾP TRÂM ================= -->
+          <article class="relic-dossier-panel dossier-shadow" role="tabpanel">
+            <!-- Cột Trái: Trưng Bày Vũ Khí 3D Cận Cảnh -->
+            <div class="relic-visual-stage">
+              <div class="weapon-altar-pedestal">
+                <div class="altar-energy-disk altar-shadow"></div>
+                <div class="weapon-model-wrapper">
+                  <img src="assets/images/relic-staff-shadow.svg" alt="Thần Khí U Minh Vạn Kiếp Trâm" width="600" height="700" loading="lazy">
+                </div>
+              </div>
+              <div class="weapon-interactive-hint">
+                <span class="hint-pulse-dot dot-shadow"></span>
+                <span>Vũ Khí Đang Ngự &bull; Kích Hoạt Pháp Vực Ma Uyên Toàn Trang</span>
+              </div>
+            </div>
+
+            <!-- Cột Phải: Hồ Sơ Kỹ Thuật, Nguồn Gốc & Tuyệt Kỹ Võ Học -->
+            <div class="relic-details-body">
+              <div class="relic-rank-badge-wrap">
+                <span class="relic-rank-badge badge-shadow">DỊ PHẨM MA UYÊN &bull; BẬC 10/10</span>
+                <span class="relic-forge-meta">Lò Rèn: Đáy Vạn Kiếp Ma Uyên Tối Tăm</span>
+              </div>
+              <h3 class="relic-dossier-title">U Minh Vạn Kiếp Trâm</h3>
+              <p class="relic-tagline">"Đúc từ oán khí của vạn kiếp oan hồn dưới đáy vực sâu, con mắt ma uyên nhìn thấu tâm can và nuốt chửng linh hồn kẻ thù."</p>
+
+              <!-- Nguồn Gốc Rèn Đúc -->
+              <div class="relic-lore-box">
+                <h4 class="relic-sub-heading">Truyền Thuyết Rèn Đúc:</h4>
+                <p>
+                  Khi Tiêu Cửu U bị hãm hại đày ải dưới đáy Ma Uyên, chàng đã dùng chính chân huyết và oán hận ngút trời đúc kết nên thanh Phệ Hồn Luân Trâm này. Vòng luân xoay ngược chiều vũ trụ hấp thu sinh cơ vạn vật, hễ xuất chiêu là sương độc tím đen bủa vây, kẻ trúng chiêu bị ảo ảnh giam cầm vĩnh viễn không siêu thoát.
+                </p>
+              </div>
+
+              <!-- Chỉ Số Chiến Đấu Thần Khí -->
+              <div class="relic-attributes-grid">
+                <div class="relic-attr-item">
+                  <div class="attr-header">
+                    <span class="attr-name">Hút Máu Toàn Phần</span>
+                    <span class="attr-value">+50% Hút Máu</span>
+                  </div>
+                  <div class="attr-bar"><div class="attr-fill fill-shadow" style="width: 95%"></div></div>
+                </div>
+                <div class="relic-attr-item">
+                  <div class="attr-header">
+                    <span class="attr-name">Xuyên Thấu Ma Kháng</span>
+                    <span class="attr-value">85% Bỏ Qua Kháng</span>
+                  </div>
+                  <div class="attr-bar"><div class="attr-fill fill-shadow" style="width: 88%"></div></div>
+                </div>
+                <div class="relic-attr-item">
+                  <div class="attr-header">
+                    <span class="attr-name">Tàng Hình Thân Ảnh</span>
+                    <span class="attr-value">Né Đòn 100%</span>
+                  </div>
+                  <div class="attr-bar"><div class="attr-fill fill-shadow" style="width: 92%"></div></div>
+                </div>
+                <div class="relic-attr-item">
+                  <div class="attr-header">
+                    <span class="attr-name">Ảo Giác Oán Hồn</span>
+                    <span class="attr-value">Hỗn Loạn 4 Giây</span>
+                  </div>
+                  <div class="attr-bar"><div class="attr-fill fill-shadow" style="width: 90%"></div></div>
+                </div>
+              </div>
+
+              <!-- 3 Tuyệt Kỹ Trấn Phái -->
+              <div class="relic-skills-matrix">
+                <h4 class="relic-sub-heading">Tuyệt Kỹ Trấn Phái:</h4>
+                <div class="relic-skill-list">
+                  <div class="relic-skill-card card-shadow">
+                    <span class="skill-key">Q</span>
+                    <div class="skill-info">
+                      <strong>Phệ Hồn Luân Vũ:</strong>
+                      <span>Phóng thích vòng xoáy hư vô gặm nhấm đan điền đối phương, chuyển 50% sát thương thành sinh lực cho bản thân.</span>
+                    </div>
+                  </div>
+                  <div class="relic-skill-card card-shadow">
+                    <span class="skill-key">E</span>
+                    <div class="skill-info">
+                      <strong>U Ảnh Hóa Hư:</strong>
+                      <span>Tan biến thành làn khói tím tàng hình trong 3 giây, di chuyển xuyên qua mục tiêu và gây câm lặng diện rộng.</span>
+                    </div>
+                  </div>
+                  <div class="relic-skill-card card-shadow">
+                    <span class="skill-key">R</span>
+                    <div class="skill-info">
+                      <strong>Vạn Kiếp Quỷ Trảo (Nộ Khí):</strong>
+                      <span>Mở ra cánh cổng Ma Uyên dưới chân đối thủ, ngàn cánh tay quỷ kéo mục tiêu xuống vực sâu không lối thoát.</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="relic-action-dock">
+                <span class="equipped-badge badge-shadow">✓ Đang Ngự Thần Khí &bull; Đã Áp Dụng Theme U Minh</span>
+                <a href="#hero" class="btn btn-secondary">Xem Pháp Thân Ở Hero</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- ================= VŨ KHÍ 4: HOÀNG KIM THIÊN CƯƠNG THẦN KIẾM ================= -->
+          <article class="relic-dossier-panel dossier-gold" role="tabpanel">
+            <!-- Cột Trái: Trưng Bày Vũ Khí 3D Cận Cảnh -->
+            <div class="relic-visual-stage">
+              <div class="weapon-altar-pedestal">
+                <div class="altar-energy-disk altar-gold"></div>
+                <div class="weapon-model-wrapper">
+                  <img src="assets/images/relic-blade-gold.svg" alt="Thần Khí Hoàng Kim Thiên Cương Thần Kiếm" width="600" height="700" loading="lazy">
+                </div>
+              </div>
+              <div class="weapon-interactive-hint">
+                <span class="hint-pulse-dot dot-gold"></span>
+                <span>Vũ Khí Đang Ngự &bull; Kích Hoạt Pháp Vực Thiên Triều Toàn Trang</span>
+              </div>
+            </div>
+
+            <!-- Cột Phải: Hồ Sơ Kỹ Thuật, Nguồn Gốc & Tuyệt Kỹ Võ Học -->
+            <div class="relic-details-body">
+              <div class="relic-rank-badge-wrap">
+                <span class="relic-rank-badge badge-gold">TIÊN PHẨM CHÍ TÔN &bull; BẬC 10/10</span>
+                <span class="relic-forge-meta">Lò Rèn: Cung Điện Thiên Đế Chín Tầng Trời</span>
+              </div>
+              <h3 class="relic-dossier-title">Hoàng Kim Thiên Cương Thần Kiếm</h3>
+              <p class="relic-tagline">"Đúc bằng vàng ròng Thái Dương kết hợp chín tầng kim kinh, mang uy quyền chí tôn của Thiên Đạo giáng thế trảm sát muôn loài."</p>
+
+              <!-- Nguồn Gốc Rèn Đúc -->
+              <div class="relic-lore-box">
+                <h4 class="relic-sub-heading">Truyền Thuyết Rèn Đúc:</h4>
+                <p>
+                  Thanh bảo kiếm hoàng gia uy nghiêm nhất của Thượng Giới Tiên Tộc, đại diện cho công lý tuyệt đối và trật tự thái bình. Lưỡi kiếm tỏa ra ánh kim quang xua tan mọi tà ma u ám, bất kỳ ai được thanh kiếm này thừa nhận sẽ sở hữu thiên cương bất hoại thân, miễn nhiễm mọi bùa chú khống chế của yêu ma.
+                </p>
+              </div>
+
+              <!-- Chỉ Số Chiến Đấu Thần Khí -->
+              <div class="relic-attributes-grid">
+                <div class="relic-attr-item">
+                  <div class="attr-header">
+                    <span class="attr-name">Phòng Ngự &amp; Miễn Khống</span>
+                    <span class="attr-value">75% Kháng Mọi Hiệu Ứng</span>
+                  </div>
+                  <div class="attr-bar"><div class="attr-fill fill-gold" style="width: 96%"></div></div>
+                </div>
+                <div class="relic-attr-item">
+                  <div class="attr-header">
+                    <span class="attr-name">Sát Thương Thần Thánh</span>
+                    <span class="attr-value">4,500 + Sát Thương Chuẩn</span>
+                  </div>
+                  <div class="attr-bar"><div class="attr-fill fill-gold" style="width: 90%"></div></div>
+                </div>
+                <div class="relic-attr-item">
+                  <div class="attr-header">
+                    <span class="attr-name">Thiên Cương Bất Hoại</span>
+                    <span class="attr-value">Miễn Tử 1 Lần</span>
+                  </div>
+                  <div class="attr-bar"><div class="attr-fill fill-gold" style="width: 100%"></div></div>
+                </div>
+                <div class="relic-attr-item">
+                  <div class="attr-header">
+                    <span class="attr-name">Kim Quang Phổ Độ</span>
+                    <span class="attr-value">Hồi Máu Đồng Đội</span>
+                  </div>
+                  <div class="attr-bar"><div class="attr-fill fill-gold" style="width: 92%"></div></div>
+                </div>
+              </div>
+
+              <!-- 3 Tuyệt Kỹ Trấn Phái -->
+              <div class="relic-skills-matrix">
+                <h4 class="relic-sub-heading">Tuyệt Kỹ Trấn Phái:</h4>
+                <div class="relic-skill-list">
+                  <div class="relic-skill-card card-gold">
+                    <span class="skill-key">Q</span>
+                    <div class="skill-info">
+                      <strong>Thiên Quang Trảm Phạt:</strong>
+                      <span>Giáng một chùm kim kiếm quang từ tầng mây thứ chín thiêu rụi giáp hộ thể và làm choáng kẻ địch 3 giây.</span>
+                    </div>
+                  </div>
+                  <div class="relic-skill-card card-gold">
+                    <span class="skill-key">E</span>
+                    <div class="skill-info">
+                      <strong>Thần Thánh Kim Liên:</strong>
+                      <span>Triệu hồi đóa sen vàng bao bọc cơ thể, thanh tẩy mọi bùa chú bất lợi và tăng 50% giáp cho đồng đội kế bên.</span>
+                    </div>
+                  </div>
+                  <div class="relic-skill-card card-gold">
+                    <span class="skill-key">R</span>
+                    <div class="skill-info">
+                      <strong>Vạn Kiếm Quy Tông (Nộ Khí):</strong>
+                      <span>Hàng ngàn thanh hoàng kim bảo kiếm xoay tròn quanh thân thể rồi đồng loạt bay về phía trước, càn quét toàn chiến trường.</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="relic-action-dock">
+                <span class="equipped-badge badge-gold">✓ Đang Ngự Thần Khí &bull; Đã Áp Dụng Theme Hoàng Kim</span>
+                <a href="#hero" class="btn btn-secondary">Xem Pháp Thân Ở Hero</a>
+              </div>
+            </div>
+          </article>
+
+        </div>
+
+      </div>
     </section>
 
     <!-- ====================================================================

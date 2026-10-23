@@ -1,0 +1,103 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 700" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bladeMagma" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff" />
+      <stop offset="25%" stop-color="#ffedd5" />
+      <stop offset="50%" stop-color="#ff5722" />
+      <stop offset="85%" stop-color="#b71c1c" />
+      <stop offset="100%" stop-color="#3e0707" />
+    </linearGradient>
+    <linearGradient id="fireEdge" x1="0%" y1="100%" x2="0%" y2="0%">
+      <stop offset="0%" stop-color="#b71c1c" />
+      <stop offset="50%" stop-color="#ff3d00" />
+      <stop offset="100%" stop-color="#ffeb3b" />
+    </linearGradient>
+    <radialGradient id="flamePedestal" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#ff3344" stop-opacity="0.7" />
+      <stop offset="50%" stop-color="#ff7700" stop-opacity="0.3" />
+      <stop offset="100%" stop-color="transparent" />
+    </radialGradient>
+    <filter id="flameBloom">
+      <feGaussianBlur stdDeviation="7" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+  </defs>
+
+  <!-- Pedestal Lava Ground -->
+  <ellipse cx="300" cy="580" rx="230" ry="65" fill="url(#flamePedestal)" filter="url(#flameBloom)" />
+  <ellipse cx="300" cy="580" rx="170" ry="40" stroke="#ff3d00" stroke-width="2.5" fill="none" stroke-dasharray="12,8" opacity="0.85" />
+  <ellipse cx="300" cy="580" rx="110" ry="25" stroke="#ffeb3b" stroke-width="1.5" fill="none" stroke-dasharray="6,6" opacity="0.7" />
+
+  <!-- Rising Fire Embers Particles -->
+  <g fill="#ff5722" filter="url(#flameBloom)">
+    <circle cx="140" cy="500" r="5" opacity="0.8" />
+    <circle cx="170" cy="360" r="7" opacity="0.7" fill="#ffeb3b" />
+    <circle cx="450" cy="460" r="6" opacity="0.8" />
+    <circle cx="420" cy="310" r="4" opacity="0.9" fill="#ff9800" />
+    <circle cx="210" cy="220" r="5" opacity="0.7" />
+    <circle cx="390" cy="180" r="8" opacity="0.6" fill="#ff1744" />
+  </g>
+
+  <!-- SABER WEAPON: Xích Hỏa Ma Thần Nhận -->
+  <g transform="translate(300, 310) rotate(-12)">
+    
+    <!-- Outer Blazing Heat Aura -->
+    <path d="M -15,-250 C 45,-210 75,-120 70,110 L 0,165 L -45,110 C -45,-30 -35,-180 -15,-250 Z" fill="#ff1744" opacity="0.3" filter="url(#flameBloom)" />
+
+    <!-- Curved Heavy Demon Blade -->
+    <path d="M -10,-240 C 40,-200 68,-110 60,115 L 0,160 L -38,110 C -38,-20 -30,-170 -10,-240 Z" fill="url(#bladeMagma)" stroke="#ff3d00" stroke-width="2.5" />
+    
+    <!-- Serrated Teeth on the Back Ridge (Răng Cưa Ma Thần) -->
+    <path d="M -30,-140 L -50,-125 L -32,-110 M -33,-80 L -55,-65 L -34,-50 M -35,-20 L -60,-5 L -36,10 M -37,40 L -62,55 L -38,70" stroke="#ff9800" stroke-width="3" stroke-linecap="round" filter="url(#flameBloom)" />
+
+    <!-- Sharp Flaming Cutting Edge (Lưỡi Kiếm Liệt Diễm) -->
+    <path d="M -10,-240 C 40,-200 68,-110 60,115" stroke="url(#fireEdge)" stroke-width="5" fill="none" stroke-linecap="round" filter="url(#flameBloom)" />
+    <path d="M -8,-235 C 38,-195 65,-110 57,110" stroke="#ffffff" stroke-width="2" fill="none" opacity="0.8" />
+
+    <!-- Molten Magma Channels Inside Blade (Rãnh Huyết Nham Thạch) -->
+    <path d="M 0,-180 Q 25,-80 18,30 T 5,130" stroke="#ffeb3b" stroke-width="3.5" fill="none" stroke-linecap="round" filter="url(#flameBloom)" />
+    <path d="M 8,-120 Q 30,-50 25,60" stroke="#ff3d00" stroke-width="2" fill="none" />
+    <path d="M -10,-70 Q 5,10 0,90" stroke="#ff1744" stroke-width="2" fill="none" />
+
+    <!-- Demonic Crossguard (Đầu Lâu Ma Hoàng Khóa Kiếm) -->
+    <g transform="translate(0, 160)">
+      <!-- Demon Wings Guard -->
+      <path d="M 0,-5 C 50,-35 95,-30 115,10 C 85,25 45,25 0,25 C -45,25 -85,25 -115,10 C -95,-30 -50,-35 0,-5 Z" fill="#1c070a" stroke="#ff1744" stroke-width="2.5" />
+      <path d="M 0,0 C 40,-20 75,-15 90,12 C 65,18 35,18 0,18 C -35,18 -65,18 -90,12 C -75,-15 -40,-20 0,0 Z" fill="#991b1b" />
+      
+      <!-- Center Demon Eye Skull -->
+      <circle cx="0" cy="10" r="16" fill="#ff1744" filter="url(#flameBloom)" />
+      <circle cx="0" cy="10" r="10" fill="#ffeb3b" />
+      <polygon points="0,0 6,10 0,18 -6,10" fill="#3e0707" />
+    </g>
+
+    <!-- Hilt Wrapped in Barbed Metal (Chuôi Đao Quấn Xích Sắt) -->
+    <g transform="translate(0, 185)">
+      <rect x="-10" y="0" width="20" height="85" rx="5" fill="#180407" stroke="#ff5722" stroke-width="2" />
+      <!-- Barbed chains -->
+      <path d="M -10,15 L 10,25 M 10,15 L -10,25" stroke="#ef4444" stroke-width="2.5" />
+      <path d="M -10,40 L 10,50 M 10,40 L -10,50" stroke="#ef4444" stroke-width="2.5" />
+      <path d="M -10,65 L 10,75 M 10,65 L -10,75" stroke="#ef4444" stroke-width="2.5" />
+    </g>
+
+    <!-- Pommel with Heavy Iron Ring (Vòng Khuyên Đốc Đao Đỏ Lửa) -->
+    <g transform="translate(0, 275)">
+      <circle cx="0" cy="15" r="18" fill="none" stroke="#ff3d00" stroke-width="4" filter="url(#flameBloom)" />
+      <circle cx="0" cy="15" r="8" fill="#ff1744" />
+      <!-- Fire Tail -->
+      <path d="M 0,33 Q 15,65 5,110 Q -5,140 10,170" stroke="#ff5722" stroke-width="4" fill="none" stroke-linecap="round" />
+      <path d="M 0,33 Q -15,70 -5,115 Q 8,145 -2,175" stroke="#ffeb3b" stroke-width="2.5" fill="none" stroke-linecap="round" />
+    </g>
+
+  </g>
+
+  <!-- Weapon Specs Tag -->
+  <g transform="translate(50, 40)">
+    <rect width="210" height="38" rx="8" fill="rgba(24, 4, 7, 0.9)" stroke="#ff3344" stroke-width="1.5" />
+    <text x="18" y="24" font-family="'Cinzel', serif" font-size="13" font-weight="900" fill="#fee2e2">XÍCH HỎA MA THẦN NHẬN</text>
+  </g>
+  <g transform="translate(420, 40)">
+    <rect width="130" height="38" rx="8" fill="rgba(24, 4, 7, 0.9)" stroke="#ff5722" stroke-width="1.5" />
+    <text x="16" y="24" font-family="'Cinzel', serif" font-size="13" font-weight="800" fill="#ff7700">THẦN PHẨM SSS</text>
+  </g>
+</svg>

@@ -1,0 +1,115 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 700" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bladeFrost" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff" />
+      <stop offset="30%" stop-color="#e0f2fe" />
+      <stop offset="70%" stop-color="#38bdf8" />
+      <stop offset="100%" stop-color="#0284c7" />
+    </linearGradient>
+    <linearGradient id="edgeGleam" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff" />
+      <stop offset="50%" stop-color="#00f2fe" />
+      <stop offset="100%" stop-color="#0369a1" />
+    </linearGradient>
+    <radialGradient id="dragonPedestal" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#00f2fe" stop-opacity="0.6" />
+      <stop offset="60%" stop-color="#0284c7" stop-opacity="0.2" />
+      <stop offset="100%" stop-color="transparent" />
+    </radialGradient>
+    <filter id="iceBloom">
+      <feGaussianBlur stdDeviation="6" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+  </defs>
+
+  <!-- Background Pedestal Glow -->
+  <ellipse cx="300" cy="580" rx="220" ry="60" fill="url(#dragonPedestal)" filter="url(#iceBloom)" />
+  <ellipse cx="300" cy="580" rx="160" ry="35" stroke="#00f2fe" stroke-width="2" fill="none" stroke-dasharray="10,6" opacity="0.8" />
+  <circle cx="300" cy="580" r="100" stroke="#38bdf8" stroke-width="1.5" fill="none" stroke-dasharray="4,4" opacity="0.6" />
+
+  <!-- Floating Magic Ice Shards -->
+  <g fill="#e0f2fe" opacity="0.75" filter="url(#iceBloom)">
+    <polygon points="120,480 130,460 125,495" />
+    <polygon points="160,320 175,295 168,340" />
+    <polygon points="460,420 475,390 465,440" />
+    <polygon points="430,260 440,240 435,275" />
+    <polygon points="200,180 210,165 205,190" />
+  </g>
+
+  <!-- SWORD WEAPON: Thanh Long Băng Phách Kiếm -->
+  <g transform="translate(300, 310)">
+    
+    <!-- Outer Cold Aura -->
+    <path d="M 0,-240 L 32,-190 L 22,140 L 0,170 L -22,140 L -32,-190 Z" fill="#00f2fe" opacity="0.25" filter="url(#iceBloom)" />
+
+    <!-- Main Blade Center Spine -->
+    <path d="M 0,-250 L 24,-190 L 18,140 L 0,165 L -18,140 L -24,-190 Z" fill="url(#bladeFrost)" stroke="#00f2fe" stroke-width="2" />
+    
+    <!-- Left Blade Edge (Bevel) -->
+    <path d="M 0,-250 L -24,-190 L -18,140 L 0,165 Z" fill="#bae6fd" opacity="0.6" />
+    
+    <!-- Central Ridge Line (Hàn Băng Huyết Cương) -->
+    <line x1="0" y1="-240" x2="0" y2="155" stroke="#ffffff" stroke-width="3" filter="url(#iceBloom)" />
+
+    <!-- Ancient Dragon Frost Runes Engraved on Blade -->
+    <g stroke="#ffffff" stroke-width="2" fill="none" opacity="0.9" filter="url(#iceBloom)">
+      <!-- Rune 1 -->
+      <path d="M -8,-160 L 0,-170 L 8,-160 M 0,-170 L 0,-145 M -6,-150 L 6,-150" />
+      <!-- Rune 2 -->
+      <path d="M -7,-110 L 0,-120 L 7,-110 M -6,-115 L 6,-115 M 0,-120 L 0,-95" />
+      <!-- Rune 3 -->
+      <path d="M 0,-70 L -6,-60 L 6,-60 Z M 0,-60 L 0,-45" />
+      <!-- Rune 4 -->
+      <path d="M -6,-20 L 0,-30 L 6,-20 M 0,-30 L 0,-5" />
+      <!-- Rune 5 -->
+      <path d="M -5,20 L 0,10 L 5,20 M -5,15 L 5,15 M 0,10 L 0,35" />
+      <!-- Rune 6 -->
+      <path d="M -4,60 L 0,50 L 4,60 M 0,50 L 0,75" />
+    </g>
+
+    <!-- Crossguard (Thanh Long Hộ Thủ) -->
+    <g transform="translate(0, 165)">
+      <!-- Dragon Horns spreading out -->
+      <path d="M 0,-5 C 40,-25 80,-40 105,-15 C 80,-5 50,15 0,20 C -50,15 -80,-5 -105,-15 C -80,-40 -40,-25 0,-5 Z" fill="#0f172a" stroke="#00f2fe" stroke-width="2.5" />
+      <path d="M 0,0 C 35,-15 65,-25 85,-10 C 65,-2 40,10 0,14 C -40,10 -65,-2 -85,-10 C -65,-25 -35,-15 0,0 Z" fill="#0284c7" />
+      
+      <!-- Central Dragon Gem Core -->
+      <circle cx="0" cy="5" r="14" fill="#ffffff" filter="url(#iceBloom)" />
+      <circle cx="0" cy="5" r="9" fill="#00f2fe" />
+      <polygon points="0,-2 6,5 0,12 -6,5" fill="#ffffff" />
+    </g>
+
+    <!-- Hilt / Grip (Chuôi Kiếm Bọc Da Vảy Rồng) -->
+    <g transform="translate(0, 185)">
+      <rect x="-8" y="0" width="16" height="75" rx="4" fill="#0b1329" stroke="#38bdf8" stroke-width="1.5" />
+      <!-- Diamond wrap bindings -->
+      <line x1="-8" y1="15" x2="8" y2="25" stroke="#00f2fe" stroke-width="2" />
+      <line x1="8" y1="15" x2="-8" y2="25" stroke="#00f2fe" stroke-width="2" />
+      <line x1="-8" y1="35" x2="8" y2="45" stroke="#00f2fe" stroke-width="2" />
+      <line x1="8" y1="35" x2="-8" y2="45" stroke="#00f2fe" stroke-width="2" />
+      <line x1="-8" y1="55" x2="8" y2="65" stroke="#00f2fe" stroke-width="2" />
+      <line x1="8" y1="55" x2="-8" y2="65" stroke="#00f2fe" stroke-width="2" />
+    </g>
+
+    <!-- Pommel (Đốc Kiếm Đầu Rồng) -->
+    <g transform="translate(0, 260)">
+      <polygon points="0,0 16,10 12,24 0,30 -12,24 -16,10" fill="#0284c7" stroke="#00f2fe" stroke-width="2" />
+      <circle cx="0" cy="14" r="5" fill="#ffffff" filter="url(#iceBloom)" />
+      
+      <!-- Dragon Tassel (Dải Anh Túc Lam Sắc) -->
+      <path d="M 0,30 Q 15,60 10,95 Q 5,120 12,145" stroke="#38bdf8" stroke-width="3" fill="none" stroke-linecap="round" />
+      <path d="M 0,30 Q -10,65 -5,100 Q 2,125 -2,150" stroke="#00f2fe" stroke-width="2.5" fill="none" stroke-linecap="round" />
+    </g>
+
+  </g>
+
+  <!-- Weapon Specs Tag -->
+  <g transform="translate(50, 40)">
+    <rect width="210" height="38" rx="8" fill="rgba(15, 23, 42, 0.9)" stroke="#00f2fe" stroke-width="1.5" />
+    <text x="18" y="24" font-family="'Cinzel', serif" font-size="13" font-weight="900" fill="#e0f2fe">THANH LONG BĂNG KIẾM</text>
+  </g>
+  <g transform="translate(420, 40)">
+    <rect width="130" height="38" rx="8" fill="rgba(15, 23, 42, 0.9)" stroke="#38bdf8" stroke-width="1.5" />
+    <text x="16" y="24" font-family="'Cinzel', serif" font-size="13" font-weight="800" fill="#38bdf8">THẦN PHẨM SSS</text>
+  </g>
+</svg>
