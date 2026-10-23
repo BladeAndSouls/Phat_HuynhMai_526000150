@@ -348,6 +348,35 @@ Dự án được xây dựng với vai trò của một **Kỹ sư Thiết kế
 
 ---
 
+### Giai đoạn 17: Xây Dựng Hệ Thống Modal Chi Tiết Môn Phái Phong Cách Genshin Impact Cho Mục Hệ Phái Võ Học (#classes)
+- **Mục tiêu:** Thực hiện trọn vẹn yêu cầu: *"mục này tôi muốn nhấp vào ra chi tiết nội dung hơn"* (dựa trên ảnh chụp màn hình 4 thẻ nghề nghiệp Kiếm Sư, Khí Công Sư, Sát Thủ, Quyền Sư).
+- **Các giải pháp kỹ thuật và nội dung chi tiết chuyên sâu (100% Zero JavaScript):**
+  1. **Bổ Sung Nút Tương Tác Trực Quan Trên Từng Thẻ Môn Phái:**
+     - Trang bị nút kêu gọi hành động mạ kim `.class-explore-btn` (*"Khám Phá Chi Tiết Môn Phái &rarr;"*) trên cả 4 thẻ Class Card, giúp người dùng dễ dàng nhận biết và nhấp chuột tương tác.
+     - Khắc phục triệt để lỗi hiển thị ký tự mã hóa kép `â€œ` trên câu thoại nhân vật, đưa về định dạng trích dẫn chuẩn mực.
+  2. **Hệ Thống 4 Modal Showcase Nhân Vật Phong Cách HoYoverse / Genshin Impact (Pure CSS :target):**
+     - **Kiếm Sư (Blade Master - `#class-modal-blade-master`):**
+       - Khung poster nhân vật 3D hào quang Băng tuyết (Cryo), CV Kenjiro Tsuda.
+       - Cốt truyện truyền thừa võ đạo Hồng Môn Kiếm Tông tại Cực Bắc.
+       - Bảng 4 kỹ năng chi tiết: Phong Thần Trảm (Q - Lướt kiếm 350% dame), Bạt Kiếm Thức (E - Chặn 100% sát thương, phản đòn choáng 2s), Thiên Kiếm Trận (R - Hất tung 3m mở khóa không chiến), Phá Cương Quyết - Vạn Kiếm Quy Tông (TAB - Triệu hồi 1.000 phi kiếm dội xuống 1.450% dame).
+       - Thẻ đề xuất Thần Khí Trấn Phái: *Thanh Long Băng Phách Kiếm* kèm nút liên kết đến bệ thờ thần khí.
+     - **Khí Công Sư (Force Master - `#class-modal-force-master`):**
+       - Poster nguyên tố Âm Dương Hỏa & Băng (Pyro/Cryo), CV Saori Hayami.
+       - Bộ 4 kỹ năng chi tiết: Hỏa Long Trảm (Q - 420% dame, đốt cháy 5 tầng), Băng Hộ Thể (E - Bất tử 3s hồi 25% máu), Băng Hỏa Liên Hoàn (R - Nổ nguyên tố âm dương hất ngã 10m), Hỏa Thiên Trận (TAB - Thiên thạch lửa phá vỡ 100% giáp Boss).
+       - Thẻ đề xuất Thần Khí: *Xích Hỏa Ma Thần Nhẫn*.
+     - **Sát Thủ (Assassin - `#class-modal-assassin`):**
+       - Poster bóng đêm Ám Ảnh (Shadow), CV Yuichi Nakamura.
+       - Bộ 4 kỹ năng chi tiết: Ẩn Thân Quyết (Q - Tàng hình 6s, 100% chí mạng), Độc Vụ Trận (E - Bẫy độc làm chậm 60%, trừ 45% thủ), Ám Sát Trảm (R - Dịch chuyển sau lưng chém 680% bạo kích), Hoán Đổi Vị Trí (TAB - Thế thân khúc gỗ né đòn mù mắt 3s).
+       - Thẻ đề xuất Thần Khí: *U Minh Vạn Kiếp Trảm*.
+     - **Quyền Sư (Soul Fighter - `#class-modal-soul-fighter`):**
+       - Poster quyền thuật sấm sét Cuồng Long (Electro), CV Akio Otsuka.
+       - Bộ 4 kỹ năng chi tiết: Long Quyền Bộc Phá (Q - Phá giáp đẩy lùi 10m), Thiết Bố Sam (E - Mình đồng da sắt giảm 65% dame trong 5s), Cuồng Long Thức (R - Quật ngã Boss lớn 3s), Khí Huyết Hồi Phục (TAB - Hồi 40% máu toàn đội và hộ thuẫn 10.000 dame).
+       - Thẻ đề xuất Thần Khí: *Hoàng Kim Thiên Cương Thần Kiếm*.
+  3. **Ràng Buộc Kỹ Thuật Tuyệt Đối:**
+     - 100% Zero JavaScript: Hoạt động trơn tru bằng Pure CSS `:target`, hỗ trợ đóng modal bằng nút `×`, nút "Quay Lại Môn Phái" hoặc click vào vùng nền ngoài viền.
+
+---
+
 ## 3. BẢNG TỰ ĐÁNH GIÁ MỨC ĐỘ ĐÁP ỨNG YÊU CẦU ĐỀ BÀI
 
 | STT | Tiêu chí đánh giá của Giảng viên | Hiện trạng thực hiện trong dự án | Mức độ hoàn thành |
